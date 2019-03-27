@@ -136,7 +136,7 @@ export default function RNSButton(props) {
 }
 
 const HEIGHT = 40;
-const HEIGHT_SMALL = 30;
+const HEIGHT_SMALL = 40;
 const HEIGHT_LARGE = 50;
 
 const styles = StyleSheet.create({
@@ -182,7 +182,7 @@ const styles = StyleSheet.create({
     fontFamily: fonts.primaryBold,
   },
   captionSmall: {
-    fontSize: 12,
+    fontSize: 14,
     fontWeight: '500',
   },
   captionWithIcon: {

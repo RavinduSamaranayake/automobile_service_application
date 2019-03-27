@@ -73,7 +73,7 @@ render(){
 
       <View style={styles.buttonsContainer}>
         <Button
-          large
+          small
           secondary
           rounded
           style={styles.button}
@@ -104,8 +104,8 @@ const styles = StyleSheet.create({
     width: 350,
     fontSize: 18,
     fontWeight: '500',
-    height: 55,
-    backgroundColor: 'rgba(52, 52, 52, 0.2)',
+    height: 45,
+    backgroundColor: 'rgba(52, 52, 52, 0.1)',
     margin: 10,
     color: 'white',
     padding: 8,
@@ -130,7 +130,7 @@ const styles = StyleSheet.create({
   },
   button: {
     alignSelf: 'stretch',
-    marginBottom: 20,
+    marginBottom: 15,
   },
 });
 

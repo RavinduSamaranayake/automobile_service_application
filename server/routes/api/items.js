@@ -9,10 +9,10 @@ const Item = require('../../models/Item') // the "../" mean back to the one dire
 //@desc Get All items
 //@access public
 
-router.get('/',(req,res) => {
+router.get('/items.json',(req,res) => {
   Item.find()
     .sort({date:-1})
-    .then(items => res.json(items))
+    .then(items => res.json({items:items}))
 });
 
 //@route POST api/items

@@ -161,12 +161,12 @@ class GridsViewContainer extends React.Component {
   componentDidMount(){
 
     return fetch(`https://facebook.github.io/react-native/movies.json`)
-           .then((response) => response.json())
-           .then((responseJson) => {
+           .then((response) => response.json()) //covert to the json object
+           .then((responsJson) => {
 
              this.setState({
                isLoading:false,
-               dataSource: responseJson.movies,
+               dataSource: responsJson.movies, //array of the movies
              })
            })
     .catch((error) => {
@@ -204,7 +204,7 @@ render(){
   else{
     let movies = this.state.dataSource.map((val,key)=>{
       return <View key = {key} style={styles.item}>
-                 <Text>{val.title}</Text>
+                 <Text>{val.title} is {val.releaseYear}</Text>
              </View>
     })
   return (
