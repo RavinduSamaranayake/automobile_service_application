@@ -138,30 +138,93 @@ import {
   Text,
   StyleSheet,
   ImageBackground,
+  ActivityIndicator
   
 } from 'react-native';
 
 import { fonts, colors } from '../../styles';
  
+//import {fetchItems} from '../../../constants/api'
+ 
+ 
 
 class GridsViewContainer extends React.Component {
+
+  constructor(props){
+    super(props);
+    this.state = {
+      isLoading: true,
+      dataSource: null,
+    }
+  }
+
+  componentDidMount(){
+
+    return fetch(`https://facebook.github.io/react-native/movies.json`)
+           .then((response) => response.json())
+           .then((responseJson) => {
+
+             this.setState({
+               isLoading:false,
+               dataSource: responseJson.movies,
+             })
+           })
+    .catch((error) => {
+      console.log(error)
+    });
+  }
+  // static defaultProps = {
+  //   fetchItems
+  // }
+
+  // state = {
+  //   loading: false,
+  //   items: []
+  // }
+
+  // async componentDidMount() {
+  //   this.setState({ loading: true });
+  //   const data = await this.props.fetchItems();
+  //   setTimeout(() => this.setState({ loading: false, items: data.items }), 2000);
+  //   //this.setState({ loading: false, items: data.items });
+  // }
+
 
    
  
  
 render(){
+  if (this.state.isLoading) {
+    return (
+      <View style={styles.container}>
+        <ActivityIndicator/>
+      </View>
+    )
+  }
+  else{
+    let movies = this.state.dataSource.map((val,key)=>{
+      return <View key = {key} style={styles.item}>
+                 <Text>{val.title}</Text>
+             </View>
+    })
   return (
    <ImageBackground 
        source={require('../../../assets/images/background.png')}
        style={styles.container}
     > 
     <View style={styles.textContainer}>
-        <Text style={styles.availableText}>Our Services and booking</Text>
+        {/* <Text style={styles.availableText}>Our Services and booking</Text>
+        {this.state.items.map((item, i) => (
          
+          <Text key={i}>{item.name}</Text>
+        ))}
+          */}
+          {movies}
       </View>
       
     </ImageBackground>
   );
+}
 }
 
 }
@@ -186,6 +249,10 @@ const styles = StyleSheet.create({
   textContainer: {
     alignItems: 'center',
   },
+  item: {
+    flex: 1,
+    alignSelf: 'stretch',
+  }
   
 });
 

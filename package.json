@@ -20,6 +20,7 @@
     "lodash": "^4.17.11",
     "moment": "^2.24.0",
     "react": "16.6.3",
+    "react-addons-update": "^15.6.2",
     "react-native": "0.58.5",
     "react-native-calendars": "^1.22.0",
     "react-native-gesture-handler": "^1.0.16",
@@ -31,6 +32,7 @@
     "react-native-modal-datetime-picker": "^6.0.0",
     "react-native-modal-dropdown": "^0.6.2",
     "react-native-paper": "^2.12.0",
+    "react-native-router-flux": "^4.0.6",
     "react-native-ui-lib": "^3.18.0",
     "react-native-vector-icons": "^6.3.0",
     "react-navigation": "^3.3.2",
@@ -39,7 +41,6 @@
     "react-redux": "^6.0.1",
     "recompose": "^0.30.0",
     "redux": "^4.0.1",
-    "redux-logger": "^3.0.6",
     "redux-persist": "^5.10.0",
     "redux-promise": "^0.6.0",
     "redux-thunk": "^2.3.0",
@@ -70,6 +71,7 @@
     "react-addons-test-utils": "^15.6.2",
     "react-dom": "^16.6.3",
     "react-test-renderer": "16.6.3",
+    "redux-logger": "^3.0.6",
     "sinon": "^7.1.1"
   },
   "jest": {
@@ -107,6 +109,7 @@
         "type": "ios.simulator",
         "name": "iPhone XS"
       },
+      "proxy": "http://localhost:3000",
       "ios.sim.release": {
         "binaryPath": "ios/build/Build/Products/Release-iphonesimulator/ReactNativeStarter.app",
         "build": "xcodebuild -UseModernBuildSystem=NO -project ios/ReactNativeStarter.xcodeproj -scheme ReactNativeStarter -configuration Release -sdk iphonesimulator -derivedDataPath ios/build",
