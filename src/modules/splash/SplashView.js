@@ -7,6 +7,7 @@ import {
   ImageBackground,
   Dimensions
 } from 'react-native'
+import firebase from 'react-native-firebase'
 import {COLOR_PINK, COLOR_PINK_LIGHT, COLOR_FACEBOOK, COLOR_PINK_MEDIUM} from './myColors'
 var {height, width} = Dimensions.get('window')
 
@@ -37,8 +38,11 @@ export default class SplashView extends Component {
         duration: 2000,              
       })
     ]).start(() => {
-     this.props.navigation.navigate('Login')
-     console.log('succss...................................');
+      firebase.auth().onAuthStateChanged(user => {
+        this.props.navigation.navigate(user ? 'Dashboard' : 'Login')
+      })
+     //this.props.navigation.navigate('Login')
+     console.log('success...................................');
     });
   }
   render() {    
