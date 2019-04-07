@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "815315496769",
+    "firebase_url": "https://shan-vehicle-service-app.firebaseio.com",
+    "project_id": "shan-vehicle-service-app",
+    "storage_bucket": "shan-vehicle-service-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:815315496769:android:68de87dde6110e07",
+        "android_client_info": {
+          "package_name": "com.reactnativestarter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "815315496769-elo04hnbmlnhg1fbo2omqmp2t7guvnju.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC85m97VRQTtT4M7pMCPKDH_MGpG-iyHzA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

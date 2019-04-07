@@ -160,13 +160,13 @@ class GridsViewContainer extends React.Component {
 
   componentDidMount(){
 
-    return fetch(`https://facebook.github.io/react-native/movies.json`)
+    return fetch(`http://shan-motors.herokuapp.com/api/auth/get-list-of-users`)//fetch(`https://facebook.github.io/react-native/movies.json`)
            .then((response) => response.json()) //covert to the json object
            .then((responsJson) => {
 
              this.setState({
                isLoading:false,
-               dataSource: responsJson.movies, //array of the movies
+               dataSource: responsJson.users,//responsJson.movies, //array of the movies
              })
            })
     .catch((error) => {
@@ -202,11 +202,12 @@ render(){
     )
   }
   else{
-    let movies = this.state.dataSource.map((val,key)=>{
-      return <View key = {key} style={styles.item}>
-                 <Text>{val.title} is {val.releaseYear}</Text>
-             </View>
-    })
+    let movies = this.state.dataSource
+    // let movies = this.state.dataSource.map((val,key)=>{
+    //   return <View key = {key} style={styles.item}>
+    //              <Text>{val.name} is {val.username}</Text>
+    //          </View>
+    // })
   return (
    <ImageBackground 
        source={require('../../../assets/images/background.png')}

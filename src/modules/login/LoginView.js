@@ -10,31 +10,46 @@ import {
   Linking,
 } from 'react-native';
 
+import firebase from 'react-native-firebase';
 import { fonts, colors } from '../../styles';
 import { Button } from '../../components';
 
 class LoginScreen extends React.Component {
 
   state = {
-    username: '', password: ''
+    isAuthenticated: false,
+    username: '', 
+    password: '',
+    user: null,
   }
  
 
-  onChangeText = (key, value) => {
-    this.setState({ [key]: value })
-  }
+ 
    
   signIn = () => {
-      console.log('user successfully signed in!')
-      const { username, password } = this.state
-      if(username=='admin'&&password=='admin'){
-          
-        this.props.navigation.navigate('Dashboard')
+ 
 
-      }
-      else{
-        Alert.alert('Error','Username/Password missmatch',[{text:'ok'}])
-      }
+      //----------------------login------------------------
+      firebase.auth().signInWithEmailAndPassword(this.state.username, this.state.password)
+      .then(() => {
+         // console.log(`Login with user : ${JSON.stringify(loggedInUser.toJSON())}`);
+          this.props.navigation.navigate('Dashboard')
+      }).catch((error) => {
+          Alert.alert('Error',`${error}`,[{text:'ok'}])
+          //console.log(`Login fail with error: ${error}`);
+      });
+
+      
+
+      //---------------------register------------------------
+      // firebase.auth().createUserWithEmailAndPassword(this.state.username, this.state.password)
+      // .then((loggedInUser) => {
+      //     this.setState({ user: loggedInUser })
+      //     //console.log(`Register with user : ${JSON.stringify(loggedInUser.toJSON())}`);
+      // }).catch((error) => {
+      //     //console.log(`Register fail with error: ${error}`);
+      //     Alert.alert('Error',`${error}`,[{text:'ok'}]);
+      // });
     }
  
  
@@ -58,7 +73,10 @@ render(){
           autoCapitalize="none"
           autoCorrect={false}
           placeholderTextColor='white'
-          onChangeText={val => this.onChangeText('username', val)}
+          onChangeText={  (text) => {
+            this.setState({ username: text });
+        }
+      }
         />
         <TextInput
           style={styles.input}
@@ -66,7 +84,10 @@ render(){
           autoCapitalize="none"
           secureTextEntry={true}
           placeholderTextColor='white'
-          onChangeText={val => this.onChangeText('password', val)}
+          onChangeText={(text) => {
+            this.setState({ password: text });
+        }
+      }
         />
       </View>
        
