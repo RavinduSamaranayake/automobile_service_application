@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, View, Text, TouchableOpacity, Image } from 'react-native';
+import firebase from 'react-native-firebase';
 
 import { colors, fonts } from '../../styles';
 
@@ -71,14 +72,25 @@ export default function PagesScreen(props) {
           <Text style={styles.itemText}>History</Text>
         </TouchableOpacity>
         <TouchableOpacity 
-        //  onPress={() => props.navigation.navigate({ routeName: 'Login' })}
+
+        onPress={ () => {
+
+          //log out from user
+               try {
+                firebase.auth().signOut();
+                props.navigation.navigate({ routeName: 'Login' })
+               } catch (e) {
+                console.log(e);
+            }
+          }
+          }
          style={styles.item}>
           <Image
             resizeMode="contain"
             source={profileIcon}
             style={styles.itemImage}
           />
-          <Text style={styles.itemText}>Reminders</Text>
+          <Text style={styles.itemText}>LogOut</Text>
         </TouchableOpacity>
       </View>
     </View>

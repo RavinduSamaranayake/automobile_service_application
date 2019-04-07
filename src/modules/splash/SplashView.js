@@ -38,11 +38,12 @@ export default class SplashView extends Component {
         duration: 2000,              
       })
     ]).start(() => {
+
+      //one time login with firebase.. if a user login a one time then he don't login again
       firebase.auth().onAuthStateChanged(user => {
         this.props.navigation.navigate(user ? 'Dashboard' : 'Login')
       })
-     //this.props.navigation.navigate('Login')
-     console.log('success...................................');
+     
     });
   }
   render() {    
