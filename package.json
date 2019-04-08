@@ -29,6 +29,7 @@
     "react-native-lightbox": "^0.8.0",
     "react-native-linear-gradient": "^2.5.3",
     "react-native-localize": "^1.0.4",
+    "react-native-maps": "^0.23.0",
     "react-native-modal": "^9.0.0",
     "react-native-modal-datetime-picker": "^6.0.0",
     "react-native-modal-dropdown": "^0.6.2",
