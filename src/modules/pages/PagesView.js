@@ -26,7 +26,7 @@ export default function PagesScreen(props) {
           <Text style={styles.itemText}>Booking</Text>
         </TouchableOpacity>
         <TouchableOpacity
-          onPress={() => props.navigation.navigate({ routeName: 'Gallery' })}
+          onPress={() => props.navigation.navigate({ routeName: 'Map' })}
           style={styles.item}
         >
           <Image

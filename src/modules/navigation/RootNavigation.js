@@ -4,7 +4,7 @@ import {  createSwitchNavigator,createAppContainer, createStackNavigator } from 
 
 import MainTabNavigator from './MainTabNavigator';
 
-import GalleryScreen from '../gallery/GalleryViewContainer';
+import MapScreen from '../map/mapview';
 import LoginScreen from '../login/LoginView';
 import SplashScreen from '../splash/SplashView';
 
@@ -53,8 +53,8 @@ const stackNavigator = createStackNavigator(
         title: 'Profile',
       },
     },
-    Gallery: {
-      screen: GalleryScreen,
+    Map: {
+      screen: MapScreen,
       navigationOptions: {
         title: 'Road Side',
       },
