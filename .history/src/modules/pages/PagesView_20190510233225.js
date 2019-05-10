@@ -95,18 +95,6 @@ export default function PagesScreen(props) {
   );
 }
 
-//sign out using remove item from async storage
-async signOut() {
-  try{
-    await AsyncStorage.removeItem('id_token')
-    .then(
-        props.navigation.navigate({ routeName: 'Login' })
-    );
-  } catch (error) {
-    console.log('AsyncStorage Error: ' + error.message);
-  }
-}
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,

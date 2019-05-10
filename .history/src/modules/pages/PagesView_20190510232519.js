@@ -11,6 +11,7 @@ const galleryIcon = require('../../../assets/images/pages/gallery.png');
 const profileIcon = require('../../../assets/images/pages/profile.png');
 
 export default function PagesScreen(props) {
+   \
   return (
     <View style={styles.container}>
       <View style={styles.row}>
@@ -76,10 +77,12 @@ export default function PagesScreen(props) {
         onPress={ () => {
 
           //log out from user
-                
+               try {
                // firebase.auth().signOut();
-                signOut();
-                
+                props.navigation.navigate({ routeName: 'Login' })
+               } catch (e) {
+                console.log(e);
+            }
           }
           }
          style={styles.item}>
@@ -93,18 +96,6 @@ export default function PagesScreen(props) {
       </View>
     </View>
   );
-}
-
-//sign out using remove item from async storage
-async signOut() {
-  try{
-    await AsyncStorage.removeItem('id_token')
-    .then(
-        props.navigation.navigate({ routeName: 'Login' })
-    );
-  } catch (error) {
-    console.log('AsyncStorage Error: ' + error.message);
-  }
 }
 
 const styles = StyleSheet.create({

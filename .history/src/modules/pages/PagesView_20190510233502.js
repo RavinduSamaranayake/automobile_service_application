@@ -95,7 +95,7 @@ export default function PagesScreen(props) {
   );
 }
 
-//sign out using remove item from async storage
+//sign out using remove item from asyn
 async signOut() {
   try{
     await AsyncStorage.removeItem('id_token')
