@@ -16,6 +16,7 @@
     "e2e:test": "detox test --configuration ios.sim.debug"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "haversine": "^1.1.1",
     "i18n-js": "^3.2.1",
     "lodash": "^4.17.11",

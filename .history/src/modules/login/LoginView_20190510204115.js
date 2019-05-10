@@ -11,7 +11,7 @@ import {
 } from 'react-native';
 
 import axios from 'axios';
-import deviceStorage from '../../services/deviceStorage';
+
 import firebase from 'react-native-firebase';
 import { fonts, colors } from '../../styles';
 import { Button } from '../../components';
