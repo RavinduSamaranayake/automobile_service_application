@@ -77,7 +77,7 @@ export default function PagesScreen(props) {
 
           //log out from user
                try {
-               // firebase.auth().signOut();
+                firebase.auth().signOut();
                 props.navigation.navigate({ routeName: 'Login' })
                } catch (e) {
                 console.log(e);
