@@ -22,7 +22,7 @@ class LoginScreen extends React.Component {
     isAuthenticated: false,
     email: '', 
     password: '',
-   // msg:'',
+    msg:'',
     user: null,
   }
  
@@ -50,15 +50,22 @@ class LoginScreen extends React.Component {
       axios.post('http://shan-motors.herokuapp.com/api/auth',User)
               .then(res=>{ 
                   //localStorage.setItem('usertoken',res.data.token);
-                  deviceStorage.saveItem("id_token", res.data.token);
+                  deviceStorage.saveKey("id_token", res.data.token);
                   if(res.data.user.role == "customer"){
                     this.props.navigation.navigate('Dashboard'); 
                   }
                   return res.data
     
                })
-          .catch((error) =>{
-                  Alert.alert('Error',`${error}`,[{text:'ok'}]);
+          .catch(res =>{
+       
+               console.log(res.response.data.msg);
+               Alert.alert('Error',`${res.response.data.msg}`,[{text:'ok'}])
+
+                  this.setState({
+                      //visible:true,
+                      msg:res.response.data.msg
+                 })
               }) 
 
       }

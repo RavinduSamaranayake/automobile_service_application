@@ -43,7 +43,7 @@ export default class SplashView extends Component {
       // firebase.auth().onAuthStateChanged(user => {
       //   this.props.navigation.navigate(user ? 'Dashboard' : 'Login')
       // })
-      this.props.navigation.navigate('Login');
+      
      
     });
   }

@@ -12,7 +12,7 @@ import {
 
 import axios from 'axios';
 import deviceStorage from '../../services/deviceStorage';
-//import firebase from 'react-native-firebase';
+import firebase from 'react-native-firebase';
 import { fonts, colors } from '../../styles';
 import { Button } from '../../components';
 
@@ -20,9 +20,8 @@ class LoginScreen extends React.Component {
 
   state = {
     isAuthenticated: false,
-    email: '', 
+    username: '', 
     password: '',
-   // msg:'',
     user: null,
   }
  
@@ -32,7 +31,7 @@ class LoginScreen extends React.Component {
   signIn = () => {
  
 
-      //----------------------login with firebase auth------------------------
+      //----------------------login------------------------
       // firebase.auth().signInWithEmailAndPassword(this.state.username, this.state.password)
       // .then(() => {
       //    // console.log(`Login with user : ${JSON.stringify(loggedInUser.toJSON())}`);
@@ -47,21 +46,26 @@ class LoginScreen extends React.Component {
         password:this.state.password
       }
 
-      axios.post('http://shan-motors.herokuapp.com/api/auth',User)
+      axios.post('api/auth',User)
               .then(res=>{ 
-                  //localStorage.setItem('usertoken',res.data.token);
-                  deviceStorage.saveItem("id_token", res.data.token);
+                  localStorage.setItem('usertoken',res.data.token);
                   if(res.data.user.role == "customer"){
-                    this.props.navigation.navigate('Dashboard'); 
-                  }
+                   
+                    }
                   return res.data
     
-               })
-          .catch((error) =>{
-                  Alert.alert('Error',`${error}`,[{text:'ok'}]);
-              }) 
+    })
+     .catch(res =>{
+       
+        console.log(res.response.data.msg);
 
-      }
+        this.setState({
+            visible:true,
+            msg:res.response.data.msg
+        })
+    }) 
+
+    }
  
  
 render(){
@@ -85,7 +89,7 @@ render(){
           autoCorrect={false}
           placeholderTextColor='white'
           onChangeText={  (text) => {
-            this.setState({ email: text });
+            this.setState({ username: text });
         }
       }
         />
