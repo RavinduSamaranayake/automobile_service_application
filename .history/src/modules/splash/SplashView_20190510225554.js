@@ -7,7 +7,7 @@ import {
   ImageBackground,
   Dimensions
 } from 'react-native'
-import { AsyncStorage } from 'react-native';
+import deviceStorage from '../../services/deviceStorage';
 //import firebase from 'react-native-firebase'
 import {COLOR_PINK, COLOR_PINK_LIGHT, COLOR_FACEBOOK, COLOR_PINK_MEDIUM} from './myColors'
 var {height, width} = Dimensions.get('window')
@@ -44,19 +44,15 @@ export default class SplashView extends Component {
       // firebase.auth().onAuthStateChanged(user => {
       //   this.props.navigation.navigate(user ? 'Dashboard' : 'Login')
       // })
-
-      //one time login with jwt auth..
       if(this.isAlreadyAuthenticated()){
-      this.props.navigation.navigate('Dashboard');
+      this.props.navigation.navigate('Login');
       }
-      else{
-        this.props.navigation.navigate('Login');
-      }
+      
     });
   }
- 
-  async isAlreadyAuthenticated(){
-    const value = await AsyncStorage.getItem('id_token'); //get the id_token and check it. AsyncStorage like localstorage in web
+
+  isAlreadyAuthenticated(){
+    const value = await AsyncStorage.getItem('id_token');
     if (!value) {
       return false;
     }

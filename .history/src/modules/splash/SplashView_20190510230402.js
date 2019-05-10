@@ -46,7 +46,8 @@ export default class SplashView extends Component {
       // })
 
       //one time login with jwt auth..
-      if(this.isAlreadyAuthenticated()){
+      const value = await AsyncStorage.getItem('id_token');
+      if (!value) {
       this.props.navigation.navigate('Dashboard');
       }
       else{
@@ -54,13 +55,9 @@ export default class SplashView extends Component {
       }
     });
   }
- 
-  async isAlreadyAuthenticated(){
-    const value = await AsyncStorage.getItem('id_token'); //get the id_token and check it. AsyncStorage like localstorage in web
-    if (!value) {
-      return false;
-    }
-    return true;
+
+   
+    
 }
   render() {    
     return (
