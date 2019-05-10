@@ -79,8 +79,8 @@ export default function PagesScreen(props) {
           //log out from user
                 
                // firebase.auth().signOut();
-               deviceStorage.deleteJWT();
-               props.navigation.navigate({ routeName: 'Splash' });
+               deviceStorage.deleteJWT()
+                props.navigation.navigate({ routeName: 'Login' });
                 
           }
           }

@@ -44,7 +44,7 @@ export default class SplashView extends Component {
       // firebase.auth().onAuthStateChanged(user => {
       //   this.props.navigation.navigate(user ? 'Dashboard' : 'Login')
       // })
-      this.isAlreadyAuthenticated();
+
       //one time login with jwt auth..
       // if(this.isAlreadyAuthenticated()){
       // this.props.navigation.navigate('Dashboard');
@@ -53,7 +53,7 @@ export default class SplashView extends Component {
       //   this.props.navigation.navigate('Login');
       // }
       //   this.props.navigation.navigate('Login');
-
+      //   this.props.navigation.navigate('Login');
       
     });
   }
@@ -61,10 +61,10 @@ export default class SplashView extends Component {
   async isAlreadyAuthenticated(){
     const value = await AsyncStorage.getItem('id_token'); //get the id_token and check it. AsyncStorage like localstorage in web
     if (value !== null) {
-      this.props.navigation.navigate('Dashboard'); 
+      return true;
     }
     else{
-      this.props.navigation.navigate('Login');
+    return false;
     }
 }
   render() {    

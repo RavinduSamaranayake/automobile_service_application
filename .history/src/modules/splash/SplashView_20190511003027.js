@@ -44,7 +44,7 @@ export default class SplashView extends Component {
       // firebase.auth().onAuthStateChanged(user => {
       //   this.props.navigation.navigate(user ? 'Dashboard' : 'Login')
       // })
-      this.isAlreadyAuthenticated();
+
       //one time login with jwt auth..
       // if(this.isAlreadyAuthenticated()){
       // this.props.navigation.navigate('Dashboard');

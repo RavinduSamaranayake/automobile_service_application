@@ -3,7 +3,6 @@ import { StyleSheet, View, Text, TouchableOpacity, Image } from 'react-native';
 //import firebase from 'react-native-firebase';
 
 import { colors, fonts } from '../../styles';
-import deviceStorage from '../../services/deviceStorage';
 
 const chartIcon = require('../../../assets/images/pages/chart.png');
 const calendarIcon = require('../../../assets/images/pages/calendar.png');
@@ -79,8 +78,7 @@ export default function PagesScreen(props) {
           //log out from user
                 
                // firebase.auth().signOut();
-               deviceStorage.deleteJWT();
-               props.navigation.navigate({ routeName: 'Splash' });
+                signOut();
                 
           }
           }
