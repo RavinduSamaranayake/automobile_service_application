@@ -151,10 +151,10 @@ export default class ViewProfile extends Component {
           <View style={styles.body}>
             <View style={styles.bodyContent}>
               <Text style={styles.name}> {this.state.name}</Text>
-              <Text style={styles.info}> {this.state.email}</Text>
-              <Text style={styles.info}> {this.state.address}</Text>
-              <Text style={styles.info}> {this.state.contact}</Text>
-              <Text style={styles.info}>NIC {this.state.nic}</Text>
+              <Text style={styles.info}> {this.state.name}</Text>
+              <Text style={styles.info}> {this.state.name}</Text>
+              <Text style={styles.info}> {this.state.name}</Text>
+              <Text style={styles.info}>nic {this.state.name}</Text>
               {/* <Text style={styles.description}>Lorem ipsum dolor sit amet, saepe sapientem eu nam. Qui ne assum electram expetendis, omittam deseruisse consequuntur ius an,</Text> */}
 {/*               
               <TouchableOpacity style={styles.buttonContainer}>

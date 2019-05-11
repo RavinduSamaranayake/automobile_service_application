@@ -104,10 +104,7 @@ export default class ViewProfile extends Component {
     state = {
     userdata: '',
     name: '',
-    email: '',
-    address: '',
-    nic: '',
-    contact: ''
+    email: 
   }
 
   componentDidMount(){
@@ -126,10 +123,6 @@ export default class ViewProfile extends Component {
        console.log('..............user state value is......',this.state.userdata,'..................');
        this.setState({
          name: JSON.parse(this.state.userdata).name,
-         email: JSON.parse(this.state.userdata).email,
-         address: JSON.parse(this.state.userdata).address,
-         nic: JSON.parse(this.state.userdata).nic,
-         contact: JSON.parse(this.state.userdata).contact_number,
        });
        console.log('..............user state name value is......',this.state.name,'..................');
       } else {
@@ -150,11 +143,11 @@ export default class ViewProfile extends Component {
           <Image style={styles.avatar} source={{uri: 'https://bootdey.com/img/Content/avatar/avatar6.png'}}/>
           <View style={styles.body}>
             <View style={styles.bodyContent}>
-              <Text style={styles.name}> {this.state.name}</Text>
-              <Text style={styles.info}> {this.state.email}</Text>
-              <Text style={styles.info}> {this.state.address}</Text>
-              <Text style={styles.info}> {this.state.contact}</Text>
-              <Text style={styles.info}>NIC {this.state.nic}</Text>
+              <Text style={styles.name}>John Doe</Text>
+              <Text style={styles.info}>UX Designer / Mobile developer</Text>
+              <Text style={styles.info}>fehgirrgtjyj</Text>
+              <Text style={styles.info}>UX Designer / Mobile developer</Text>
+              <Text style={styles.info}>UX Designer / Mobile developer</Text>
               {/* <Text style={styles.description}>Lorem ipsum dolor sit amet, saepe sapientem eu nam. Qui ne assum electram expetendis, omittam deseruisse consequuntur ius an,</Text> */}
 {/*               
               <TouchableOpacity style={styles.buttonContainer}>
