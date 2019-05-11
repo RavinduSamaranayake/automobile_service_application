@@ -13,7 +13,7 @@ const deviceStorage = {
       },
       async deleteJWT() {
         try{
-          await AsyncStorage.clear(); //Async storage all items are remove
+          await AsyncStorage.clear(); //f
           console.log('....................log out success...............');
             }catch (error) {
           console.log('AsyncStorage Error: ' + error.message);

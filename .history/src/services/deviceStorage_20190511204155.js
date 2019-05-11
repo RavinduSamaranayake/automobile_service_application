@@ -2,10 +2,9 @@
 import { AsyncStorage } from 'react-native';
 
 const deviceStorage = {
-    async saveItem(token , user) {
+    async saveItem(token) {
         try {
-          await AsyncStorage.setItem('id_token', token);
-          await AsyncStorage.setItem('user',  JSON.stringify(user)); //Async storage can store only styings. can't store json objects
+          await AsyncStorage.setItem(key, value);
          
         } catch (error) {
           console.log('AsyncStorage Error: ' + error.message);
@@ -13,7 +12,7 @@ const deviceStorage = {
       },
       async deleteJWT() {
         try{
-          await AsyncStorage.clear(); //Async storage all items are remove
+          await AsyncStorage.removeItem('id_token');
           console.log('....................log out success...............');
             }catch (error) {
           console.log('AsyncStorage Error: ' + error.message);

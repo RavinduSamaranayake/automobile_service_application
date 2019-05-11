@@ -5,7 +5,7 @@ const deviceStorage = {
     async saveItem(token , user) {
         try {
           await AsyncStorage.setItem('id_token', token);
-          await AsyncStorage.setItem('user',  JSON.stringify(user)); //Async storage can store only styings. can't store json objects
+          await AsyncStorage.setItem('user',  JSON.stringify(user));
          
         } catch (error) {
           console.log('AsyncStorage Error: ' + error.message);
@@ -13,7 +13,7 @@ const deviceStorage = {
       },
       async deleteJWT() {
         try{
-          await AsyncStorage.clear(); //Async storage all items are remove
+          await AsyncStorage.clear();
           console.log('....................log out success...............');
             }catch (error) {
           console.log('AsyncStorage Error: ' + error.message);

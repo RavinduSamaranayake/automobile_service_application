@@ -16,10 +16,10 @@ export default class ViewProfile extends React.Component {
   state = {
     userdata: null,
   }
- // when we use the componentDidMount the when the page is load the function is auto call like angular ngOnInit function 
+ // the componentDid
   async componentDidMount() {
     try {
-      const value = await AsyncStorage.getItem('user');
+      const value = await AsyncStorage.getItem('id_token');
       if (value !== null) {
         this.setState({
           userdata: value
@@ -42,7 +42,7 @@ render(){
        style={styles.container}
     > 
     <View style={styles.textContainer}>
-        <Text style={styles.availableText}>MyProfile Details are : {this.state.userdata.name}</Text>
+        <Text style={styles.availableText}>MyProfile Details</Text>
          
       </View>
       

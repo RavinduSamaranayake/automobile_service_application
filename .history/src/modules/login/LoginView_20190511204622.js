@@ -50,7 +50,7 @@ class LoginScreen extends React.Component {
       axios.post('http://shan-motors.herokuapp.com/api/auth',User)
               .then(res=>{ 
                   // store login user token in device storage this like localStorage.setItem('id_token',res.data.token) in web
-                  deviceStorage.saveItem(res.data.token , res.data.user); 
+                  deviceStorage.saveItem(res.data.token , re); 
                   if(res.data.user.role == "customer"){
                     this.props.navigation.navigate('Dashboard'); 
                   }else{

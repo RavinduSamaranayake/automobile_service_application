@@ -1,5 +1,4 @@
 import React from 'react';
-import { AsyncStorage } from 'react-native';
 import {
   View,
   Text,
@@ -13,26 +12,7 @@ import { fonts, colors } from '../../styles';
 
 export default class ViewProfile extends React.Component {
 
-  state = {
-    userdata: null,
-  }
- // when we use the componentDidMount the when the page is load the function is auto call like angular ngOnInit function 
-  async componentDidMount() {
-    try {
-      const value = await AsyncStorage.getItem('user');
-      if (value !== null) {
-        this.setState({
-          userdata: value
-       });
-      } else {
-        this.setState({
-          userdata: null
-        });
-      }
-    } catch (error) {
-      console.log('AsyncStorage Error: ' + error.message);
-    }
-  }  
+  
  
  
 render(){
@@ -42,7 +22,7 @@ render(){
        style={styles.container}
     > 
     <View style={styles.textContainer}>
-        <Text style={styles.availableText}>MyProfile Details are : {this.state.userdata.name}</Text>
+        <Text style={styles.availableText}>MyProfile Details</Text>
          
       </View>
       
