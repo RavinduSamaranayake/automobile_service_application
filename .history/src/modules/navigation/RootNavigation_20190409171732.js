@@ -17,7 +17,6 @@ import SplashScreen from '../splash/SplashView';
 // import ChartsScreen from '../containers/ChartsScreen';
 
 import AvailableInFullVersion from '../availableInFullVersion/AvailableInFullVersionViewContainer';
-import ViewProfile from '../profile/ViewProfile';
 
 import { colors, fonts } from '../../styles';
 
@@ -49,7 +48,7 @@ const stackNavigator = createStackNavigator(
     },
 
     Profile: {
-      screen: ViewProfile,
+      screen: AvailableInFullVersion,
       navigationOptions: {
         title: 'Profile',
       },

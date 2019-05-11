@@ -49,7 +49,7 @@ const stackNavigator = createStackNavigator(
     },
 
     Profile: {
-      screen: ViewProfile,
+      screen: V,
       navigationOptions: {
         title: 'Profile',
       },
