@@ -14,26 +14,21 @@ import { fonts, colors } from '../../styles';
 export default class ViewProfile extends React.Component {
 
   state = {
-    userdata: '',
+    userdata: null,
   }
-
-  componentDidMount(){
-    this.loadData();
-  }
- // when we use the componentDidMount or componentWillMount the when the page is load the function is auto call like angular ngOnInit function 
-  async loadData() { //when we using componentWillMount first execte the function and then rendering the component
+ // when we use the componentDidMount the when the page is load the function is auto call like angular ngOnInit function 
+  async componentWillMount() {
     console.log('..............load value......................');
     try {
       const value = await AsyncStorage.getItem('user');
       if (value !== null) {
         console.log('..............user data value is......',value,'..................');
         this.setState({
-          userdata: value,
+          userdata: value
        });
-       console.log('..............user state value is......',this.state.userdata,'..................');
       } else {
         this.setState({
-          userdata: ''
+          userdata: null
         });
       }
     } catch (error) {

@@ -16,19 +16,15 @@ export default class ViewProfile extends React.Component {
   state = {
     userdata: '',
   }
-
-  componentDidMount(){
-    this.loadData();
-  }
  // when we use the componentDidMount or componentWillMount the when the page is load the function is auto call like angular ngOnInit function 
-  async loadData() { //when we using componentWillMount first execte the function and then rendering the component
+componentmount() { //when we using componentWillMount first execte the function and then rendering the component
     console.log('..............load value......................');
     try {
       const value = await AsyncStorage.getItem('user');
       if (value !== null) {
         console.log('..............user data value is......',value,'..................');
         this.setState({
-          userdata: value,
+          userdata: "kushannnn",
        });
        console.log('..............user state value is......',this.state.userdata,'..................');
       } else {

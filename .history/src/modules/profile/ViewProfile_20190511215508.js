@@ -28,7 +28,7 @@ export default class ViewProfile extends React.Component {
       if (value !== null) {
         console.log('..............user data value is......',value,'..................');
         this.setState({
-          userdata: value,
+          userdata: "kushannnn",
        });
        console.log('..............user state value is......',this.state.userdata,'..................');
       } else {
