@@ -89,13 +89,13 @@
 
 
 
+ 
 import React, { Component } from 'react';
 import {
   StyleSheet,
   Text,
   View,
   Image,
-  TouchableOpacity
 } from 'react-native';
 
 export default class ViewProfile extends Component {
@@ -103,25 +103,56 @@ export default class ViewProfile extends Component {
   render() {
     return (
       <View style={styles.container}>
-          <View style={styles.header}></View>
-          <Image style={styles.avatar} source={{uri: 'https://bootdey.com/img/Content/avatar/avatar6.png'}}/>
-          <View style={styles.body}>
-            <View style={styles.bodyContent}>
-              <Text style={styles.name}>John Doe</Text>
-              <Text style={styles.info}>UX Designer / Mobile developer</Text>
-              <Text style={styles.info}>fehgirrgtjyj</Text>
-              <Text style={styles.info}>UX Designer / Mobile developer</Text>
-              <Text style={styles.info}>UX Designer / Mobile developer</Text>
-              {/* <Text style={styles.description}>Lorem ipsum dolor sit amet, saepe sapientem eu nam. Qui ne assum electram expetendis, omittam deseruisse consequuntur ius an,</Text> */}
-{/*               
-              <TouchableOpacity style={styles.buttonContainer}>
-                <Text>Opcion 1</Text>  
-              </TouchableOpacity>               */}
-              <TouchableOpacity style={styles.buttonContainer}>
-                <Text>Change Profile</Text> 
-              </TouchableOpacity>
+          <View style={styles.header}>
+            <View style={styles.headerContent}>
+                <Image style={styles.avatar}
+                  source={{uri: 'https://bootdey.com/img/Content/avatar/avatar6.png'}}/>
+
+                <Text style={styles.name}>John Doe </Text>
+                <Text style={styles.userInfo}>jhonnydoe@mail.com </Text>
+                <Text style={styles.userInfo}>Florida,wdhgejf,fdegfrj </Text>
+                
             </View>
-        </View>
+          </View>
+
+          <View style={styles.body}>
+            <View style={styles.item}>
+              <View style={styles.iconContent}>
+                <Image style={styles.icon} source={{uri: 'https://png.icons8.com/home/win8/50/ffffff'}}/>
+              </View>
+              <View style={styles.infoContent}>
+                <Text style={styles.info}>Home</Text>
+              </View>
+            </View>
+
+            <View style={styles.item}>
+              <View style={styles.iconContent}>
+                <Image style={styles.icon} source={{uri: 'https://png.icons8.com/settings/win8/50/ffffff'}}/>
+              </View>
+              <View style={styles.infoContent}>
+                <Text style={styles.info}>Settings</Text>
+              </View>
+            </View>
+
+            <View style={styles.item}>
+              <View style={styles.iconContent}>
+                <Image style={styles.icon} source={{uri: 'https://png.icons8.com/news/win8/50/ffffff'}}/>
+              </View>
+              <View style={styles.infoContent}>
+                <Text style={styles.info}>News</Text>
+              </View>
+            </View>
+
+            <View style={styles.item}>
+              <View style={styles.iconContent}>
+                <Image style={styles.icon} source={{uri: 'https://png.icons8.com/shopping-basket/ios11/50/ffffff'}}/>
+              </View>
+              <View style={styles.infoContent}>
+                <Text style={styles.info}>Shop</Text>
+              </View>
+            </View>
+
+          </View>
       </View>
     );
   }
@@ -129,8 +160,11 @@ export default class ViewProfile extends Component {
 
 const styles = StyleSheet.create({
   header:{
-    backgroundColor: "#00BFFF",
-    height:200,
+    backgroundColor: "#DCDCDC",
+  },
+  headerContent:{
+    padding:30,
+    alignItems: 'center',
   },
   avatar: {
     width: 130,
@@ -139,48 +173,45 @@ const styles = StyleSheet.create({
     borderWidth: 4,
     borderColor: "white",
     marginBottom:10,
-    alignSelf:'center',
-    position: 'absolute',
-    marginTop:130
   },
   name:{
     fontSize:22,
-    color:"#FFFFFF",
+    color:"#000000",
+    fontWeight:'600',
+  },
+  userInfo:{
+    fontSize:16,
+    color:"#778899",
     fontWeight:'600',
   },
   body:{
-    marginTop:40,
+    backgroundColor: "#778899",
+    height:500,
+    alignItems:'center',
   },
-  bodyContent: {
-    flex: 1,
-    alignItems: 'center',
-    padding:30,
+  item:{
+    flexDirection : 'row',
   },
-  name:{
-    fontSize:28,
-    color: "#696969",
-    fontWeight: "600"
+  infoContent:{
+    flex:1,
+    alignItems:'flex-start',
+    paddingLeft:5
+  },
+  iconContent:{
+    flex:1,
+    alignItems:'flex-end',
+    paddingRight:5,
+  },
+  icon:{
+    width:30,
+    height:30,
+    marginTop:20,
   },
   info:{
-    fontSize:16,
-    color: "#00BFFF",
-    marginTop:10
-  },
-  description:{
-    fontSize:16,
-    color: "#696969",
-    marginTop:10,
-    textAlign: 'center'
-  },
-  buttonContainer: {
-    marginTop:10,
-    height:45,
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginBottom:20,
-    width:250,
-    borderRadius:30,
-    backgroundColor: "#00BFFF",
-  },
+    fontSize:18,
+    marginTop:20,
+    color: "#FFFFFF",
+  }
 });
+
+

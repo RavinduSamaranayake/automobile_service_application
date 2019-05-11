@@ -113,12 +113,12 @@ export default class ViewProfile extends Component {
               <Text style={styles.info}>UX Designer / Mobile developer</Text>
               <Text style={styles.info}>UX Designer / Mobile developer</Text>
               {/* <Text style={styles.description}>Lorem ipsum dolor sit amet, saepe sapientem eu nam. Qui ne assum electram expetendis, omittam deseruisse consequuntur ius an,</Text> */}
-{/*               
+              
               <TouchableOpacity style={styles.buttonContainer}>
                 <Text>Opcion 1</Text>  
-              </TouchableOpacity>               */}
+              </TouchableOpacity>              
               <TouchableOpacity style={styles.buttonContainer}>
-                <Text>Change Profile</Text> 
+                <Text>Opcion 2</Text> 
               </TouchableOpacity>
             </View>
         </View>

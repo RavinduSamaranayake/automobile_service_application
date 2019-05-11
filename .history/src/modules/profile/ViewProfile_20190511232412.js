@@ -108,17 +108,14 @@ export default class ViewProfile extends Component {
           <View style={styles.body}>
             <View style={styles.bodyContent}>
               <Text style={styles.name}>John Doe</Text>
-              <Text style={styles.info}>UX Designer / Mobile developer</Text>
-              <Text style={styles.info}>fehgirrgtjyj</Text>
-              <Text style={styles.info}>UX Designer / Mobile developer</Text>
-              <Text style={styles.info}>UX Designer / Mobile developer</Text>
+              <Text style={styles.info}>ovk@gmail.com</Text>
               {/* <Text style={styles.description}>Lorem ipsum dolor sit amet, saepe sapientem eu nam. Qui ne assum electram expetendis, omittam deseruisse consequuntur ius an,</Text> */}
-{/*               
+              
               <TouchableOpacity style={styles.buttonContainer}>
                 <Text>Opcion 1</Text>  
-              </TouchableOpacity>               */}
+              </TouchableOpacity>              
               <TouchableOpacity style={styles.buttonContainer}>
-                <Text>Change Profile</Text> 
+                <Text>Opcion 2</Text> 
               </TouchableOpacity>
             </View>
         </View>
@@ -184,3 +181,5 @@ const styles = StyleSheet.create({
     backgroundColor: "#00BFFF",
   },
 });
+
+

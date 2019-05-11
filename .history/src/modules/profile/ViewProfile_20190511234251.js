@@ -118,7 +118,7 @@ export default class ViewProfile extends Component {
                 <Text>Opcion 1</Text>  
               </TouchableOpacity>               */}
               <TouchableOpacity style={styles.buttonContainer}>
-                <Text>Change Profile</Text> 
+                <Text></Text> 
               </TouchableOpacity>
             </View>
         </View>
