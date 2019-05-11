@@ -54,7 +54,7 @@ render(){
        style={styles.container}
     > 
     <View style={styles.textContainer}>
-        <Text style={styles.availableText}>MyProfile Details are : {this.state.name} </Text>
+        <Text style={styles.availableText}>MyProfile Details are : {this.state.userdata} </Text>
          
       </View>
       

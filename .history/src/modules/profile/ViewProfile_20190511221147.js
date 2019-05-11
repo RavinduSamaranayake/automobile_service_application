@@ -35,7 +35,7 @@ export default class ViewProfile extends React.Component {
        this.setState({
          name: JSON.parse(this.state.userdata).name,
        });
-       console.log('..............user state name value is......',this.state.name,'..................');
+       console.log('..............user state value is......',this.state.,'..................');
       } else {
         this.setState({
           userdata: ''
@@ -54,7 +54,7 @@ render(){
        style={styles.container}
     > 
     <View style={styles.textContainer}>
-        <Text style={styles.availableText}>MyProfile Details are : {this.state.name} </Text>
+        <Text style={styles.availableText}>MyProfile Details are : {this.state.userdata} </Text>
          
       </View>
       
