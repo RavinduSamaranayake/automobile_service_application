@@ -26,7 +26,7 @@ export default class ViewProfile extends Component {
 
   changeProfile = () => {
     this.props.navigation.navigate({ routeName: 'ChangeProfile' });
-   
+    //console.log('..............................clicked nav btn...............');
   };
 
   settingAccount = () => {

@@ -55,10 +55,10 @@ const stackNavigator = createStackNavigator(
         title: 'Profile',
       },
     },
-    ChangeProfile: {
-      screen: ChangeProfile,
+    CProfile: {
+      screen: ViewProfile,
       navigationOptions: {
-        title: 'Change profile',
+        title: 'Profile',
       },
     },
     Map: {

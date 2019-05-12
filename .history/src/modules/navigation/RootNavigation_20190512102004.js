@@ -18,7 +18,7 @@ import SplashScreen from '../splash/SplashView';
 
 import AvailableInFullVersion from '../availableInFullVersion/AvailableInFullVersionViewContainer';
 import ViewProfile from '../profile/ViewProfile';
-import ChangeProfile from '../settingprofile/ChangeProfile';
+import ViewProfile from '../settingprofile/ViewProfile';
 
 import { colors, fonts } from '../../styles';
 
@@ -53,12 +53,6 @@ const stackNavigator = createStackNavigator(
       screen: ViewProfile,
       navigationOptions: {
         title: 'Profile',
-      },
-    },
-    ChangeProfile: {
-      screen: ChangeProfile,
-      navigationOptions: {
-        title: 'Change profile',
       },
     },
     Map: {

@@ -168,7 +168,7 @@ requestLocationPermission = () => {
               title="Send Location"
             />
            */}
-           <TouchableOpacity onPress={this.sendLocation} style={[styles.bubble2, styles.button]}>
+           <TouchableOpacity style={[styles.bubble2, styles.button]}>
                <Text style={{color: 'white',fontWeight: 'bold'}}>Send Location</Text>
           </TouchableOpacity>
         </View>

@@ -56,9 +56,9 @@ const stackNavigator = createStackNavigator(
       },
     },
     ChangeProfile: {
-      screen: ChangeProfile,
+      screen: ViewProfile,
       navigationOptions: {
-        title: 'Change profile',
+        title: 'rofile',
       },
     },
     Map: {

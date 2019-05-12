@@ -26,11 +26,6 @@ export default class ViewProfile extends Component {
 
   changeProfile = () => {
     this.props.navigation.navigate({ routeName: 'ChangeProfile' });
-   
-  };
-
-  settingAccount = () => {
-    //this.props.navigation.navigate({ routeName: 'ChangeProfile' });
     console.log('..............................clicked nav btn...............');
   };
  // when we use the componentDidMount or componentWillMount the when the page is load the function is auto call like angular ngOnInit function 

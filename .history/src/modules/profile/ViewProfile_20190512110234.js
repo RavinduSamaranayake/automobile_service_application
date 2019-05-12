@@ -26,12 +26,7 @@ export default class ViewProfile extends Component {
 
   changeProfile = () => {
     this.props.navigation.navigate({ routeName: 'ChangeProfile' });
-   
-  };
-
-  settingAccount = () => {
-    //this.props.navigation.navigate({ routeName: 'ChangeProfile' });
-    console.log('..............................clicked nav btn...............');
+    console.log('..............................clicked nav ')
   };
  // when we use the componentDidMount or componentWillMount the when the page is load the function is auto call like angular ngOnInit function 
   async loadData() { //when we using componentWillMount first execte the function and then rendering the component
@@ -76,11 +71,8 @@ export default class ViewProfile extends Component {
               <Text style={styles.info}> {this.state.contact}</Text>
               <Text style={styles.info}>NIC {this.state.nic}</Text>
  
-              <TouchableOpacity onPress={this.changeProfile} style={styles.buttonContainer}>
-              <Text style={{color: 'white',fontWeight: 'bold'}}>Change Profile</Text>
-              </TouchableOpacity>
-              <TouchableOpacity onPress={this.settingAccount} style={styles.buttonContainer}>
-              <Text style={{color: 'white',fontWeight: 'bold'}}>Settings</Text>
+              <TouchableOpacity style={styles.buttonContainer}>
+              <Text onPress={this.changeProfile} style={{color: 'white',fontWeight: 'bold'}}>Change Profile</Text>
               </TouchableOpacity>
             </View>
         </View>
