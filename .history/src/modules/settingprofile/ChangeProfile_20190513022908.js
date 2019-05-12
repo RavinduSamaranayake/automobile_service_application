@@ -23,7 +23,10 @@ export default class ChangeProfile extends ValidationComponent {
   render() {
       return (
         <View>
-          
+          <ImageBackground 
+       source={require('../../../assets/images/background.png')}
+       style={styles.container}
+       > < 
           <TextInput  style={styles.input}  ref="name" onChangeText={(name) => this.setState({name})} value={this.state.name} />
           <TextInput  style={styles.input}  ref="username" onChangeText={(name) => this.setState({name})} value={this.state.name} />
           <TextInput  style={styles.input}   ref="email" onChangeText={(email) => this.setState({email})} value={this.state.email} />

@@ -1,6 +1,6 @@
  
 import React, {Component}  from 'react';
-import {View, Text, TextInput, TouchableHighlight,  TouchableOpacity, StyleSheet, ImageBackground} from 'react-native';
+import {View, Text, TextInput, TouchableHighlight,  TouchableOpacity, StyleSheet} from 'react-native';
 import ValidationComponent from 'react-native-form-validator';
 import { Button } from '../../components';
 export default class ChangeProfile extends ValidationComponent {
@@ -45,7 +45,7 @@ export default class ChangeProfile extends ValidationComponent {
           secondary
           rounded
           style={styles.button}
-          caption="        Save Changes       "
+          caption="Save "
           onPress={this.signIn}
         />
       </View>
@@ -104,9 +104,8 @@ const styles = StyleSheet.create({
   },
   
   button: {
-    height: 50,
+    height: 40,
     width: 600,
-    //backgroundColor: "#00008b",
     paddingHorizontal: 12,
     alignItems: "center",
     marginHorizontal: 10

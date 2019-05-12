@@ -1,8 +1,8 @@
  
 import React, {Component}  from 'react';
-import {View, Text, TextInput, TouchableHighlight,  TouchableOpacity, StyleSheet, ImageBackground} from 'react-native';
+import {View, Text, TextInput, TouchableHighlight,  TouchableOpacity, StyleSheet} from 'react-native';
 import ValidationComponent from 'react-native-form-validator';
-import { Button } from '../../components';
+
 export default class ChangeProfile extends ValidationComponent {
 
   constructor(props) {
@@ -35,21 +35,11 @@ export default class ChangeProfile extends ValidationComponent {
           {/* <TouchableHighlight style={styles.buttonsContainer} onPress={this._onPressButton}>
             <Text>Submit</Text>
           </TouchableHighlight> */}
-           {/* <View style={styles.buttonsContainer}>
+           <View style={styles.buttonsContainer}>
            <TouchableOpacity onPress={this.sendLocation} style={[styles.bubble2,styles.button]}>
                <Text style={{color: 'white',fontWeight: 'bold'}}>Send Location</Text>
-          </TouchableOpacity> */}
-          <View style={styles.buttonsContainer}>
-        <Button
-          small
-          secondary
-          rounded
-          style={styles.button}
-          caption="        Save Changes       "
-          onPress={this.signIn}
-        />
-      </View>
-  
+          </TouchableOpacity>
+        </View>
           <Text>
             {this.getErrorMessages()}
           </Text>
@@ -104,9 +94,8 @@ const styles = StyleSheet.create({
   },
   
   button: {
-    height: 50,
-    width: 600,
-    //backgroundColor: "#00008b",
+    height: 0,
+    width: 200,
     paddingHorizontal: 12,
     alignItems: "center",
     marginHorizontal: 10

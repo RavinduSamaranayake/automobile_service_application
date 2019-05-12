@@ -1,8 +1,8 @@
  
 import React, {Component}  from 'react';
-import {View, Text, TextInput, TouchableHighlight,  TouchableOpacity, StyleSheet, ImageBackground} from 'react-native';
+import {View, Text, TextInput, TouchableHighlight, StyleSheet} from 'react-native';
 import ValidationComponent from 'react-native-form-validator';
-import { Button } from '../../components';
+
 export default class ChangeProfile extends ValidationComponent {
 
   constructor(props) {
@@ -25,31 +25,15 @@ export default class ChangeProfile extends ValidationComponent {
         <View>
           
           <TextInput  style={styles.input}  ref="name" onChangeText={(name) => this.setState({name})} value={this.state.name} />
-          <TextInput  style={styles.input}  ref="username" onChangeText={(name) => this.setState({name})} value={this.state.name} />
           <TextInput  style={styles.input}   ref="email" onChangeText={(email) => this.setState({email})} value={this.state.email} />
-          <TextInput  style={styles.input}  ref="address" onChangeText={(name) => this.setState({name})} value={this.state.name} />
-          <TextInput  style={styles.input}   ref="number" onChangeText={(number) => this.setState({number})} value={this.state.number} />
-          <TextInput  style={styles.input}  ref="idnum" onChangeText={(date) => this.setState({date})} value={this.state.date} />
+          <TextInput ref="number" onChangeText={(number) => this.setState({number})} value={this.state.number} />
+          <TextInput ref="date" onChangeText={(date) => this.setState({date})} value={this.state.date} />
           {this.isFieldInError('date') && this.getErrorsInField('date').map(errorMessage => <Text>{errorMessage}</Text>) }
 
-          {/* <TouchableHighlight style={styles.buttonsContainer} onPress={this._onPressButton}>
+          <TouchableHighlight onPress={this._onPressButton}>
             <Text>Submit</Text>
-          </TouchableHighlight> */}
-           {/* <View style={styles.buttonsContainer}>
-           <TouchableOpacity onPress={this.sendLocation} style={[styles.bubble2,styles.button]}>
-               <Text style={{color: 'white',fontWeight: 'bold'}}>Send Location</Text>
-          </TouchableOpacity> */}
-          <View style={styles.buttonsContainer}>
-        <Button
-          small
-          secondary
-          rounded
-          style={styles.button}
-          caption="        Save Changes       "
-          onPress={this.signIn}
-        />
-      </View>
-  
+          </TouchableHighlight>
+
           <Text>
             {this.getErrorMessages()}
           </Text>
@@ -76,7 +60,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: '300',
     height: 45,
-    backgroundColor: 'rgba(52, 52, 52, 0.3)',
+    backgroundColor: 'rgba(52, 52, 52, 0.5)',
     margin: 10,
     color: 'black',
     padding: 8,
@@ -93,24 +77,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     alignSelf: 'stretch',
   },
-   
-  bubble2: {
-    flex: 1,
-    backgroundColor: "#00008b",
-    
-    paddingHorizontal: 18,
-    paddingVertical: 12,
-    borderRadius: 20
-  },
-  
   button: {
-    height: 50,
-    width: 600,
-    //backgroundColor: "#00008b",
-    paddingHorizontal: 12,
-    alignItems: "center",
-    marginHorizontal: 10
-  }
+    alignSelf: 'stretch',
+    marginBottom: 15,
+  },
 });
 
  

@@ -22,8 +22,12 @@ export default class ChangeProfile extends ValidationComponent {
 
   render() {
       return (
+        <ImageBackground 
+        source={require('../../../assets/images/background.png')}
+        style={styles.container}
+        >  
         <View>
-          
+         
           <TextInput  style={styles.input}  ref="name" onChangeText={(name) => this.setState({name})} value={this.state.name} />
           <TextInput  style={styles.input}  ref="username" onChangeText={(name) => this.setState({name})} value={this.state.name} />
           <TextInput  style={styles.input}   ref="email" onChangeText={(email) => this.setState({email})} value={this.state.email} />
@@ -54,6 +58,7 @@ export default class ChangeProfile extends ValidationComponent {
             {this.getErrorMessages()}
           </Text>
         </View>
+        </ImageBackground>
       );
   }
 
