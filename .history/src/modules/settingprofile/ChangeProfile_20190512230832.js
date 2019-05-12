@@ -91,9 +91,9 @@
 // // });
 import React, {Component}  from 'react';
 import {View, Text, TextInput, TouchableHighlight} from 'react-native';
-import ValidationComponent from 'react-native-form-validator';
+import ValidationComponent from '../index';
 
-export default class ChangeProfile extends ValidationComponent {
+export default class  extends ValidationComponent {
 
   constructor(props) {
     super(props);
