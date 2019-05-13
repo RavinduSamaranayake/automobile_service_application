@@ -112,7 +112,7 @@ render(){
           small
           secondary
           rounded
-          style={styles.button}
+          style={{backgroundColor:"#00008b"}}
           caption="LogIn"
           onPress={this.signIn}
         />

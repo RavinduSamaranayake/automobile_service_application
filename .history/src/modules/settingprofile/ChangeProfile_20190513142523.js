@@ -124,18 +124,14 @@ export default class ChangeProfile extends ValidationComponent {
 
          
           <View style={styles.buttonsContainer}>
-          <TouchableOpacity onPress={this.saveProfile} style={styles.buttonContainer}>
-              <Text style={{color: 'white',fontWeight: 'bold'}}>Save Changes</Text>
-              </TouchableOpacity>
-  
-        {/* <Button
+        <Button
           small
           secondary
           rounded
           style={styles.button}
           caption="        Save Changes       "
           onPress={this.saveProfile}
-        /> */}
+        />
       </View> 
       
           {/* <Text>
@@ -213,7 +209,7 @@ const styles = StyleSheet.create({
     marginBottom:20,
     width:250,
     borderRadius:30,
-    backgroundColor: "#00008b",
+    backgroundColor: "#00BFFF",
   },
 });
 

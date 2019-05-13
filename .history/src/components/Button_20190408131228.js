@@ -152,7 +152,6 @@ const styles = StyleSheet.create({
   },
   button: {
     flex: 1,
-    //backgroundColor:"#00008b",
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
@@ -168,7 +167,6 @@ const styles = StyleSheet.create({
   },
   primaryButton: {
     backgroundColor: 'transparent',
-   // backgroundColor:"#00008b",
     borderRadius: 5,
   },
   rounded: {
@@ -196,11 +194,9 @@ const styles = StyleSheet.create({
   secondaryCaption: {
     color: 'white',
     backgroundColor: 'transparent',
-   // backgroundColor:"#00008b",
   },
   action: {
     borderRadius: 20,
-   // backgroundColor:"#00008b",
     height: HEIGHT,
     width: HEIGHT,
     paddingHorizontal: 0,

@@ -213,7 +213,7 @@ const styles = StyleSheet.create({
     marginBottom:20,
     width:250,
     borderRadius:30,
-    backgroundColor: "#00008b",
+    backgroundColor: "#00BFFF",
   },
 });
 

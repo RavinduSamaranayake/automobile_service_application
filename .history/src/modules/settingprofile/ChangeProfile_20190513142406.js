@@ -122,22 +122,21 @@ export default class ChangeProfile extends ValidationComponent {
           <TextInput  style={styles.input}  ref="nic" onChangeText={(nic) => this.setState({nic})} value={this.state.nic} />
           {/* {this.isFieldInError('name') && this.getErrorsInField('name').map(errorMessage => <Text>{errorMessage}</Text>) } */}
 
-         
-          <View style={styles.buttonsContainer}>
-          <TouchableOpacity onPress={this.saveProfile} style={styles.buttonContainer}>
-              <Text style={{color: 'white',fontWeight: 'bold'}}>Save Changes</Text>
+// {/* // // //          
+// // // //           <View style={styles.buttonsContainer}>
+// // // //         <Button
+// // // //           small
+// // // //           secondary
+// // // //           rounded
+// // // //           style={styles.button}
+// // // //           caption="        Save Changes       "
+// // // //           onPress={this.saveProfile}
+// // // //         />
+// // // //       </View> */}
+       <TouchableOpacity onPress={this.saveProfile} style={styles.buttonContainer}>
+              <Text style={{color: 'white',fontWeight: 'bold'}}>Settings</Text>
               </TouchableOpacity>
   
-        {/* <Button
-          small
-          secondary
-          rounded
-          style={styles.button}
-          caption="        Save Changes       "
-          onPress={this.saveProfile}
-        /> */}
-      </View> 
-      
           {/* <Text>
             {this.getErrorMessages()}
           </Text> */}
@@ -213,7 +212,7 @@ const styles = StyleSheet.create({
     marginBottom:20,
     width:250,
     borderRadius:30,
-    backgroundColor: "#00008b",
+    backgroundColor: "#00BFFF",
   },
 });
 

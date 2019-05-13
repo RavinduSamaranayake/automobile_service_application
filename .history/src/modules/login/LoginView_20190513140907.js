@@ -166,7 +166,7 @@ const styles = StyleSheet.create({
   },
   button: {
     alignSelf: 'stretch',
-    
+    backgroundColor:"#00008b",
     marginBottom: 15,
   },
 });
