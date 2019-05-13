@@ -1,10 +1,9 @@
  
 import React, {Component}  from 'react';
-import {View, Text, TextInput,Alert, TouchableHighlight,  TouchableOpacity, StyleSheet, ImageBackground} from 'react-native';
+import {View, Text, TextInput, TouchableHighlight,  TouchableOpacity, StyleSheet, ImageBackground} from 'react-native';
 import { AsyncStorage } from 'react-native';
 import ValidationComponent from 'react-native-form-validator';
 import { Button } from '../../components';
-import axios from 'axios';
 export default class ChangeProfile extends ValidationComponent {
 
   constructor(props) {
@@ -60,12 +59,12 @@ export default class ChangeProfile extends ValidationComponent {
   }  
   saveProfile = () => {
     // Call ValidationComponent validate method
-    // this.validate({
-    //   name: {minlength:3, maxlength:7, required: true},
-    //   email: {email: true},
-    //   contact: {contact: true},
+    this.validate({
+      name: {minlength:3, maxlength:7, required: true},
+      email: {email: true},
+      contact: {contact: true},
      
-    // });
+    });
 
 
 
@@ -75,32 +74,27 @@ export default class ChangeProfile extends ValidationComponent {
       username:this.state.username,
       email:this.state.email,
       nic:this.state.nic,
-      contact_number:this.state.contact,
+      contact_number:this.state.contact_number,
       address:this.state.address
     }
 
-    axios.post('http://shan-motors.herokuapp.com/api/users/update-customer/'+this.state.userid,updated)
+    axios.post('api/users/update-customer/'+this.p,updated)
         .then((res)=>{
-          // this.setState({
-          //   msg:res.data.msg,
-          //   visible:true,
-          // })
-        Alert.alert('Success','Successfully Changed Your Profile! please signout and signin again...',[{text:'ok'}]);
+          this.setState({
+            msg:res.data.msg,
+            visible:true,
+          })
         })
         .catch(res=>{
-          // this.setState({
-          //     visible:true,
-          //     err:res.response.data.err
-          // })
-          Alert.alert('Error',res.response.data.err,[{text:'ok'}]);
+          this.setState({
+              visible:true,
+              err:res.response.data.err
+          })
       })
-      // this.setState({    
-      //   msg:'',
-      //   err:''
-      // });
-      //Alert.alert('Error','Some thing Went wrong',[{text:'ok'}]);
-      console.log(".................wrong..........")
-
+      this.setState({    
+        msg:'',
+        err:''
+      });
   }
  
 
@@ -140,9 +134,9 @@ export default class ChangeProfile extends ValidationComponent {
         />
       </View>
   
-          {/* <Text>
+          <Text>
             {this.getErrorMessages()}
-          </Text> */}
+          </Text>
         </View>
       );
   }

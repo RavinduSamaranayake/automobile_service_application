@@ -60,12 +60,12 @@ export default class ChangeProfile extends ValidationComponent {
   }  
   saveProfile = () => {
     // Call ValidationComponent validate method
-    // this.validate({
-    //   name: {minlength:3, maxlength:7, required: true},
-    //   email: {email: true},
-    //   contact: {contact: true},
+    this.validate({
+      name: {minlength:3, maxlength:7, required: true},
+      email: {email: true},
+      contact: {contact: true},
      
-    // });
+    });
 
 
 
@@ -85,7 +85,7 @@ export default class ChangeProfile extends ValidationComponent {
           //   msg:res.data.msg,
           //   visible:true,
           // })
-        Alert.alert('Success','Successfully Changed Your Profile! please signout and signin again...',[{text:'ok'}]);
+        Alert.alert('Success','Successfully Changed Your Profile please ',[{text:'ok'}]);
         })
         .catch(res=>{
           // this.setState({
@@ -140,9 +140,9 @@ export default class ChangeProfile extends ValidationComponent {
         />
       </View>
   
-          {/* <Text>
+          <Text>
             {this.getErrorMessages()}
-          </Text> */}
+          </Text>
         </View>
       );
   }

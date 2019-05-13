@@ -60,12 +60,12 @@ export default class ChangeProfile extends ValidationComponent {
   }  
   saveProfile = () => {
     // Call ValidationComponent validate method
-    // this.validate({
-    //   name: {minlength:3, maxlength:7, required: true},
-    //   email: {email: true},
-    //   contact: {contact: true},
+    this.validate({
+      name: {minlength:3, maxlength:7, required: true},
+      email: {email: true},
+      contact: {contact: true},
      
-    // });
+    });
 
 
 
@@ -140,9 +140,9 @@ export default class ChangeProfile extends ValidationComponent {
         />
       </View>
   
-          {/* <Text>
+          <Text>
             {this.getErrorMessages()}
-          </Text> */}
+          </Text>
         </View>
       );
   }

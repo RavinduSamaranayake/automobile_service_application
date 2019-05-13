@@ -140,9 +140,9 @@ export default class ChangeProfile extends ValidationComponent {
         />
       </View>
   
-          {/* <Text>
+          <Text>
             {this.getErrorMessages()}
-          </Text> */}
+          </Text>
         </View>
       );
   }

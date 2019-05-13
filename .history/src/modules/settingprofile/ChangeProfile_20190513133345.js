@@ -4,7 +4,6 @@ import {View, Text, TextInput,Alert, TouchableHighlight,  TouchableOpacity, Styl
 import { AsyncStorage } from 'react-native';
 import ValidationComponent from 'react-native-form-validator';
 import { Button } from '../../components';
-import axios from 'axios';
 export default class ChangeProfile extends ValidationComponent {
 
   constructor(props) {
@@ -60,12 +59,12 @@ export default class ChangeProfile extends ValidationComponent {
   }  
   saveProfile = () => {
     // Call ValidationComponent validate method
-    // this.validate({
-    //   name: {minlength:3, maxlength:7, required: true},
-    //   email: {email: true},
-    //   contact: {contact: true},
+    this.validate({
+      name: {minlength:3, maxlength:7, required: true},
+      email: {email: true},
+      contact: {contact: true},
      
-    // });
+    });
 
 
 
@@ -85,7 +84,7 @@ export default class ChangeProfile extends ValidationComponent {
           //   msg:res.data.msg,
           //   visible:true,
           // })
-        Alert.alert('Success','Successfully Changed Your Profile! please signout and signin again...',[{text:'ok'}]);
+        Alert.alert('Success',res.data.msg,[{text:'ok'}]);
         })
         .catch(res=>{
           // this.setState({
@@ -98,9 +97,7 @@ export default class ChangeProfile extends ValidationComponent {
       //   msg:'',
       //   err:''
       // });
-      //Alert.alert('Error','Some thing Went wrong',[{text:'ok'}]);
-      console.log(".................wrong..........")
-
+      
   }
  
 
@@ -140,9 +137,9 @@ export default class ChangeProfile extends ValidationComponent {
         />
       </View>
   
-          {/* <Text>
+          <Text>
             {this.getErrorMessages()}
-          </Text> */}
+          </Text>
         </View>
       );
   }
