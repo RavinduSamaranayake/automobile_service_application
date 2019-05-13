@@ -1,7 +1,6 @@
  
 import React, {Component}  from 'react';
 import {View, Text, TextInput, TouchableHighlight,  TouchableOpacity, StyleSheet, ImageBackground} from 'react-native';
-import { AsyncStorage } from 'react-native';
 import ValidationComponent from 'react-native-form-validator';
 import { Button } from '../../components';
 export default class ChangeProfile extends ValidationComponent {
@@ -68,30 +67,28 @@ export default class ChangeProfile extends ValidationComponent {
     this.validate({
       name: {minlength:3, maxlength:7, required: true},
       email: {email: true},
-      contact: {contact: true},
-     // date: {date: 'YYYY-MM-DD'}
+      contact: {numbers: true},
+      date: {date: 'YYYY-MM-DD'}
     });
-    console.log(".................Saved profile.................")
   }
  
 
-   
+  _onPressButton() {
+    // Call ValidationComponent validate method
+    
+  }
+
   render() {
       return (
         <View>
-          <Text style={styles.textst}>Name</Text> 
+          
           <TextInput  style={styles.input}  ref="name" onChangeText={(name) => this.setState({name})} value={this.state.name} />
-          <Text style={styles.textst}>User name</Text> 
           <TextInput  style={styles.input}  ref="username" onChangeText={(username) => this.setState({username})} value={this.state.username} />
-          <Text style={styles.textst}>Email</Text> 
           <TextInput  style={styles.input}   ref="email" onChangeText={(email) => this.setState({email})} value={this.state.email} />
-          <Text style={styles.textst}>Address</Text> 
           <TextInput  style={styles.input}  ref="address" onChangeText={(address) => this.setState({address})} value={this.state.address} />
-          <Text style={styles.textst}>Contact number</Text> 
           <TextInput  style={styles.input}   ref="contact" onChangeText={(contact) => this.setState({contact})} value={this.state.contact} />
-          <Text style={styles.textst}>NIC</Text> 
           <TextInput  style={styles.input}  ref="nic" onChangeText={(nic) => this.setState({nic})} value={this.state.nic} />
-          {/* {this.isFieldInError('name') && this.getErrorsInField('name').map(errorMessage => <Text>{errorMessage}</Text>) } */}
+          {this.isFieldInError('name') && this.getErrorsInField('name').map(errorMessage => <Text>{errorMessage}</Text>) }
 
           {/* <TouchableHighlight style={styles.buttonsContainer} onPress={this._onPressButton}>
             <Text>Submit</Text>
@@ -107,7 +104,7 @@ export default class ChangeProfile extends ValidationComponent {
           rounded
           style={styles.button}
           caption="        Save Changes       "
-          onPress={this.saveProfile}
+          onPress={this.signIn}
         />
       </View>
   
@@ -142,11 +139,6 @@ const styles = StyleSheet.create({
     color: 'black',
     padding: 8,
     borderRadius: 14
-  },
-  textst: {
-   
-    paddingLeft: 5,
-     
   },
   nerdImage: {
     width: 80,

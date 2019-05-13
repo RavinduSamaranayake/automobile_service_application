@@ -79,17 +79,17 @@ export default class ChangeProfile extends ValidationComponent {
   render() {
       return (
         <View>
-          <Text style={styles.textst}>Name</Text> 
+          <Text style={styles.}>Name</Text> 
           <TextInput  style={styles.input}  ref="name" onChangeText={(name) => this.setState({name})} value={this.state.name} />
-          <Text style={styles.textst}>User name</Text> 
+          <Text>User name</Text> 
           <TextInput  style={styles.input}  ref="username" onChangeText={(username) => this.setState({username})} value={this.state.username} />
-          <Text style={styles.textst}>Email</Text> 
+          <Text>Email</Text> 
           <TextInput  style={styles.input}   ref="email" onChangeText={(email) => this.setState({email})} value={this.state.email} />
-          <Text style={styles.textst}>Address</Text> 
+          <Text>Address</Text> 
           <TextInput  style={styles.input}  ref="address" onChangeText={(address) => this.setState({address})} value={this.state.address} />
-          <Text style={styles.textst}>Contact number</Text> 
+          <Text>Contact number</Text> 
           <TextInput  style={styles.input}   ref="contact" onChangeText={(contact) => this.setState({contact})} value={this.state.contact} />
-          <Text style={styles.textst}>NIC</Text> 
+          <Text>NIC</Text> 
           <TextInput  style={styles.input}  ref="nic" onChangeText={(nic) => this.setState({nic})} value={this.state.nic} />
           {/* {this.isFieldInError('name') && this.getErrorsInField('name').map(errorMessage => <Text>{errorMessage}</Text>) } */}
 
@@ -145,7 +145,7 @@ const styles = StyleSheet.create({
   },
   textst: {
    
-    paddingLeft: 5,
+    marginleft: 10,
      
   },
   nerdImage: {

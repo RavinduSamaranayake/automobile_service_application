@@ -79,19 +79,15 @@ export default class ChangeProfile extends ValidationComponent {
   render() {
       return (
         <View>
-          <Text style={styles.textst}>Name</Text> 
+          <Text>Name</Text> 
           <TextInput  style={styles.input}  ref="name" onChangeText={(name) => this.setState({name})} value={this.state.name} />
-          <Text style={styles.textst}>User name</Text> 
+          <Text>User name</Text> 
           <TextInput  style={styles.input}  ref="username" onChangeText={(username) => this.setState({username})} value={this.state.username} />
-          <Text style={styles.textst}>Email</Text> 
           <TextInput  style={styles.input}   ref="email" onChangeText={(email) => this.setState({email})} value={this.state.email} />
-          <Text style={styles.textst}>Address</Text> 
           <TextInput  style={styles.input}  ref="address" onChangeText={(address) => this.setState({address})} value={this.state.address} />
-          <Text style={styles.textst}>Contact number</Text> 
           <TextInput  style={styles.input}   ref="contact" onChangeText={(contact) => this.setState({contact})} value={this.state.contact} />
-          <Text style={styles.textst}>NIC</Text> 
           <TextInput  style={styles.input}  ref="nic" onChangeText={(nic) => this.setState({nic})} value={this.state.nic} />
-          {/* {this.isFieldInError('name') && this.getErrorsInField('name').map(errorMessage => <Text>{errorMessage}</Text>) } */}
+          {this.isFieldInError('name') && this.getErrorsInField('name').map(errorMessage => <Text>{errorMessage}</Text>) }
 
           {/* <TouchableHighlight style={styles.buttonsContainer} onPress={this._onPressButton}>
             <Text>Submit</Text>
@@ -133,7 +129,7 @@ const styles = StyleSheet.create({
     // height: null,
   },
   input: {
-    width: 340,
+    width: 5,
     fontSize: 16,
     fontWeight: '300',
     height: 45,
@@ -142,11 +138,6 @@ const styles = StyleSheet.create({
     color: 'black',
     padding: 8,
     borderRadius: 14
-  },
-  textst: {
-   
-    paddingLeft: 5,
-     
   },
   nerdImage: {
     width: 80,
