@@ -13,7 +13,6 @@ export default class ChangeProfile extends ValidationComponent {
 
   state = {
     userdata: '',
-    userid: '',
     name: '',
     username: '',
     email: '',
@@ -39,7 +38,7 @@ export default class ChangeProfile extends ValidationComponent {
        });
        console.log('..............user state value is......',this.state.userdata,'..................');
        this.setState({
-         userid: JSON.parse(this.state.userdata).id,
+         userid:
          name: JSON.parse(this.state.userdata).name,
          username: JSON.parse(this.state.userdata).username,
          email: JSON.parse(this.state.userdata).email,
@@ -47,7 +46,7 @@ export default class ChangeProfile extends ValidationComponent {
          nic: JSON.parse(this.state.userdata).nic,
          contact: JSON.parse(this.state.userdata).contact_number,
        });
-       console.log('..............user state id value is......',this.state.userid,'..................');
+       console.log('..............user state name value is......',this.state.name,'..................');
       } else {
         this.setState({
           userdata: ''
@@ -63,38 +62,35 @@ export default class ChangeProfile extends ValidationComponent {
       name: {minlength:3, maxlength:7, required: true},
       email: {email: true},
       contact: {contact: true},
-     
+     // date: {date: 'YYYY-MM-DD'}
     });
+    console.log(".................Saved profile.................")
+    const updated = {
+      name:this.state.name,
+      username:this.state.username,
+      email:this.state.email,
+      nic:this.state.nic,
+      contact_number:this.state.contact_number,
+      address:this.state.address
+    }
 
-
-
-    console.log(".................Saved profile.........." ,this.state.userid , ".......")
-    // const updated = {
-    //   name:this.state.name,
-    //   username:this.state.username,
-    //   email:this.state.email,
-    //   nic:this.state.nic,
-    //   contact_number:this.state.contact_number,
-    //   address:this.state.address
-    // }
-
-    // axios.post('api/users/update-customer/'+this.props.match.params.id,updated)
-    //     .then((res)=>{
-    //       this.setState({
-    //         msg:res.data.msg,
-    //         visible:true,
-    //       })
-    //     })
-    //     .catch(res=>{
-    //       this.setState({
-    //           visible:true,
-    //           err:res.response.data.err
-    //       })
-    //   })
-    //   this.setState({    
-    //     msg:'',
-    //     err:''
-    //   });
+    axios.post('api/users/update-customer/'+this.props.match.params.id,updated)
+        .then((res)=>{
+          this.setState({
+            msg:res.data.msg,
+            visible:true,
+          })
+        })
+        .catch(res=>{
+          this.setState({
+              visible:true,
+              err:res.response.data.err
+          })
+      })
+      this.setState({    
+        msg:'',
+        err:''
+      });
   }
  
 

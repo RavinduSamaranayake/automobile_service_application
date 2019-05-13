@@ -39,7 +39,7 @@ export default class ChangeProfile extends ValidationComponent {
        });
        console.log('..............user state value is......',this.state.userdata,'..................');
        this.setState({
-         userid: JSON.parse(this.state.userdata).id,
+         userid: JSON.parse(this.state.userdata)id,
          name: JSON.parse(this.state.userdata).name,
          username: JSON.parse(this.state.userdata).username,
          email: JSON.parse(this.state.userdata).email,
