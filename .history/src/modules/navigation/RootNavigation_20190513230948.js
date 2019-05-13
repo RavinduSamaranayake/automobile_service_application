@@ -79,7 +79,7 @@ const stackNavigator = createStackNavigator(
     VehicleList: {
       screen: VehicleList,
       navigationOptions: {
-        title: 'My Vehicles',
+        title: 'My ',
       },
     },
     Messages: {

@@ -19,7 +19,7 @@ import SplashScreen from '../splash/SplashView';
 import AvailableInFullVersion from '../availableInFullVersion/AvailableInFullVersionViewContainer';
 import ViewProfile from '../profile/ViewProfile';
 import ChangeProfile from '../settingprofile/ChangeProfile';
-import VehicleList from '../vehicle/VehicleList';
+import V from '../profile/ViewProfile';
 
 import { colors, fonts } from '../../styles';
 
@@ -76,10 +76,10 @@ const stackNavigator = createStackNavigator(
       },
     },
 
-    VehicleList: {
-      screen: VehicleList,
+    Chat: {
+      screen: AvailableInFullVersion,
       navigationOptions: {
-        title: 'My Vehicles',
+        title: 'Open Chat',
       },
     },
     Messages: {

@@ -77,9 +77,9 @@ const stackNavigator = createStackNavigator(
     },
 
     VehicleList: {
-      screen: VehicleList,
+      screen: ,
       navigationOptions: {
-        title: 'My Vehicles',
+        title: 'Open Chat',
       },
     },
     Messages: {

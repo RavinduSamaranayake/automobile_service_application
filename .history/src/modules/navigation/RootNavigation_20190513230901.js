@@ -76,10 +76,10 @@ const stackNavigator = createStackNavigator(
       },
     },
 
-    VehicleList: {
-      screen: VehicleList,
+    V: {
+      screen: AvailableInFullVersion,
       navigationOptions: {
-        title: 'My Vehicles',
+        title: 'Open Chat',
       },
     },
     Messages: {

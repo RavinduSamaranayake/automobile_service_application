@@ -51,7 +51,7 @@ export default function PagesScreen(props) {
       </View>
       <View style={styles.row}>
         <TouchableOpacity
-          onPress={() => props.navigation.navigate({ routeName: 'VehicleList' })}
+          onPress={() => props.navigation.navigate({ routeName: 'V' })}
           style={styles.item}
         >
           <Image
@@ -59,7 +59,7 @@ export default function PagesScreen(props) {
             source={chatIcon}
             style={styles.itemImage}
           />
-          <Text style={styles.itemText}>Reminders</Text>
+          <Text style={styles.itemText}>Vehicle Services</Text>
         </TouchableOpacity>
         <TouchableOpacity
           onPress={() => props.navigation.navigate({ routeName: 'Calendar' })}
