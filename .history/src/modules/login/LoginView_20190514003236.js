@@ -49,12 +49,12 @@ class LoginScreen extends React.Component {
 
       axios.post('http://shan-motors.herokuapp.com/api/auth',User)
               .then(res=>{ 
-                  //first check whether the user is custommer or not and user status is true or false user ststus mean activate or deactivate acc
+                  //check we
                   // store login user token in device storage this like localStorage.setItem('id_token',res.data.token) in web
                   
                   if(res.data.user.role == "customer" && res.data.user.status){
                     deviceStorage.saveItem(res.data.token , res.data.user); 
-                   
+                   // console.log("....user status is.......",res.data.user.status , ".......",true,".............");
                     this.props.navigation.navigate('Dashboard'); 
                   }else{
                     Alert.alert('Error',`Invalid user login`,[{text:'ok'}]);
