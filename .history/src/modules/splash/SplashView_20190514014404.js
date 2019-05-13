@@ -75,7 +75,7 @@ export default class SplashView extends Component {
         //resizeMode="cover"
       >   
       <View style={styles.container}>
-        <Animated.Image source={require('./Logo/mylogo.png')} 
+        <Animated.Image source={require('./Logo/logowhite.png')} 
           style={{...styles.logo, opacity: this.state.logoOpacity}}/>
         <Animated.Text style={{...styles.title, marginTop: this.state.titleMarginTop}}>
            SHAN AUTOMOBILE

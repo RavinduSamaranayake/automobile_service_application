@@ -54,7 +54,7 @@ class LoginScreen extends React.Component {
                   
                   if(res.data.user.role == "customer" && res.data.user.status){
                     this.props.navigation.navigate('Dashboard');
-                    deviceStorage.saveItem(res.data.token , res.data.user);  
+                     
                   }else{
                     Alert.alert('Error',`Invalid user login`,[{text:'ok'}]);
                     return res.data;

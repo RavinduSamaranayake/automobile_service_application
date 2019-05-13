@@ -53,8 +53,9 @@ class LoginScreen extends React.Component {
                   // store login user token in device storage this like localStorage.setItem('id_token',res.data.token) in web
                   
                   if(res.data.user.role == "customer" && res.data.user.status){
-                    this.props.navigation.navigate('Dashboard');
-                    deviceStorage.saveItem(res.data.token , res.data.user);  
+                    deviceStorage.saveItem(res.data.token , res.data.user); 
+                   
+                    this.props.navigation.navigate('Dashboard'); 
                   }else{
                     Alert.alert('Error',`Invalid user login`,[{text:'ok'}]);
                     return res.data;
@@ -77,9 +78,9 @@ render(){
        style={styles.container}
     > 
       <Image
-        source={require('../../../assets/images/RNS_nerd.png')}
-       
-       style={styles.nerdImage}
+        // source={require('../../../assets/images/RNS_nerd.png')}
+        source={require('./')}
+        style={styles.nerdImage}
       />
 
       

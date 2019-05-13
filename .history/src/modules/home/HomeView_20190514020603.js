@@ -35,9 +35,9 @@ export default function HomeScreen({ isExtended, setIsExtended }) {
         source={require('./logowhite.png')}
        // style={styles.nerdImage}
       />
-          {/* <Text size={20} white>
+          <Text size={20} white>
             Home
-          </Text> */}
+          </Text>
         </View>
         <View style={styles.section}>
           <Text color="#19e7f7" size={15}>
