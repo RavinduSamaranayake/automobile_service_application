@@ -155,7 +155,7 @@ export default class ChangeProfile extends ValidationComponent {
 
          
           <KeyboardSpacer/>        
-        </KeyboardAwareScrollView>
+        </ScrollView>
        
       );
   }

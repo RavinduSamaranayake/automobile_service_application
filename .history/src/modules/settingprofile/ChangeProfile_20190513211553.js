@@ -125,7 +125,7 @@ export default class ChangeProfile extends ValidationComponent {
   render() {
       return (
          
-        <KeyboardAwareScrollView> 
+        <ScrollView> 
          
            {/* If we use view instead of we don't see the some text inputs and button because of keyboard */}
           <Text style={styles.textst}>Name</Text> 
@@ -155,7 +155,7 @@ export default class ChangeProfile extends ValidationComponent {
 
          
           <KeyboardSpacer/>        
-        </KeyboardAwareScrollView>
+        </ScrollView>
        
       );
   }

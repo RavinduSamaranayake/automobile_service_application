@@ -1,9 +1,8 @@
  
 import React, {Component}  from 'react';
 import KeyboardSpacer from 'react-native-keyboard-spacer';
-import {View,ScrollView, Keyboard,Text, TextInput,Alert, TouchableHighlight,  TouchableOpacity, StyleSheet, ImageBackground} from 'react-native';
+import {View,ScrollView, Text,KeyboardSpacer, TextInput,Alert, TouchableHighlight,  TouchableOpacity, StyleSheet, ImageBackground} from 'react-native';
 import { AsyncStorage } from 'react-native';
-import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import ValidationComponent from 'react-native-form-validator';
 import { Button } from '../../components';
 import axios from 'axios';
@@ -124,10 +123,8 @@ export default class ChangeProfile extends ValidationComponent {
    
   render() {
       return (
+        <ScrollView>
          
-        <KeyboardAwareScrollView> 
-         
-           {/* If we use view instead of we don't see the some text inputs and button because of keyboard */}
           <Text style={styles.textst}>Name</Text> 
           <TextInput  style={styles.input}  ref="name"  onChangeText={(name) => this.setState({name})} value={this.state.name} />
           <Text style={styles.textst}>User name</Text> 
@@ -139,9 +136,9 @@ export default class ChangeProfile extends ValidationComponent {
           <Text style={styles.textst}>Contact number</Text> 
           <TextInput  style={styles.input}   ref="contact" onChangeText={(contact) => this.setState({contact})} value={this.state.contact} />
           <Text style={styles.textst}>NIC</Text> 
-          <TextInput  style={styles.input}  ref="nic"   onChangeText={(nic) => this.setState({nic})} value={this.state.nic} onSubmitEditing={this.handleEditComplete}/>
-         
-          
+          <TextInput  style={styles.input}  ref="nic" onChangeText={(nic) => this.setState({nic})} value={this.state.nic} />
+          {/* {this.isFieldInError('name') && this.getErrorsInField('name').map(errorMessage => <Text>{errorMessage}</Text>) } */}
+
          
           <View style={styles.buttonsContainer}>
           <TouchableOpacity onPress={this.saveProfile} style={styles.buttonContainer}>
@@ -151,12 +148,11 @@ export default class ChangeProfile extends ValidationComponent {
          
       </View> 
       
-           
-
-         
-          <KeyboardSpacer/>        
-        </KeyboardAwareScrollView>
-       
+          {/* <Text>
+            {this.getErrorMessages()}
+          </Text> */}
+          <KeyboardSpacer/>
+        </ScrollView>
       );
   }
 

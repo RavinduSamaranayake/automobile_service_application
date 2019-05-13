@@ -143,7 +143,7 @@ export default class ChangeProfile extends ValidationComponent {
          
           
          
-          <View style={styles.buttonsContainer}>
+          <KeyboardAwareScrollViewV style={styles.buttonsContainer}>
           <TouchableOpacity onPress={this.saveProfile} style={styles.buttonContainer}>
               <Text style={{color: 'white',fontWeight: 'bold'}}>Save Changes</Text>
               </TouchableOpacity>

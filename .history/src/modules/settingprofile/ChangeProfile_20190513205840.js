@@ -3,7 +3,6 @@ import React, {Component}  from 'react';
 import KeyboardSpacer from 'react-native-keyboard-spacer';
 import {View,ScrollView, Keyboard,Text, TextInput,Alert, TouchableHighlight,  TouchableOpacity, StyleSheet, ImageBackground} from 'react-native';
 import { AsyncStorage } from 'react-native';
-import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import ValidationComponent from 'react-native-form-validator';
 import { Button } from '../../components';
 import axios from 'axios';
@@ -125,7 +124,7 @@ export default class ChangeProfile extends ValidationComponent {
   render() {
       return (
          
-        <KeyboardAwareScrollView> 
+        <ScrollView> 
          
            {/* If we use view instead of we don't see the some text inputs and button because of keyboard */}
           <Text style={styles.textst}>Name</Text> 
@@ -139,8 +138,8 @@ export default class ChangeProfile extends ValidationComponent {
           <Text style={styles.textst}>Contact number</Text> 
           <TextInput  style={styles.input}   ref="contact" onChangeText={(contact) => this.setState({contact})} value={this.state.contact} />
           <Text style={styles.textst}>NIC</Text> 
-          <TextInput  style={styles.input}  ref="nic"   onChangeText={(nic) => this.setState({nic})} value={this.state.nic} onSubmitEditing={this.handleEditComplete}/>
-         
+          <TextInput  style={styles.input}  ref="nic"  onChangeText={(nic) => this.setState({nic})} value={this.state.nic} />
+      
           
          
           <View style={styles.buttonsContainer}>
@@ -155,7 +154,7 @@ export default class ChangeProfile extends ValidationComponent {
 
          
           <KeyboardSpacer/>        
-        </KeyboardAwareScrollView>
+        </ScrollView>
        
       );
   }
