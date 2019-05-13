@@ -105,7 +105,7 @@ export default class ChangeProfile extends ValidationComponent {
     axios.post('http://shan-motors.herokuapp.com/api/users/update-customer/'+this.state.userid,updated)
         .then((res)=>{
           
-        Alert.alert('Successfully Changed Profile!','please signout and signin again...',[{text:'ok'}]);
+        Alert.alert('Success!','please signout and signin again...',[{text:'ok'}]);
         })
         .catch(res=>{
          
@@ -162,7 +162,10 @@ const styles = StyleSheet.create({
     paddingHorizontal: 30,
     paddingVertical: 50,
     justifyContent: 'space-around',
-    
+    // flex: 1,
+    // // remove width and height to override fixed static size
+    // width: null,
+    // height: null,
   },
   input: {
     width: 340,
@@ -204,6 +207,7 @@ const styles = StyleSheet.create({
   button: {
     height: 50,
     width: 600,
+    //backgroundColor: "#00008b",
     paddingHorizontal: 12,
     alignItems: "center",
     marginHorizontal: 10

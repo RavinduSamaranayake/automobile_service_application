@@ -77,44 +77,28 @@ export default class ChangeProfile extends ValidationComponent {
     const nicRegex1 = RegExp(/^[0-9]{9}[vVxX]$/);
     const nicRegex2 = RegExp( /^[0-9]{12}$/);
 
-    
-    const updated = {
-      name:this.state.name,
-      username:this.state.username,
-      email:this.state.email,
-      nic:this.state.nic,
-      contact_number:this.state.contact,
-      address:this.state.address
-    }
-    
-    //form validation
-    if(updated.name.trim().length == 0){
-      Alert.alert('Error!','Name is required..',[{text:'ok'}]);
-    }else if(updated.username.trim().length == 0){
-      Alert.alert('Error!','Username is required..',[{text:'ok'}]);
-    }else if(updated.address.trim().length == 0){
-      Alert.alert('Error!','Address is required..',[{text:'ok'}]);
-    }else if(!emailRegex.test(updated.email)){
-      Alert.alert('Error!','Email is not valid..',[{text:'ok'}]);
-    }else if(!phoneRegex.test(updated.contact_number)){
-      Alert.alert('Error!','Contact number is not valid..',[{text:'ok'}]);
-    }else if(!(nicRegex1.test(updated.nic) || nicRegex2.test(updated.nic))){
-      Alert.alert('Error!','NIC number is not valid..',[{text:'ok'}]);
-    }else{
-
+   
     axios.post('http://shan-motors.herokuapp.com/api/users/update-customer/'+this.state.userid,updated)
         .then((res)=>{
-          
-        Alert.alert('Successfully Changed Profile!','please signout and signin again...',[{text:'ok'}]);
+          // this.setState({
+          //   msg:res.data.msg,
+          //   visible:true,
+          // })
+        Alert.alert('Success','Successfully Changed Your Profile! please signout and signin again...',[{text:'ok'}]);
         })
         .catch(res=>{
-         
-          Alert.alert('Error!',res.response.data.err,[{text:'ok'}]);
+          // this.setState({
+          //     visible:true,
+          //     err:res.response.data.err
+          // })
+          Alert.alert('Error',res.response.data.err,[{text:'ok'}]);
       })
-     
+      // this.setState({    
+      //   msg:'',
+      //   err:''
+      // });
+      //Alert.alert('Error','Some thing Went wrong',[{text:'ok'}]);
       console.log(".................wrong..........")
-
-    }
 
   }
  
@@ -143,7 +127,14 @@ export default class ChangeProfile extends ValidationComponent {
               <Text style={{color: 'white',fontWeight: 'bold'}}>Save Changes</Text>
               </TouchableOpacity>
   
-       
+        {/* <Button
+          small
+          secondary
+          rounded
+          style={styles.button}
+          caption="        Save Changes       "
+          onPress={this.saveProfile}
+        /> */}
       </View> 
       
           {/* <Text>
@@ -162,7 +153,10 @@ const styles = StyleSheet.create({
     paddingHorizontal: 30,
     paddingVertical: 50,
     justifyContent: 'space-around',
-    
+    // flex: 1,
+    // // remove width and height to override fixed static size
+    // width: null,
+    // height: null,
   },
   input: {
     width: 340,
@@ -204,6 +198,7 @@ const styles = StyleSheet.create({
   button: {
     height: 50,
     width: 600,
+    //backgroundColor: "#00008b",
     paddingHorizontal: 12,
     alignItems: "center",
     marginHorizontal: 10

@@ -105,7 +105,7 @@ export default class ChangeProfile extends ValidationComponent {
     axios.post('http://shan-motors.herokuapp.com/api/users/update-customer/'+this.state.userid,updated)
         .then((res)=>{
           
-        Alert.alert('Successfully Changed Profile!','please signout and signin again...',[{text:'ok'}]);
+        Alert.alert('Chaneged Successfully!','please signout and signin again...',[{text:'ok'}]);
         })
         .catch(res=>{
          

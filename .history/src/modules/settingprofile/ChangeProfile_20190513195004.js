@@ -105,13 +105,17 @@ export default class ChangeProfile extends ValidationComponent {
     axios.post('http://shan-motors.herokuapp.com/api/users/update-customer/'+this.state.userid,updated)
         .then((res)=>{
           
-        Alert.alert('Successfully Changed Profile!','please signout and signin again...',[{text:'ok'}]);
+        Alert.alert('Success!','please signout and signin again...',[{text:'ok'}]);
         })
         .catch(res=>{
          
           Alert.alert('Error!',res.response.data.err,[{text:'ok'}]);
       })
-     
+      // this.setState({    
+      //   msg:'',
+      //   err:''
+      // });
+      //Alert.alert('Error','Some thing Went wrong',[{text:'ok'}]);
       console.log(".................wrong..........")
 
     }
@@ -143,7 +147,14 @@ export default class ChangeProfile extends ValidationComponent {
               <Text style={{color: 'white',fontWeight: 'bold'}}>Save Changes</Text>
               </TouchableOpacity>
   
-       
+        {/* <Button
+          small
+          secondary
+          rounded
+          style={styles.button}
+          caption="        Save Changes       "
+          onPress={this.saveProfile}
+        /> */}
       </View> 
       
           {/* <Text>
@@ -162,7 +173,10 @@ const styles = StyleSheet.create({
     paddingHorizontal: 30,
     paddingVertical: 50,
     justifyContent: 'space-around',
-    
+    // flex: 1,
+    // // remove width and height to override fixed static size
+    // width: null,
+    // height: null,
   },
   input: {
     width: 340,
@@ -204,6 +218,7 @@ const styles = StyleSheet.create({
   button: {
     height: 50,
     width: 600,
+    //backgroundColor: "#00008b",
     paddingHorizontal: 12,
     alignItems: "center",
     marginHorizontal: 10
