@@ -9,6 +9,8 @@ import LoginScreen from '../login/LoginView';
 import SplashScreen from '../splash/SplashView';
 
 
+ 
+
 import AvailableInFullVersion from '../availableInFullVersion/AvailableInFullVersionViewContainer';
 import ViewProfile from '../profile/ViewProfile';
 import ChangeProfile from '../settingprofile/ChangeProfile';
@@ -136,6 +138,11 @@ const AppSwitchNavigator = createSwitchNavigator({
   
   Splash: { screen: SplashScreen },
   Login: { screen: LoginScreen },
+ 
+  // home: {screen: Home},
+  // settings: {screen: Settings},
+  // profile: {screen: Profile},
+ // drawer: {screen: AppDrawerNavigator},
   Dashboard: { screen: stackNavigator },
   
 });

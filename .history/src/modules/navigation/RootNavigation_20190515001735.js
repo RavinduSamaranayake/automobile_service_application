@@ -136,6 +136,7 @@ const AppSwitchNavigator = createSwitchNavigator({
   
   Splash: { screen: SplashScreen },
   Login: { screen: LoginScreen },
+  
   Dashboard: { screen: stackNavigator },
   
 });

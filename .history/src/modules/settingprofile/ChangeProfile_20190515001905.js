@@ -54,7 +54,7 @@ export default class ChangeProfile extends ValidationComponent {
          nic: JSON.parse(this.state.userdata).nic,
          contact: JSON.parse(this.state.userdata).contact_number,
        });
-       
+       console.log('..............user state id value is......',this.state.userid,'..................');
       } else {
         this.setState({
           userdata: ''
