@@ -116,7 +116,6 @@ export default class VehicleList extends Component {
         </View>
       );
     }
-    
     return (
       <View style={styles.container}>
           

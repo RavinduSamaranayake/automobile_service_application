@@ -321,7 +321,7 @@ FlatListItemSeparator = () => {
 
     if (this.state.isLoading) {
       return (
-        <View style={styles.container}>
+        <View style=>
           <ActivityIndicator />
         </View>
       );

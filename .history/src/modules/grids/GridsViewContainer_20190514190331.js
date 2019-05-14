@@ -199,11 +199,7 @@
  
 // render(){
 //   if (this.state.isLoading) {
-//     return (
-//       <View style={styles.container}>
-//         <ActivityIndicator/>
-//       </View>
-//     )
+//    styles.container
 //   }
 //   else{
 //     let movies = this.state.dataSource
@@ -321,7 +317,7 @@ FlatListItemSeparator = () => {
 
     if (this.state.isLoading) {
       return (
-        <View style={styles.container}>
+        <View style={{flex: 1, paddingTop: 20}}>
           <ActivityIndicator />
         </View>
       );

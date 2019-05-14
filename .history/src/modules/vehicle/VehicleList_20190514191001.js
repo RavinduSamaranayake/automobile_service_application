@@ -107,16 +107,6 @@ export default class VehicleList extends Component {
   }
 
   render() {
-
-    //for load  the activity indicator untill json data is load to state
-    if (this.state.isLoading) {
-      return (
-        <View style={styles.actvityind}>
-          <ActivityIndicator />
-        </View>
-      );
-    }
-    
     return (
       <View style={styles.container}>
           
@@ -301,13 +291,5 @@ const styles = StyleSheet.create({
   modalInfo:{
     alignItems:'center',
     justifyContent:'center',
-  },
-  actvityind: {
-    flex: 1,
-    alignItems: 'center',
-    paddingHorizontal: 30,
-    paddingVertical: 50,
-    justifyContent: 'space-around',
-     
-  },
+  }
 }); 

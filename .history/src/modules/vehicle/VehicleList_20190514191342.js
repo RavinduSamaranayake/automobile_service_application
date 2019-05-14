@@ -108,7 +108,7 @@ export default class VehicleList extends Component {
 
   render() {
 
-    //for load  the activity indicator untill json data is load to state
+    //for load  the activity indicator untill data is load to state
     if (this.state.isLoading) {
       return (
         <View style={styles.actvityind}>
@@ -116,7 +116,6 @@ export default class VehicleList extends Component {
         </View>
       );
     }
-    
     return (
       <View style={styles.container}>
           
@@ -302,7 +301,7 @@ const styles = StyleSheet.create({
     alignItems:'center',
     justifyContent:'center',
   },
-  actvityind: {
+  act: {
     flex: 1,
     alignItems: 'center',
     paddingHorizontal: 30,

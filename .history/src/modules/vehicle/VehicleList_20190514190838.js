@@ -11,7 +11,6 @@ import {
   Dimensions,
   Modal,
   ScrollView,
-  ActivityIndicator
 } from 'react-native';
 import { AsyncStorage } from 'react-native';
 import axios from 'axios';
@@ -21,7 +20,6 @@ export default class VehicleList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isLoading: true,
       modalVisible:false,
       userSelected: [],
       // userSelected:[],
@@ -70,8 +68,7 @@ export default class VehicleList extends Component {
     axios.get('http://shan-motors.herokuapp.com/api/users/view-vehicle-details/'+this.state.userid)
     .then((res)=>{
       this.setState({
-        vehicle_details:res.data,
-        isLoading: false,
+        vehicle_details:res.data
       })
       console.log('..............read succcess......',this.state.vehicle_details,'..................');
     })
@@ -107,16 +104,6 @@ export default class VehicleList extends Component {
   }
 
   render() {
-
-    //for load  the activity indicator untill json data is load to state
-    if (this.state.isLoading) {
-      return (
-        <View style={styles.actvityind}>
-          <ActivityIndicator />
-        </View>
-      );
-    }
-    
     return (
       <View style={styles.container}>
           
@@ -301,13 +288,5 @@ const styles = StyleSheet.create({
   modalInfo:{
     alignItems:'center',
     justifyContent:'center',
-  },
-  actvityind: {
-    flex: 1,
-    alignItems: 'center',
-    paddingHorizontal: 30,
-    paddingVertical: 50,
-    justifyContent: 'space-around',
-     
-  },
+  }
 }); 

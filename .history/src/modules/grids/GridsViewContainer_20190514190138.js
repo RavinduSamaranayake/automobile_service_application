@@ -321,7 +321,7 @@ FlatListItemSeparator = () => {
 
     if (this.state.isLoading) {
       return (
-        <View style={styles.container}>
+        <View style={{flex: 1, paddingTop: 20}}>
           <ActivityIndicator />
         </View>
       );
@@ -363,13 +363,13 @@ paddingTop: (Platform.OS === 'ios') ? 20 : 0,
 },
 
 container: {
-      flex: 1,
-      alignItems: 'center',
-      paddingHorizontal: 30,
-      paddingVertical: 50,
-      justifyContent: 'space-around',
+  //     flex: 1,
+  //     alignItems: 'center',
+  //     paddingHorizontal: 30,
+  //     paddingVertical: 50,
+  //     justifyContent: 'space-around',
        
-    },
+  //   },
 
 FlatListItemStyle: {
     padding: 10,
