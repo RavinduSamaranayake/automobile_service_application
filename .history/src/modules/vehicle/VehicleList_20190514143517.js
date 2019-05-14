@@ -238,7 +238,7 @@ const styles = StyleSheet.create({
   followButton: {
     marginTop:10,
     height:35,
-    width:200,
+    width:300,
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',

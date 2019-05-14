@@ -77,9 +77,6 @@ export default class VehicleList extends Component {
       console.log('..............read fail......',err,'..................');
     })
      
-
-
-
       } else {
         this.setState({
           userdata: ''
@@ -122,10 +119,10 @@ export default class VehicleList extends Component {
                 <Text style={styles.name}>{item.vehicle_number}</Text>
                 <Text style={styles.position}>{item.vehicle_brand}</Text>
                 <TouchableOpacity style={styles.followButton} onPress={()=> this.clickEventListener(item)}>
-                  <Text style={styles.followButtonText}>View Details</Text>  
+                  <Text style={styles.followButtonText}>View</Text>  
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.followButton} onPress={()=> this.clickEventListener(item)}>
-                  <Text style={styles.followButtonText}>Appointment</Text>  
+                  <Text style={styles.followButtonText}>Reminder</Text>  
                 </TouchableOpacity>
               </View>
             </TouchableOpacity>
@@ -238,7 +235,7 @@ const styles = StyleSheet.create({
   followButton: {
     marginTop:10,
     height:35,
-    width:200,
+    width:100,
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',

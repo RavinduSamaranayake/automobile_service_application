@@ -21,7 +21,6 @@ export default class VehicleList extends Component {
     super(props);
     this.state = {
       modalVisible:false,
-      userSelected: [],
       // userSelected:[],
       // data: [
       //   {id:1,  name: "Mark Doe",   position:"CEO",               image:"https://bootdey.com/img/Content/avatar/avatar7.png", about:"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo."},
@@ -42,7 +41,16 @@ export default class VehicleList extends Component {
     this.loadData();
     console.log('..............user state id value is......',this.state.userid,'..................');
 
-    
+    //get the vehicle data from api
+    axios.get('http://shan-motors.herokuapp.com/api/users/view-vehicle-details/'+this.state.userid)
+    .then((res)=>{
+      this.setState({
+        vehicle_details:res.data
+      })
+    })
+    .catch((err)=>{
+      console.log(err);
+    })
   }
 
   
@@ -56,30 +64,11 @@ export default class VehicleList extends Component {
         this.setState({
           userdata: value,
        });
-      // console.log('..............user state value is......',this.state.userdata,'..................');
+       console.log('..............user state value is......',this.state.userdata,'..................');
        this.setState({
          userid: JSON.parse(this.state.userdata).id,
        });
-       console.log('..............user load state id value is......',this.state.userid,'..................');
-      
-      
-      
-       //get the vehicle data from api
-    axios.get('http://shan-motors.herokuapp.com/api/users/view-vehicle-details/'+this.state.userid)
-    .then((res)=>{
-      this.setState({
-        vehicle_details:res.data
-      })
-      console.log('..............read succcess......',this.state.vehicle_details,'..................');
-    })
-    .catch((err)=>{
-     // console.log(err);
-      console.log('..............read fail......',err,'..................');
-    })
-     
-
-
-
+      // console.log('..............user state id value is......',this.state.userid,'..................');
       } else {
         this.setState({
           userdata: ''
@@ -95,7 +84,6 @@ export default class VehicleList extends Component {
   clickEventListener = (item) => {
     this.setState({userSelected: item}, () =>{
       this.setModalVisible(true);
-      console.log('..............vehicle number is......',this.state.userSelected.vehicle_number,'..................');
     });
   }
 
@@ -112,7 +100,7 @@ export default class VehicleList extends Component {
           columnWrapperStyle={styles.listContainer}
           data={this.state.vehicle_details}
           keyExtractor= {(item) => {
-            return item.vehicle_number;
+            return item. vehicle_number;
           }}
           renderItem={({item}) => {
           return (
@@ -120,12 +108,12 @@ export default class VehicleList extends Component {
               {/* <Image style={styles.image} source={{uri: item.image}}/> */}
               <View style={styles.cardContent}>
                 <Text style={styles.name}>{item.vehicle_number}</Text>
-                <Text style={styles.position}>{item.vehicle_brand}</Text>
+                <Text style={styles.position}>{item. vehicle_brand}</Text>
                 <TouchableOpacity style={styles.followButton} onPress={()=> this.clickEventListener(item)}>
-                  <Text style={styles.followButtonText}>View Details</Text>  
+                  <Text style={styles.followButtonText}>View</Text>  
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.followButton} onPress={()=> this.clickEventListener(item)}>
-                  <Text style={styles.followButtonText}>Appointment</Text>  
+                  <Text style={styles.followButtonText}>Reminder</Text>  
                 </TouchableOpacity>
               </View>
             </TouchableOpacity>
@@ -145,7 +133,7 @@ export default class VehicleList extends Component {
                     <Text style={styles.name}>{this.state.userSelected.vehicle_number}</Text>
                     <Text style={styles.position}>{this.state.userSelected.vehicle_brand}</Text>
                     <Text style={styles.about}>Vehicle Type : {this.state.userSelected.vehicle_type}</Text>
-                    <Text style={styles.about}>Meter Reading : {this.state.userSelected.meter_reading} km</Text>
+                    <Text style={styles.about}>Meter Reading : {this.state.userSelected.meter_reading}</Text>
                 </ScrollView>
               </View>
               <View style={styles.popupButtons}>
@@ -238,7 +226,7 @@ const styles = StyleSheet.create({
   followButton: {
     marginTop:10,
     height:35,
-    width:200,
+    width:100,
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
