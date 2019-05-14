@@ -16,7 +16,7 @@ import {
 import { AsyncStorage } from 'react-native';
 import axios from 'axios';
 
-export default class Booking extends Component {
+export default class ServiceHistory extends Component {
 
   constructor(props) {
     super(props);
@@ -120,9 +120,9 @@ export default class Booking extends Component {
               {/* <Image style={styles.image} source={{uri: item.image}}/> */}
               <View style={styles.cardContent}>
                 <Text style={styles.name}>{item.vehicle_number}</Text>
-                <Text style={styles.position}>{item.vehicle_type}</Text>
+                <Text style={styles.position}>{item.vehicle_brand}</Text>
                 <TouchableOpacity style={styles.followButton} onPress={()=> this.clickEventListener(item)}>
-                  <Text style={styles.followButtonText}>Appointment</Text>  
+                  <Text style={styles.followButtonText}>View S</Text>  
                 </TouchableOpacity>
               </View>
             </TouchableOpacity>

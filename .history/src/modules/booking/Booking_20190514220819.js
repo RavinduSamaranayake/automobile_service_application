@@ -120,7 +120,7 @@ export default class Booking extends Component {
               {/* <Image style={styles.image} source={{uri: item.image}}/> */}
               <View style={styles.cardContent}>
                 <Text style={styles.name}>{item.vehicle_number}</Text>
-                <Text style={styles.position}>{item.vehicle_type}</Text>
+                <Text style={styles.position}>{item.vehicle_}</Text>
                 <TouchableOpacity style={styles.followButton} onPress={()=> this.clickEventListener(item)}>
                   <Text style={styles.followButtonText}>Appointment</Text>  
                 </TouchableOpacity>

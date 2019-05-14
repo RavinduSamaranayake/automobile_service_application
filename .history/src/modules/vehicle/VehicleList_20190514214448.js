@@ -16,7 +16,7 @@ import {
 import { AsyncStorage } from 'react-native';
 import axios from 'axios';
 
-export default class Booking extends Component {
+export default class VehicleList extends Component {
 
   constructor(props) {
     super(props);
@@ -120,10 +120,13 @@ export default class Booking extends Component {
               {/* <Image style={styles.image} source={{uri: item.image}}/> */}
               <View style={styles.cardContent}>
                 <Text style={styles.name}>{item.vehicle_number}</Text>
-                <Text style={styles.position}>{item.vehicle_type}</Text>
+                <Text style={styles.position}>{item.vehicle_brand}</Text>
                 <TouchableOpacity style={styles.followButton} onPress={()=> this.clickEventListener(item)}>
-                  <Text style={styles.followButtonText}>Appointment</Text>  
+                  <Text style={styles.followButtonText}>View details</Text>  
                 </TouchableOpacity>
+                {/* <TouchableOpacity style={styles.followButton} onPress={()=> this.clickEventListener(item)}>
+                  <Text style={styles.followButtonText}>Appointment</Text>  
+                </TouchableOpacity> */}
               </View>
             </TouchableOpacity>
           )}}/>
@@ -139,11 +142,10 @@ export default class Booking extends Component {
               <View style={styles.popupContent}>
                 <ScrollView contentContainerStyle={styles.modalInfo}>
                     {/* <Image style={styles.image} source={{uri: this.state.userSelected.image}}/> */}
-                    <Text style={styles.name}>Submit Your Appointment</Text>
-                    {/* <Text style={styles.name}>{this.state.userSelected.vehicle_number}</Text>
+                    <Text style={styles.name}>{this.state.userSelected.vehicle_number}</Text>
                     <Text style={styles.position}>{this.state.userSelected.vehicle_brand}</Text>
                     <Text style={styles.about}>Vehicle Type : {this.state.userSelected.vehicle_type}</Text>
-                    <Text style={styles.about}>Meter Reading : {this.state.userSelected.meter_reading} km</Text> */}
+                    <Text style={styles.about}>Meter Reading : {this.state.userSelected.meter_reading} km</Text>
                 </ScrollView>
               </View>
               <View style={styles.popupButtons}>

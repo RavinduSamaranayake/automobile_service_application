@@ -91,9 +91,9 @@ const stackNavigator = createStackNavigator(
       },
     },
     ServiceHistory: {
-      screen: ServiceHistory,
+      screen: AvailableInFullVersion,
       navigationOptions: {
-        title: 'Service History',
+        title: 'Booking',
       },
     },
   },

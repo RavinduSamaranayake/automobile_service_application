@@ -21,7 +21,7 @@ import ViewProfile from '../profile/ViewProfile';
 import ChangeProfile from '../settingprofile/ChangeProfile';
 import VehicleList from '../vehicle/VehicleList';
 import Booking from '../booking/Booking';
-import ServiceHistory from '../servicehistory/ServiceHistory';
+import  from '../servicehistory/ServiceHi';
 
 import { colors, fonts } from '../../styles';
 
@@ -90,10 +90,10 @@ const stackNavigator = createStackNavigator(
         header: null,
       },
     },
-    ServiceHistory: {
-      screen: ServiceHistory,
+    Charts: {
+      screen: AvailableInFullVersion,
       navigationOptions: {
-        title: 'Service History',
+        title: 'Booking',
       },
     },
   },

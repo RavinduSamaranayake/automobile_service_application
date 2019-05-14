@@ -93,7 +93,7 @@ const stackNavigator = createStackNavigator(
     ServiceHistory: {
       screen: ServiceHistory,
       navigationOptions: {
-        title: 'Service History',
+        title: 'Booking',
       },
     },
   },
