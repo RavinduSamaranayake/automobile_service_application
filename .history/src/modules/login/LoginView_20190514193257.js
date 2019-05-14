@@ -59,7 +59,6 @@ class LoginScreen extends React.Component {
                     this.props.navigation.navigate('Dashboard');
                     deviceStorage.saveItem(res.data.token , res.data.user);  
                   }else{
-                    this.setState({ isLoading: false}); //end of rendering activity indicator
                     Alert.alert('Error',`Invalid user login`,[{text:'ok'}]);
                     return res.data;
                   }
@@ -67,7 +66,7 @@ class LoginScreen extends React.Component {
     
                })
           .catch((error) =>{
-                  this.setState({ isLoading: false}); //end of rendering activity indicator
+                  //Alert.alert('Error',`${error}`,[{text:'ok'}]);
                   Alert.alert('Error',`User name or password is incorrect`,[{text:'ok'}]);
               }) 
 

@@ -67,7 +67,7 @@ class LoginScreen extends React.Component {
     
                })
           .catch((error) =>{
-                  this.setState({ isLoading: false}); //end of rendering activity indicator
+                  //Alert.alert('Error',`${error}`,[{text:'ok'}]);
                   Alert.alert('Error',`User name or password is incorrect`,[{text:'ok'}]);
               }) 
 

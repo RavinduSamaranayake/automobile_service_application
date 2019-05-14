@@ -21,6 +21,7 @@ class LoginScreen extends React.Component {
 
   state = {
     isLoading: false,
+    isAuthenticated: false,
     email: '', 
     password: '',
    // msg:'',
@@ -31,7 +32,6 @@ class LoginScreen extends React.Component {
  
    
   signIn = () => {
-    //start the rendering activituy indicator
     this.setState({ isLoading: true});
 
       //----------------------login with firebase auth------------------------
@@ -55,11 +55,10 @@ class LoginScreen extends React.Component {
                   // store login user token in device storage this like localStorage.setItem('id_token',res.data.token) in web
                   
                   if(res.data.user.role == "customer" && res.data.user.status){
-                    this.setState({ isLoading: false}); //end of rendering activity indicator
+                    this.setState({ isAuthenticated: true , isLoading: false});
                     this.props.navigation.navigate('Dashboard');
                     deviceStorage.saveItem(res.data.token , res.data.user);  
                   }else{
-                    this.setState({ isLoading: false}); //end of rendering activity indicator
                     Alert.alert('Error',`Invalid user login`,[{text:'ok'}]);
                     return res.data;
                   }
@@ -67,7 +66,7 @@ class LoginScreen extends React.Component {
     
                })
           .catch((error) =>{
-                  this.setState({ isLoading: false}); //end of rendering activity indicator
+                  //Alert.alert('Error',`${error}`,[{text:'ok'}]);
                   Alert.alert('Error',`User name or password is incorrect`,[{text:'ok'}]);
               }) 
 
@@ -185,14 +184,6 @@ const styles = StyleSheet.create({
     alignSelf: 'stretch',
     
     marginBottom: 15,
-  },
-  actvityind: {
-    flex: 1,
-    alignItems: 'center',
-    paddingHorizontal: 30,
-    paddingVertical: 50,
-    justifyContent: 'space-around',
-     
   },
 });
 
