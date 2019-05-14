@@ -93,7 +93,7 @@ export default createBottomTabNavigator(
 
     
     Services: {
-      screen: AvailableService,
+      screen: A,
       navigationOptions: {
         header: (
           <View style={styles.headerContainer}>

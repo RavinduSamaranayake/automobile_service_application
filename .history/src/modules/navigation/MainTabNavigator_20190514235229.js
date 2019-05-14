@@ -11,7 +11,7 @@ import GridsScreen from '../grids/GridsViewContainer';
 import PagesScreen from '../pages/PagesViewContainer';
 import ComponentsScreen from '../components/ComponentsViewContainer';
 import Notifications from '../notifications/Notifications';
-import AvailableService from '../availableservices/AvailableService';
+import AvailableService from '../'
 
 const iconHome = require('../../../assets/images/tabbar/home.png');
 const iconCalendar = require('../../../assets/images/tabbar/calendar.png');
@@ -93,7 +93,7 @@ export default createBottomTabNavigator(
 
     
     Services: {
-      screen: AvailableService,
+      screen: GridsScreen,
       navigationOptions: {
         header: (
           <View style={styles.headerContainer}>
@@ -127,7 +127,7 @@ export default createBottomTabNavigator(
             iconSource = iconHome;
             break;
           case 'Notifications':
-            iconSoavailableservicesurce = iconCalendar;
+            iconSource = iconCalendar;
             break;
           case 'Services':
             iconSource = iconGrids;
