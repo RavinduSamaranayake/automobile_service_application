@@ -1,0 +1,121 @@
+import React, { Component } from 'react';
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  TouchableOpacity,
+  FlatList,
+  Dimensions,
+  ScrollView,
+  Alert
+} from 'react-native';
+
+export default class Notifications extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      data: [
+         
+        {id:5,  description:"You have to service your vehicle  AB-CD-2323", date:"2019-05-12 08:13:00", color:"#000080", completed:0},
+        {id:6,  description:"You have to service your vehicle  CD-EF-7777", date:"2019-05-14 10:15:00", color:"#000080", completed:0},
+       
+      ]
+    };
+  }
+
+  clickEventListener = (item) => {
+    Alert.alert("Item selected: "+item.description)
+  }
+
+  __getCompletedIcon = (item) => {
+    if(item.completed == 1) {
+      return "https://img.icons8.com/flat_round/64/000000/checkmark.png";
+    } else {
+      return "https://img.icons8.com/flat_round/64/000000/delete-sign.png";
+    }
+  }
+
+  __getDescriptionStyle = (item) => {
+    if(item.completed == 1) {
+      return {textDecorationLine:"line-through", fontStyle:'italic', color:"#808080"};
+    }
+  } 
+
+  render() {
+    return (
+      <View style={styles.container}>
+        <FlatList 
+          style={styles.tasks}
+          columnWrapperStyle={styles.listContainer}
+          data={this.state.data}
+          keyExtractor= {(item) => {
+            return item.id;
+          }}
+          renderItem={({item}) => {
+          return (
+            <TouchableOpacity style={[styles.card, {borderColor:item.color}]} onPress={() => {this.clickEventListener(item)}}>
+              <Image style={styles.image} source={{uri: this.__getCompletedIcon(item)}}/>
+              <View style={styles.cardContent}>
+                <Text style={[styles.description, this.__getDescriptionStyle(item)]}>{item.description}</Text>
+                <Text style={styles.date}>{item.date}</Text>
+              </View>
+            </TouchableOpacity>
+          )}}/>
+      </View>
+    );
+  }
+}
+
+const styles = StyleSheet.create({
+  container:{
+    flex:1,
+    marginTop:20,
+    backgroundColor:"#eeeeee"
+  },
+  tasks:{
+    flex:1,
+  },
+  cardContent: {
+    marginLeft:20,
+    marginTop:10,
+  },
+  image:{
+    width:25,
+    height:25,
+  },
+
+  card:{
+    shadowColor: '#00000021',
+    shadowOffset: {
+      width: 0,
+      height: 6,
+    },
+    shadowOpacity: 0.37,
+    shadowRadius: 7.49,
+    elevation: 12,
+
+    marginVertical: 10,
+    marginHorizontal:20,
+    backgroundColor:"white",
+    flexBasis: '46%',
+    padding: 10,
+    flexDirection:'row',
+    flexWrap: 'wrap',
+    borderLeftWidth:6,
+  },
+
+  description:{
+    fontSize:18,
+    flex:1,
+    color:"#008080",
+    fontWeight:'bold',
+  },
+  date:{
+    fontSize:14,
+    flex:1,
+    color:"#696969",
+    marginTop:5
+  },
+});  

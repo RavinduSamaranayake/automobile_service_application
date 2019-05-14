@@ -79,7 +79,7 @@ export default createBottomTabNavigator(
     },
     
     Notifications: {
-      screen: Notifications,
+      screen: CalendarScreen,
       navigationOptions: {
         header: (
           <View style={styles.headerContainer}>
@@ -125,7 +125,7 @@ export default createBottomTabNavigator(
           case 'Home':
             iconSource = iconHome;
             break;
-          case 'Notifications':
+          case 'History':
             iconSource = iconCalendar;
             break;
           case 'Services':

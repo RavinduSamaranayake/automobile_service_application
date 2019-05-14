@@ -125,7 +125,7 @@ export default createBottomTabNavigator(
           case 'Home':
             iconSource = iconHome;
             break;
-          case 'Notifications':
+          case 'History':
             iconSource = iconCalendar;
             break;
           case 'Services':

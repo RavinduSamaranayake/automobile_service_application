@@ -10,7 +10,7 @@ import CalendarScreen from '../calendar/CalendarViewContainer';
 import GridsScreen from '../grids/GridsViewContainer';
 import PagesScreen from '../pages/PagesViewContainer';
 import ComponentsScreen from '../components/ComponentsViewContainer';
-import Notifications from '../notifications/Notifications';
+import PagesScreen from '../notifications/PagesViewContainer';
 
 const iconHome = require('../../../assets/images/tabbar/home.png');
 const iconCalendar = require('../../../assets/images/tabbar/calendar.png');
@@ -78,8 +78,8 @@ export default createBottomTabNavigator(
       },
     },
     
-    Notifications: {
-      screen: Notifications,
+    History: {
+      screen: CalendarScreen,
       navigationOptions: {
         header: (
           <View style={styles.headerContainer}>
@@ -125,7 +125,7 @@ export default createBottomTabNavigator(
           case 'Home':
             iconSource = iconHome;
             break;
-          case 'Notifications':
+          case 'History':
             iconSource = iconCalendar;
             break;
           case 'Services':
