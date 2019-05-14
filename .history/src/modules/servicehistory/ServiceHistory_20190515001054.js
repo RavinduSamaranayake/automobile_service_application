@@ -64,7 +64,7 @@ export default class ServiceHistory extends Component {
     })
     .catch((err)=>{
      // console.log(err);
-       
+      console.log('..............read fail......',err,'..................');
     })
      
 

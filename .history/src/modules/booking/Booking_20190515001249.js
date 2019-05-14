@@ -16,7 +16,7 @@ import {
 import { AsyncStorage } from 'react-native';
 import axios from 'axios';
 
-export default class ServiceHistory extends Component {
+export default class Booking extends Component {
 
   constructor(props) {
     super(props);
@@ -29,7 +29,7 @@ export default class ServiceHistory extends Component {
 
   componentDidMount(){
     this.loadData();
-    console.log('..............user state id value is......',this.state.userid,'..................');
+     
 
     
   }
@@ -49,7 +49,7 @@ export default class ServiceHistory extends Component {
        this.setState({
          userid: JSON.parse(this.state.userdata).id,
        });
-       
+      
       
       
       
@@ -60,11 +60,11 @@ export default class ServiceHistory extends Component {
         vehicle_details:res.data,
         isLoading: false,
       })
-      
+     
     })
     .catch((err)=>{
      // console.log(err);
-       
+      console.log('..............read fail......',err,'..................');
     })
      
 
@@ -122,7 +122,7 @@ export default class ServiceHistory extends Component {
                 <Text style={styles.name}>{item.vehicle_number}</Text>
                 <Text style={styles.position}>{item.vehicle_type}</Text>
                 <TouchableOpacity style={styles.followButton} onPress={()=> this.clickEventListener(item)}>
-                  <Text style={styles.followButtonText}>Service history</Text>  
+                  <Text style={styles.followButtonText}>Appointment</Text>  
                 </TouchableOpacity>
               </View>
             </TouchableOpacity>
@@ -139,7 +139,7 @@ export default class ServiceHistory extends Component {
               <View style={styles.popupContent}>
                 <ScrollView contentContainerStyle={styles.modalInfo}>
                     {/* <Image style={styles.image} source={{uri: this.state.userSelected.image}}/> */}
-                    <Text style={styles.name}>Your Vehicle Service history</Text>
+                    <Text style={styles.name}>Submit Your Appointment</Text>
                     {/* <Text style={styles.name}>{this.state.userSelected.vehicle_number}</Text>
                     <Text style={styles.position}>{this.state.userSelected.vehicle_brand}</Text>
                     <Text style={styles.about}>Vehicle Type : {this.state.userSelected.vehicle_type}</Text>

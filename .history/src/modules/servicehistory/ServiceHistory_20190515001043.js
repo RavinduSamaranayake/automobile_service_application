@@ -49,7 +49,7 @@ export default class ServiceHistory extends Component {
        this.setState({
          userid: JSON.parse(this.state.userdata).id,
        });
-       
+       console.log('..............user load state id value is......',this.state.userid,'..................');
       
       
       
@@ -60,11 +60,11 @@ export default class ServiceHistory extends Component {
         vehicle_details:res.data,
         isLoading: false,
       })
-      
+      console.log('..............read succcess......',this.state.vehicle_details,'..................');
     })
     .catch((err)=>{
      // console.log(err);
-       
+      console.log('..............read fail......',err,'..................');
     })
      
 

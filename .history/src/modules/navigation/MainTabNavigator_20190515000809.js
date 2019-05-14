@@ -93,7 +93,7 @@ export default createBottomTabNavigator(
 
     
     Services: {
-      screen: AvailableService,
+      screen: Ava,
       navigationOptions: {
         header: (
           <View style={styles.headerContainer}>
@@ -127,7 +127,7 @@ export default createBottomTabNavigator(
             iconSource = iconHome;
             break;
           case 'Notifications':
-            iconSource = iconCalendar;
+            iconSoavailableservicesurce = iconCalendar;
             break;
           case 'Services':
             iconSource = iconGrids;
