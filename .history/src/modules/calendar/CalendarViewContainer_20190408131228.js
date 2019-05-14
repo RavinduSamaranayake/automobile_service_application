@@ -41,7 +41,7 @@ render(){
        style={styles.container}
     > 
     <View style={styles.textContainer}>
-        <Text style={styles.availableText}>Service Notifications</Text>
+        <Text style={styles.availableText}>Service History</Text>
          
       </View>
       

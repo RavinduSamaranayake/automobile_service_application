@@ -16,7 +16,7 @@ export default function PagesScreen(props) {
     <View style={styles.container}>
       <View style={styles.row}>
         <TouchableOpacity
-          onPress={() => props.navigation.navigate({ routeName: 'Booking' })}
+          onPress={() => props.navigation.navigate({ routeName: '' })}
           style={styles.item}
         >
           <Image
@@ -24,7 +24,7 @@ export default function PagesScreen(props) {
             source={chartIcon}
             style={styles.itemImage}
           />
-          <Text style={styles.itemText}>Appointment</Text>
+          <Text style={styles.itemText}>Booking</Text>
         </TouchableOpacity>
         <TouchableOpacity
           onPress={() => props.navigation.navigate({ routeName: 'Map' })}
@@ -59,7 +59,7 @@ export default function PagesScreen(props) {
             source={chatIcon}
             style={styles.itemImage}
           />
-          <Text style={styles.itemText}>Vehicles</Text>
+          <Text style={styles.itemText}>Reminders</Text>
         </TouchableOpacity>
         <TouchableOpacity
           onPress={() => props.navigation.navigate({ routeName: 'Calendar' })}

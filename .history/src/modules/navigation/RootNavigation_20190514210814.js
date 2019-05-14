@@ -70,7 +70,7 @@ const stackNavigator = createStackNavigator(
       },
     },
     Booking: {
-      screen: Booking,
+      screen: AvailableInFullVersion,
       navigationOptions: {
         title: 'Appointment',
         

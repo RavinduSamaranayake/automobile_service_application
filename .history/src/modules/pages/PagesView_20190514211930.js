@@ -56,7 +56,7 @@ export default function PagesScreen(props) {
         >
           <Image
             resizeMode="contain"
-            source={chatIcon}
+            source={Icon}
             style={styles.itemImage}
           />
           <Text style={styles.itemText}>Vehicles</Text>

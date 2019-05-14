@@ -20,7 +20,7 @@ import AvailableInFullVersion from '../availableInFullVersion/AvailableInFullVer
 import ViewProfile from '../profile/ViewProfile';
 import ChangeProfile from '../settingprofile/ChangeProfile';
 import VehicleList from '../vehicle/VehicleList';
-import Booking from '../booking/Booking';
+import back from '../booking/Booking';
 
 import { colors, fonts } from '../../styles';
 
@@ -69,10 +69,10 @@ const stackNavigator = createStackNavigator(
         title: 'Road Side',
       },
     },
-    Booking: {
-      screen: Booking,
+    Article: {
+      screen: AvailableInFullVersion,
       navigationOptions: {
-        title: 'Appointment',
+        title: 'Booking',
         
       },
     },

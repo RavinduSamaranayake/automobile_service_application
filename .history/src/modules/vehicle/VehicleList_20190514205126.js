@@ -24,6 +24,7 @@ export default class VehicleList extends Component {
       isLoading: true,
       modalVisible:false,
       userSelected: [],
+       
     };
   }
 
@@ -124,9 +125,9 @@ export default class VehicleList extends Component {
                 <TouchableOpacity style={styles.followButton} onPress={()=> this.clickEventListener(item)}>
                   <Text style={styles.followButtonText}>View Details</Text>  
                 </TouchableOpacity>
-                {/* <TouchableOpacity style={styles.followButton} onPress={()=> this.clickEventListener(item)}>
+                <TouchableOpacity style={styles.followButton} onPress={()=> this.clickEventListener(item)}>
                   <Text style={styles.followButtonText}>Appointment</Text>  
-                </TouchableOpacity> */}
+                </TouchableOpacity>
               </View>
             </TouchableOpacity>
           )}}/>

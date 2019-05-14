@@ -83,7 +83,7 @@ export default createBottomTabNavigator(
         header: (
           <View style={styles.headerContainer}>
             <Image style={styles.headerImage} source={hederBackground} />
-            <Text style={styles.headerCaption}>Notifications</Text>
+            <Text style={styles.headerCaption}>History</Text>
           </View>
         ),
       },

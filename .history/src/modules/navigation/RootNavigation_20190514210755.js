@@ -69,10 +69,10 @@ const stackNavigator = createStackNavigator(
         title: 'Road Side',
       },
     },
-    Booking: {
-      screen: Booking,
+    B: {
+      screen: AvailableInFullVersion,
       navigationOptions: {
-        title: 'Appointment',
+        title: 'Booking',
         
       },
     },
