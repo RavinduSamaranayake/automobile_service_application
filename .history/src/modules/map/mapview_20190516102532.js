@@ -74,14 +74,14 @@ class AnimatedMarkers extends React.Component {
               newCoordinate,
               500
             );
-            //this.setState({isLoading: false});
+            this.setState({isLoading: false});
           }
         } else {
           coordinate.timing(newCoordinate).start();
           //this.setState({isLoading: false});
         }
 
-        this.setState({isLoading: false});
+        //this.setState({isLoading: false});
 
         this.setState({
           latitude,
@@ -103,9 +103,7 @@ class AnimatedMarkers extends React.Component {
   }
 
   componentWillUnmount() {
-   // this.setState({isLoading: false});
     navigator.geolocation.clearWatch(this.watchID);
-   
   }
 
   getMapRegion = () => ({

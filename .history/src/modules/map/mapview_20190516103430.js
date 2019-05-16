@@ -103,9 +103,7 @@ class AnimatedMarkers extends React.Component {
   }
 
   componentWillUnmount() {
-   // this.setState({isLoading: false});
     navigator.geolocation.clearWatch(this.watchID);
-   
   }
 
   getMapRegion = () => ({

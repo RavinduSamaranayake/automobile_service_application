@@ -81,7 +81,7 @@ class AnimatedMarkers extends React.Component {
           //this.setState({isLoading: false});
         }
 
-        this.setState({isLoading: false});
+        //this.setState({isLoading: false});
 
         this.setState({
           latitude,

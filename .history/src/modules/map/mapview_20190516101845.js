@@ -81,8 +81,6 @@ class AnimatedMarkers extends React.Component {
           //this.setState({isLoading: false});
         }
 
-        this.setState({isLoading: false});
-
         this.setState({
           latitude,
           longitude,
@@ -103,9 +101,7 @@ class AnimatedMarkers extends React.Component {
   }
 
   componentWillUnmount() {
-   // this.setState({isLoading: false});
     navigator.geolocation.clearWatch(this.watchID);
-   
   }
 
   getMapRegion = () => ({
