@@ -15,7 +15,6 @@ export default class ChangeProfile extends ValidationComponent {
   }
 
   state = {
-    isSave: false,
     userdata: '',
     userid: '',
     name: '',
@@ -66,7 +65,7 @@ export default class ChangeProfile extends ValidationComponent {
     }
   }  
   saveProfile = () => {
-    this.setState({isSave: true});
+    
     //regular expression for form validation
     const emailRegex = RegExp(/^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$/);
     const phoneRegex = RegExp(/^[0-9]{10}$/);
@@ -100,11 +99,11 @@ export default class ChangeProfile extends ValidationComponent {
 
     axios.post('http://shan-motors.herokuapp.com/api/users/update-customer/'+this.state.userid,updated)
         .then((res)=>{
-          this.setState({isSave: false}); 
+          
         Alert.alert('Successfully Changed Profile!','please signout and signin again...',[{text:'ok'}]);
         })
         .catch(res=>{
-          this.setState({isSave: false}); 
+         
           Alert.alert('Error!',res.response.data.err,[{text:'ok'}]);
       })
      
@@ -117,14 +116,6 @@ export default class ChangeProfile extends ValidationComponent {
 
    
   render() {
-    //for load  the activity indicator untill json data is save
-    if (this.state.isSave) {
-      return (
-        <View style={styles.actvityind}>
-          <ActivityIndicator />
-        </View>
-      );
-    }
       return (
          
         <KeyboardAwareScrollView> 
@@ -227,14 +218,6 @@ const styles = StyleSheet.create({
     width:250,
     borderRadius:30,
     backgroundColor: "#00008b",
-  },
-  actvityind: {
-    flex: 1,
-    alignItems: 'center',
-    paddingHorizontal: 30,
-    paddingVertical: 50,
-    justifyContent: 'space-around',
-     
   },
 });
 

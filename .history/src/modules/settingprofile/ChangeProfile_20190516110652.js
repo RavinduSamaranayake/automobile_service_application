@@ -104,7 +104,7 @@ export default class ChangeProfile extends ValidationComponent {
         Alert.alert('Successfully Changed Profile!','please signout and signin again...',[{text:'ok'}]);
         })
         .catch(res=>{
-          this.setState({isSave: false}); 
+         
           Alert.alert('Error!',res.response.data.err,[{text:'ok'}]);
       })
      

@@ -66,7 +66,7 @@ export default class ChangeProfile extends ValidationComponent {
     }
   }  
   saveProfile = () => {
-    this.setState({isSave: true});
+    this.
     //regular expression for form validation
     const emailRegex = RegExp(/^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$/);
     const phoneRegex = RegExp(/^[0-9]{10}$/);
@@ -100,11 +100,11 @@ export default class ChangeProfile extends ValidationComponent {
 
     axios.post('http://shan-motors.herokuapp.com/api/users/update-customer/'+this.state.userid,updated)
         .then((res)=>{
-          this.setState({isSave: false}); 
+          
         Alert.alert('Successfully Changed Profile!','please signout and signin again...',[{text:'ok'}]);
         })
         .catch(res=>{
-          this.setState({isSave: false}); 
+         
           Alert.alert('Error!',res.response.data.err,[{text:'ok'}]);
       })
      
