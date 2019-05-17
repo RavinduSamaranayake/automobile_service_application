@@ -122,7 +122,7 @@ export default class VehicleList extends Component {
                 <Text style={styles.name}>{item.vehicle_number}</Text>
                 <Text style={styles.position}>{item.vehicle_type}</Text>
                 <TouchableOpacity style={styles.followButton} onPress={()=> this.clickEventListener(item)}>
-                  <Text style={styles.followButtonText}>View</Text>  
+                  <Text style={styles.followButtonText}>View details</Text>  
                 </TouchableOpacity>
                 {/* <TouchableOpacity style={styles.followButton} onPress={()=> this.clickEventListener(item)}>
                   <Text style={styles.followButtonText}>Appointment</Text>  
@@ -141,7 +141,7 @@ export default class VehicleList extends Component {
             <View style={styles.popup}>
               <View style={styles.popupContent}>
                 <ScrollView contentContainerStyle={styles.modalInfo}>
-                    <Image style={styles.image} source={require('./mylogo.png')}/>
+                    {/* <Image style={styles.image} source={{uri: this.state.userSelected.image}}/> */}
                     <Text style={styles.name}>{this.state.userSelected.vehicle_number}</Text>
                     <Text style={styles.position}>{this.state.userSelected.vehicle_brand}</Text>
                     <Text style={styles.about}>Vehicle Type : {this.state.userSelected.vehicle_type}</Text>
@@ -238,7 +238,7 @@ const styles = StyleSheet.create({
   followButton: {
     marginTop:10,
     height:35,
-    width:100,
+    width:10,
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',

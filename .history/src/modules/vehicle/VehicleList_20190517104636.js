@@ -122,7 +122,7 @@ export default class VehicleList extends Component {
                 <Text style={styles.name}>{item.vehicle_number}</Text>
                 <Text style={styles.position}>{item.vehicle_type}</Text>
                 <TouchableOpacity style={styles.followButton} onPress={()=> this.clickEventListener(item)}>
-                  <Text style={styles.followButtonText}>View</Text>  
+                  <Text style={styles.followButtonText}>View details</Text>  
                 </TouchableOpacity>
                 {/* <TouchableOpacity style={styles.followButton} onPress={()=> this.clickEventListener(item)}>
                   <Text style={styles.followButtonText}>Appointment</Text>  
