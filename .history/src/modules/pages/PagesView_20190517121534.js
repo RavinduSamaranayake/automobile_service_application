@@ -5,9 +5,9 @@ import { StyleSheet, View, Text, TouchableOpacity, Image } from 'react-native';
 import { colors, fonts } from '../../styles';
 import deviceStorage from '../../services/deviceStorage';
 
-const bookingIcon = require('../../logos/appo.png');
+const appointmentIcon = require('../../logos/appo.png');
 const historyIcon = require('../../logos/history.png');
-const vehiclesIcon = require('../../logos/vehicles.png');
+const vehiclesIcon = require('../../../logos/vehicles.png');
 //const galleryIcon = require('../../../assets/images/pages/gallery.png');
 const roadsideIcon = require('../../logos/location.png');
 //const profileIcon = require('../../../assets/images/pages/profile.png');
@@ -23,7 +23,7 @@ export default function PagesScreen(props) {
         >
           <Image
             resizeMode="contain"
-            source={bookingIcon}
+            source={chartIcon}
             style={styles.itemImage}
           />
           <Text style={styles.itemText}>Appointment</Text>
@@ -34,7 +34,7 @@ export default function PagesScreen(props) {
         >
           <Image
             resizeMode="contain"
-            source={roadsideIcon}
+            source={galleryIcon}
             style={styles.itemImage}
           />
           <Text style={styles.itemText}>Road Side</Text>
@@ -58,7 +58,7 @@ export default function PagesScreen(props) {
         >
           <Image
             resizeMode="contain"
-            source={vehiclesIcon}
+            source={chatIcon}
             style={styles.itemImage}
           />
           <Text style={styles.itemText}>Vehicles</Text>
@@ -69,7 +69,7 @@ export default function PagesScreen(props) {
         >
           <Image
             resizeMode="contain"
-            source={historyIcon}
+            source={calendarIcon}
             style={styles.itemImage}
           />
           <Text style={styles.itemText}>History</Text>
@@ -89,7 +89,7 @@ export default function PagesScreen(props) {
          style={styles.item}>
           <Image
             resizeMode="contain"
-            source={logoutIcon}
+            source={profileIcon}
             style={styles.itemImage}
           />
           <Text style={styles.itemText}>LogOut</Text>

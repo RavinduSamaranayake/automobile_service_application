@@ -5,14 +5,12 @@ import { StyleSheet, View, Text, TouchableOpacity, Image } from 'react-native';
 import { colors, fonts } from '../../styles';
 import deviceStorage from '../../services/deviceStorage';
 
-const bookingIcon = require('../../logos/appo.png');
-const historyIcon = require('../../logos/history.png');
-const vehiclesIcon = require('../../logos/vehicles.png');
+const chartIcon = require('../../../assets/images/pages/chart.png');
+const calendarIcon = require('../../../assets/images/pages/calendar.png');
+const chatIcon = require('../../../assets/images/pages/chat.png');
 //const galleryIcon = require('../../../assets/images/pages/gallery.png');
-const roadsideIcon = require('../../logos/location.png');
 //const profileIcon = require('../../../assets/images/pages/profile.png');
 const profileIcon = require('../../logos/profileimg.png');
-const logoutIcon = require('../../logos/exit1.png');
 export default function PagesScreen(props) {
   return (
     <View style={styles.container}>
@@ -23,7 +21,7 @@ export default function PagesScreen(props) {
         >
           <Image
             resizeMode="contain"
-            source={bookingIcon}
+            source={chartIcon}
             style={styles.itemImage}
           />
           <Text style={styles.itemText}>Appointment</Text>
@@ -34,7 +32,7 @@ export default function PagesScreen(props) {
         >
           <Image
             resizeMode="contain"
-            source={roadsideIcon}
+            source={galleryIcon}
             style={styles.itemImage}
           />
           <Text style={styles.itemText}>Road Side</Text>
@@ -58,7 +56,7 @@ export default function PagesScreen(props) {
         >
           <Image
             resizeMode="contain"
-            source={vehiclesIcon}
+            source={chatIcon}
             style={styles.itemImage}
           />
           <Text style={styles.itemText}>Vehicles</Text>
@@ -69,7 +67,7 @@ export default function PagesScreen(props) {
         >
           <Image
             resizeMode="contain"
-            source={historyIcon}
+            source={calendarIcon}
             style={styles.itemImage}
           />
           <Text style={styles.itemText}>History</Text>
@@ -89,7 +87,7 @@ export default function PagesScreen(props) {
          style={styles.item}>
           <Image
             resizeMode="contain"
-            source={logoutIcon}
+            source={profileIcon}
             style={styles.itemImage}
           />
           <Text style={styles.itemText}>LogOut</Text>
