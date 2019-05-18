@@ -8,7 +8,9 @@ import deviceStorage from '../../services/deviceStorage';
 const bookingIcon = require('../../logos/appo.png');
 const historyIcon = require('../../logos/history.png');
 const vehiclesIcon = require('../../logos/vehicles.png');
+ 
 const roadsideIcon = require('../../logos/location.png');
+//const profileIcon = require('../../../assets/images/pages/profile.png');
 const profileIcon = require('../../logos/profileimg.png');
 const logoutIcon = require('../../logos/exit1.png');
 export default function PagesScreen(props) {
