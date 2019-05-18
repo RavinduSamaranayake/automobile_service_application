@@ -117,12 +117,12 @@ export default class ServiceHistory extends Component {
           renderItem={({item}) => {
           return (
             <TouchableOpacity style={styles.card} onPress={() => {this.clickEventListener(item)}}>
-              <Image style={styles.image} source={require('../../logos/history.png')}/>
+              <Image style={styles.image} source={require('../../logos/his')}/>
               <View style={styles.cardContent}>
                 <Text style={styles.name}>{item.vehicle_number}</Text>
                 <Text style={styles.position}>{item.vehicle_type}</Text>
                 <TouchableOpacity style={styles.followButton} onPress={()=> this.clickEventListener(item)}>
-                  <Text style={styles.followButtonText}>View history</Text>  
+                  <Text style={styles.followButtonText}>Service history</Text>  
                 </TouchableOpacity>
               </View>
             </TouchableOpacity>
@@ -236,7 +236,7 @@ const styles = StyleSheet.create({
   followButton: {
     marginTop:10,
     height:35,
-    width:150,
+    width:250,
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',

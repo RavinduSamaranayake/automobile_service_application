@@ -117,12 +117,12 @@ export default class ServiceHistory extends Component {
           renderItem={({item}) => {
           return (
             <TouchableOpacity style={styles.card} onPress={() => {this.clickEventListener(item)}}>
-              <Image style={styles.image} source={require('../../logos/history.png')}/>
+              <Image style={styles.image} source={{uri: item.image}}/>
               <View style={styles.cardContent}>
                 <Text style={styles.name}>{item.vehicle_number}</Text>
                 <Text style={styles.position}>{item.vehicle_type}</Text>
                 <TouchableOpacity style={styles.followButton} onPress={()=> this.clickEventListener(item)}>
-                  <Text style={styles.followButtonText}>View history</Text>  
+                  <Text style={styles.followButtonText}>Service history</Text>  
                 </TouchableOpacity>
               </View>
             </TouchableOpacity>
@@ -138,7 +138,7 @@ export default class ServiceHistory extends Component {
             <View style={styles.popup}>
               <View style={styles.popupContent}>
                 <ScrollView contentContainerStyle={styles.modalInfo}>
-                    {/* <Image style={styles.image} source={{uri: this.state.userSelected.image}}/> */}
+                    <Image style={styles.image} source={{uri: this.state.userSelected.image}}/>
                     <Text style={styles.name}>Your Vehicle Service history</Text>
                     {/* <Text style={styles.name}>{this.state.userSelected.vehicle_number}</Text>
                     <Text style={styles.position}>{this.state.userSelected.vehicle_brand}</Text>
@@ -236,7 +236,7 @@ const styles = StyleSheet.create({
   followButton: {
     marginTop:10,
     height:35,
-    width:150,
+    width:250,
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',

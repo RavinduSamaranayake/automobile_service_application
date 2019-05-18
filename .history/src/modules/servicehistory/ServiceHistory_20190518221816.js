@@ -122,7 +122,7 @@ export default class ServiceHistory extends Component {
                 <Text style={styles.name}>{item.vehicle_number}</Text>
                 <Text style={styles.position}>{item.vehicle_type}</Text>
                 <TouchableOpacity style={styles.followButton} onPress={()=> this.clickEventListener(item)}>
-                  <Text style={styles.followButtonText}>View history</Text>  
+                  <Text style={styles.followButtonText}>Service history</Text>  
                 </TouchableOpacity>
               </View>
             </TouchableOpacity>
@@ -236,7 +236,7 @@ const styles = StyleSheet.create({
   followButton: {
     marginTop:10,
     height:35,
-    width:150,
+    width:0,
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
