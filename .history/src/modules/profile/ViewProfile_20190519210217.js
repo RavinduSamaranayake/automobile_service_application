@@ -30,7 +30,7 @@ export default class ViewProfile extends Component {
   };
 
   settingAccount = () => {
-    this.props.navigation.navigate({ routeName: 'ChangePassword' });
+    this.props.navigation.navigate({ routeName: 'ChangePass' });
      
   };
  // when we use the componentDidMount or componentWillMount the when the page is load the function is auto call like angular ngOnInit function 

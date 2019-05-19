@@ -12,7 +12,7 @@ import SplashScreen from '../splash/SplashView';
 import AvailableInFullVersion from '../availableInFullVersion/AvailableInFullVersionViewContainer';
 import ViewProfile from '../profile/ViewProfile';
 import ChangeProfile from '../settingprofile/ChangeProfile';
-import ChangePassword from '../settingprofile/ChangePassword';
+import ChangePassword from '../settingprofile/';
 import VehicleList from '../vehicle/VehicleList';
 import Booking from '../booking/Booking';
 import ServiceHistory from '../servicehistory/ServiceHistory';
@@ -56,12 +56,6 @@ const stackNavigator = createStackNavigator(
       screen: ChangeProfile,
       navigationOptions: {
         title: 'Change profile',
-      },
-    },
-    ChangePassword: {
-      screen: ChangePassword,
-      navigationOptions: {
-        title: 'Password settings',
       },
     },
     Map: {

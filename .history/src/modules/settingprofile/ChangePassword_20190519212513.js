@@ -126,7 +126,7 @@ export default class ChangePassword extends ValidationComponent {
           <Text style={styles.textst}>Enter Your new Password</Text> 
           <TextInput  style={styles.input}  secureTextEntry={true}  ref="password"  onChangeText={(password) => this.setState({newpassword:password})}   />
           <Text style={styles.textst}>Confirm Password</Text> 
-          <TextInput  style={styles.input} secureTextEntry={true} ref="confirm" onChangeText={(confirm) => this.setState({conpassword:confirm})}  />
+          <TextInput  style={styles.input} secureTextEntry={true} ref="confirm" onChangeText={(confirm) => this.setState({conpassword:co})}  />
           
          
           

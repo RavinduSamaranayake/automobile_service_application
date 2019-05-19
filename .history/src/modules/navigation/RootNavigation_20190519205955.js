@@ -58,12 +58,7 @@ const stackNavigator = createStackNavigator(
         title: 'Change profile',
       },
     },
-    ChangePassword: {
-      screen: ChangePassword,
-      navigationOptions: {
-        title: 'Password settings',
-      },
-    },
+    
     Map: {
       screen: MapScreen,
       navigationOptions: {

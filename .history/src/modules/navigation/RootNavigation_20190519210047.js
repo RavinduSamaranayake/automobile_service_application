@@ -61,7 +61,7 @@ const stackNavigator = createStackNavigator(
     ChangePassword: {
       screen: ChangePassword,
       navigationOptions: {
-        title: 'Password settings',
+        title: 'Password setting',
       },
     },
     Map: {

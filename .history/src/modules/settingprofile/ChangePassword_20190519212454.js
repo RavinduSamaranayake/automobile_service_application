@@ -124,9 +124,9 @@ export default class ChangePassword extends ValidationComponent {
          
            {/* If we use view instead of we don't see the some text inputs and button because of keyboard */}
           <Text style={styles.textst}>Enter Your new Password</Text> 
-          <TextInput  style={styles.input}  secureTextEntry={true}  ref="password"  onChangeText={(password) => this.setState({newpassword:password})}   />
+          <TextInput  style={styles.input}  secureTextEntry={true}  ref="password"  onChangeText={(password) => this.setState({newpassword:pass})}   />
           <Text style={styles.textst}>Confirm Password</Text> 
-          <TextInput  style={styles.input} secureTextEntry={true} ref="confirm" onChangeText={(confirm) => this.setState({conpassword:confirm})}  />
+          <TextInput  style={styles.input} secureTextEntry={true} ref="confirm" onChangeText={(confirm) => this.setState({conpassword})}  />
           
          
           
