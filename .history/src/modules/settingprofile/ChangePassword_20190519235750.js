@@ -19,7 +19,6 @@ export default class ChangePassword extends ValidationComponent {
     userdata: '',
     token: '',
     userid: '',
-    msg: '',
     newpassword: '',
     conpassword: ''
     
@@ -39,8 +38,7 @@ export default class ChangePassword extends ValidationComponent {
     
     try {
       const value = await AsyncStorage.getItem('user');
-      const token = await AsyncStorage.getItem('id_token');
-      console.log('original token is ...................',token);
+      const token = await AsyncStorage.getItem('token');
       if (value !== null) {
         
         this.setState({
@@ -77,38 +75,22 @@ export default class ChangePassword extends ValidationComponent {
     //form validation
     if(newpasswords.password.trim().length == 0){
       Alert.alert('Error!','Please Enter new password..',[{text:'ok'}]);
-      this.setState({isSave:false});
     }else if(newpasswords.confirm_password.trim().length == 0){
       Alert.alert('Error!','Please Enter confirm password..',[{text:'ok'}]);
-      this.setState({isSave:false});
     }else if(newpasswords.password !== newpasswords.confirm_password){
       Alert.alert('Error!','Password confirmation does not match..',[{text:'ok'}]);
-      this.setState({isSave:false});
-    }else if(passwordRegex.test(newpasswords.password)){
+    }else if(!passwordRegex.test(newpasswords.password)){
       Alert.alert('Error!','Weak Password..',[{text:'ok'}]);
-      this.setState({isSave:false});
      
     }else{
-    console.log('token is ........................:-  ',this.state.token)
-    console.log('user id is ........................:-  ',this.state.userid)
-    axios.post(`http://shan-motors.herokuapp.com/api/forgotpassword/update-user-password/${this.state.userid}/${this.state.token}`, newpasswords)
+
+    axios.post('http://shan-motors.herokuapp.com/api/forgotpassword/update-user-password/${userId}/${token}`, newPassword)
         .then((res)=>{
-          this.setState({
-            isSave:false,
-            msg:res.data.msg,
-            newpassword:'',
-            conpassword:''
-        })
-          
-        Alert.alert('Successfully Changed Password!','please signout and signin again...',[{text:'ok'}]);
+          this.setState({isSave: false}); 
+        Alert.alert('Successfully Changed Profile!','please signout and signin again...',[{text:'ok'}]);
         })
         .catch(res=>{
-          this.setState({
-            isSave:false,
-            msg:'',
-            newpassword:'',
-            conpassword:''
-        })
+          this.setState({isSave: false}); 
           Alert.alert('Error!',res.response.data.err,[{text:'ok'}]);
       })
      

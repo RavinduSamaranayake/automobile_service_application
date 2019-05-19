@@ -39,8 +39,8 @@ export default class ChangePassword extends ValidationComponent {
     
     try {
       const value = await AsyncStorage.getItem('user');
-      const token = await AsyncStorage.getItem('id_token');
-      console.log('original token is ...................',token);
+      const token = await AsyncStorage.getItem('token');
+      console.log('original token is ...................',)
       if (value !== null) {
         
         this.setState({
@@ -90,7 +90,6 @@ export default class ChangePassword extends ValidationComponent {
      
     }else{
     console.log('token is ........................:-  ',this.state.token)
-    console.log('user id is ........................:-  ',this.state.userid)
     axios.post(`http://shan-motors.herokuapp.com/api/forgotpassword/update-user-password/${this.state.userid}/${this.state.token}`, newpasswords)
         .then((res)=>{
           this.setState({
