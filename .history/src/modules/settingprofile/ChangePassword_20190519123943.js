@@ -7,7 +7,7 @@ import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view
 import ValidationComponent from 'react-native-form-validator';
 import { Button } from '../../components';
 import axios from 'axios';
-export default class ChangeProfile extends ValidationComponent {
+export default class ChangePassword extends ValidationComponent {
 
   constructor(props) {
     super(props);
@@ -131,7 +131,7 @@ export default class ChangeProfile extends ValidationComponent {
          
            {/* If we use view instead of we don't see the some text inputs and button because of keyboard */}
           <Text style={styles.textst}>Name</Text> 
-          <TextInput  style={styles.input}  ref="name"  onChangeText={(name) => this.setState({name})} value={this.state.name} />
+          <TextInput  style={styles.input}   ref="name"  onChangeText={(name) => this.setState({name})} value={this.state.name} />
           <Text style={styles.textst}>User name</Text> 
           <TextInput  style={styles.input}  ref="username" onChangeText={(username) => this.setState({username})} value={this.state.username} />
           <Text style={styles.textst}>Email</Text> 

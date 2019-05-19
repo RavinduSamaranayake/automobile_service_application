@@ -7,7 +7,7 @@ import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view
 import ValidationComponent from 'react-native-form-validator';
 import { Button } from '../../components';
 import axios from 'axios';
-export default class ChangeProfile extends ValidationComponent {
+export default class ChangePassword extends ValidationComponent {
 
   constructor(props) {
     super(props);
@@ -17,13 +17,11 @@ export default class ChangeProfile extends ValidationComponent {
   state = {
     isSave: false,
     userdata: '',
+    token: '',
     userid: '',
-    name: '',
-    username: '',
-    email: '',
-    address: '',
-    nic: '',
-    contact: ''
+    newpassword: '',
+    conpassword: ''
+    
   }
 
   
@@ -40,20 +38,17 @@ export default class ChangeProfile extends ValidationComponent {
     
     try {
       const value = await AsyncStorage.getItem('user');
+      const token = await AsyncStorage.getItem('token');
       if (value !== null) {
         
         this.setState({
           userdata: value,
+          token: token
        });
         
        this.setState({
          userid: JSON.parse(this.state.userdata).id,
-         name: JSON.parse(this.state.userdata).name,
-         username: JSON.parse(this.state.userdata).username,
-         email: JSON.parse(this.state.userdata).email,
-         address: JSON.parse(this.state.userdata).address,
-         nic: JSON.parse(this.state.userdata).nic,
-         contact: JSON.parse(this.state.userdata).contact_number,
+          
        });
        
       } else {
@@ -68,10 +63,8 @@ export default class ChangeProfile extends ValidationComponent {
   saveProfile = () => {
     this.setState({isSave: true});
     //regular expression for form validation
-    const emailRegex = RegExp(/^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$/);
-    const phoneRegex = RegExp(/^[0-9]{10}$/);
-    const nicRegex1 = RegExp(/^[0-9]{9}[vVxX]$/);
-    const nicRegex2 = RegExp( /^[0-9]{12}$/);
+    const passwordRegex = RegExp(/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{6,}$/);
+    
 
     
     const updated = {
@@ -130,18 +123,11 @@ export default class ChangeProfile extends ValidationComponent {
         <KeyboardAwareScrollView> 
          
            {/* If we use view instead of we don't see the some text inputs and button because of keyboard */}
-          <Text style={styles.textst}>Name</Text> 
-          <TextInput  style={styles.input}  ref="name"  onChangeText={(name) => this.setState({name})} value={this.state.name} />
-          <Text style={styles.textst}>User name</Text> 
-          <TextInput  style={styles.input}  ref="username" onChangeText={(username) => this.setState({username})} value={this.state.username} />
-          <Text style={styles.textst}>Email</Text> 
-          <TextInput  style={styles.input}   ref="email" onChangeText={(email) => this.setState({email})} value={this.state.email} />
-          <Text style={styles.textst}>Address</Text> 
-          <TextInput  style={styles.input}  ref="address" onChangeText={(address) => this.setState({address})} value={this.state.address} />
-          <Text style={styles.textst}>Contact number</Text> 
-          <TextInput  style={styles.input}   ref="contact" onChangeText={(contact) => this.setState({contact})} value={this.state.contact} />
-          <Text style={styles.textst}>NIC</Text> 
-          <TextInput  style={styles.input}  ref="nic"   onChangeText={(nic) => this.setState({nic})} value={this.state.nic} onSubmitEditing={this.handleEditComplete}/>
+          <Text style={styles.textst}>Enter Your new Password</Text> 
+          <TextInput  style={styles.input}  secureTextEntry={true}  ref="password"  onChangeText={(password) => this.setState({newpassword})}   />
+          <Text style={styles.textst}>Confirm Password</Text> 
+          <TextInput  style={styles.input} secureTextEntry={true} ref="confirm" onChangeText={(confirm) => this.setState({conpassword})}  />
+          
          
           
          

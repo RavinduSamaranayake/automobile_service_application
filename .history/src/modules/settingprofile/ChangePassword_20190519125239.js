@@ -7,7 +7,7 @@ import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view
 import ValidationComponent from 'react-native-form-validator';
 import { Button } from '../../components';
 import axios from 'axios';
-export default class ChangeProfile extends ValidationComponent {
+export default class ChangePassword extends ValidationComponent {
 
   constructor(props) {
     super(props);
@@ -17,6 +17,7 @@ export default class ChangeProfile extends ValidationComponent {
   state = {
     isSave: false,
     userdata: '',
+    token: ''
     userid: '',
     name: '',
     username: '',
@@ -68,10 +69,8 @@ export default class ChangeProfile extends ValidationComponent {
   saveProfile = () => {
     this.setState({isSave: true});
     //regular expression for form validation
-    const emailRegex = RegExp(/^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$/);
-    const phoneRegex = RegExp(/^[0-9]{10}$/);
-    const nicRegex1 = RegExp(/^[0-9]{9}[vVxX]$/);
-    const nicRegex2 = RegExp( /^[0-9]{12}$/);
+    const passwordRegex = RegExp(/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{6,}$/);
+    
 
     
     const updated = {
@@ -130,10 +129,10 @@ export default class ChangeProfile extends ValidationComponent {
         <KeyboardAwareScrollView> 
          
            {/* If we use view instead of we don't see the some text inputs and button because of keyboard */}
-          <Text style={styles.textst}>Name</Text> 
-          <TextInput  style={styles.input}  ref="name"  onChangeText={(name) => this.setState({name})} value={this.state.name} />
-          <Text style={styles.textst}>User name</Text> 
-          <TextInput  style={styles.input}  ref="username" onChangeText={(username) => this.setState({username})} value={this.state.username} />
+          <Text style={styles.textst}>Enter Your new Password</Text> 
+          <TextInput  style={styles.input}  secureTextEntry={true}  ref="password"  onChangeText={(name) => this.setState({name})}   />
+          <Text style={styles.textst}>Confirm Password</Text> 
+          <TextInput  style={styles.input} secureTextEntry={true} ref="confirm" onChangeText={(username) => this.setState({username})}  />
           <Text style={styles.textst}>Email</Text> 
           <TextInput  style={styles.input}   ref="email" onChangeText={(email) => this.setState({email})} value={this.state.email} />
           <Text style={styles.textst}>Address</Text> 
