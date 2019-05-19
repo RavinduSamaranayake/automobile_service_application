@@ -75,13 +75,16 @@ export default class ChangePassword extends ValidationComponent {
     //form validation
     if(newpasswords.password.trim().length == 0){
       Alert.alert('Error!','Please Enter new password..',[{text:'ok'}]);
-    }else if(newpasswords.confirm_password.trim().length == 0){
-      Alert.alert('Error!','Please Enter confirm password..',[{text:'ok'}]);
-    }else if(newpasswords.password !== newpasswords.confirm_password){
-      Alert.alert('Error!','Password confirmation does not match..',[{text:'ok'}]);
-    }else if(!passwordRegex.test(newpasswords.password)){
-      Alert.alert('Error!','Weak Password..',[{text:'ok'}]);
-     
+    }else if(newpasswords.password.trim().length == 0){
+      Alert.alert('Error!',,[{text:'ok'}]);
+    }else if(updated.address.trim().length == 0){
+      Alert.alert('Error!','Address is required..',[{text:'ok'}]);
+    }else if(!emailRegex.test(updated.email)){
+      Alert.alert('Error!','Email is not valid..',[{text:'ok'}]);
+    }else if(!phoneRegex.test(updated.contact_number)){
+      Alert.alert('Error!','Contact number is not valid..',[{text:'ok'}]);
+    }else if(!(nicRegex1.test(updated.nic) || nicRegex2.test(updated.nic))){
+      Alert.alert('Error!','NIC number is not valid..',[{text:'ok'}]);
     }else{
 
     // axios.post('http://shan-motors.herokuapp.com/api/users/update-customer/'+this.state.userid,updated)
@@ -96,7 +99,7 @@ export default class ChangePassword extends ValidationComponent {
      
     //   console.log(".................wrong..........")
 
-    }
+    // }
 
   }
  

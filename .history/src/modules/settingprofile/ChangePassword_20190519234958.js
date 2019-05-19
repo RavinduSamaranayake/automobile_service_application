@@ -84,17 +84,17 @@ export default class ChangePassword extends ValidationComponent {
      
     }else{
 
-    // axios.post('http://shan-motors.herokuapp.com/api/users/update-customer/'+this.state.userid,updated)
-    //     .then((res)=>{
-    //       this.setState({isSave: false}); 
-    //     Alert.alert('Successfully Changed Profile!','please signout and signin again...',[{text:'ok'}]);
-    //     })
-    //     .catch(res=>{
-    //       this.setState({isSave: false}); 
-    //       Alert.alert('Error!',res.response.data.err,[{text:'ok'}]);
-    //   })
+    axios.post('http://shan-motors.herokuapp.com/api/users/update-customer/'+this.state.userid,updated)
+        .then((res)=>{
+          this.setState({isSave: false}); 
+        Alert.alert('Successfully Changed Profile!','please signout and signin again...',[{text:'ok'}]);
+        })
+        .catch(res=>{
+          this.setState({isSave: false}); 
+          Alert.alert('Error!',res.response.data.err,[{text:'ok'}]);
+      })
      
-    //   console.log(".................wrong..........")
+      console.log(".................wrong..........")
 
     }
 

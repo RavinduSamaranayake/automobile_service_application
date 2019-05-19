@@ -96,7 +96,7 @@ export default class ChangePassword extends ValidationComponent {
      
     //   console.log(".................wrong..........")
 
-    }
+    // }
 
   }
  

@@ -78,10 +78,13 @@ export default class ChangePassword extends ValidationComponent {
     }else if(newpasswords.confirm_password.trim().length == 0){
       Alert.alert('Error!','Please Enter confirm password..',[{text:'ok'}]);
     }else if(newpasswords.password !== newpasswords.confirm_password){
-      Alert.alert('Error!','Password confirmation does not match..',[{text:'ok'}]);
+      Alert.alert('Error!','Address is required..',[{text:'ok'}]);
     }else if(!passwordRegex.test(newpasswords.password)){
       Alert.alert('Error!','Weak Password..',[{text:'ok'}]);
-     
+    }else if(!phoneRegex.test(updated.contact_number)){
+      Alert.alert('Error!','Contact number is not valid..',[{text:'ok'}]);
+    }else if(!(nicRegex1.test(updated.nic) || nicRegex2.test(updated.nic))){
+      Alert.alert('Error!','NIC number is not valid..',[{text:'ok'}]);
     }else{
 
     // axios.post('http://shan-motors.herokuapp.com/api/users/update-customer/'+this.state.userid,updated)
@@ -96,7 +99,7 @@ export default class ChangePassword extends ValidationComponent {
      
     //   console.log(".................wrong..........")
 
-    }
+    // }
 
   }
  
