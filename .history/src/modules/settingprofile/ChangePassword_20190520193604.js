@@ -92,8 +92,8 @@ export default class ChangePassword extends ValidationComponent {
     console.log('token is ........................:-  ',this.state.token)
     console.log('user id is ........................:-  ',this.state.userid)
     userId = this.state.userid;
-    token = this.state.token;
-    axios.post(`http://shan-motors.herokuapp.com/api/forgotpassword/update-user-password/${userId}/${token}`, newpasswords)
+    token 
+    axios.post(`http://shan-motors.herokuapp.com/api/forgotpassword/update-user-password/${this.state.userid}/${this.state.token}`, newpasswords)
         .then((res)=>{
           this.setState({
             isSave:false,
