@@ -6,7 +6,7 @@ import { colors } from './src/styles';
 
 import { store, persistor } from './src/redux/store';
 
-import AppView from './src/modules/AppView';
+import AppView from './src/modules/AppViewContainer';
 
 export default function App() {
   return (
@@ -22,7 +22,6 @@ export default function App() {
     //     <AppView />
     //   </PersistGate>
     // </Provider>
-    <AppView />
   );
 }
 
