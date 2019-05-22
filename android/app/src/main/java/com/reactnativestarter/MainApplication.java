@@ -3,6 +3,7 @@ package com.reactnativestarter;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.github.wumke.RNLocalNotifications.RNLocalNotificationsPackage;
 import com.airbnb.android.react.maps.MapsPackage;
 import io.invertase.firebase.RNFirebasePackage;
 import io.invertase.firebase.auth.RNFirebaseAuthPackage;
@@ -30,6 +31,7 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new RNLocalNotificationsPackage(),
             new MapsPackage(),
             new RNFirebasePackage(),
             new RNFirebaseAuthPackage(),
