@@ -10,12 +10,7 @@ public class MainActivity extends ReactActivity {
      * This is used to schedule rendering of the component.
      */
 
-    @Override
-    public void onResume() {
-        super.onResume();
-        // NotificationManager nMgr = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-        // nMgr.cancelAll();
-    }
+     
     @Override
     protected String getMainComponentName() {
         return "ReactNativeStarter";

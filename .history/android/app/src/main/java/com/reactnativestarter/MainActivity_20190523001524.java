@@ -13,8 +13,8 @@ public class MainActivity extends ReactActivity {
     @Override
     public void onResume() {
         super.onResume();
-        // NotificationManager nMgr = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-        // nMgr.cancelAll();
+        NotificationManager nMgr = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        nMgr.cancelAll();
     }
     @Override
     protected String getMainComponentName() {
