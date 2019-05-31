@@ -58,7 +58,18 @@ export default function HomeScreen({ isExtended, setIsExtended }) {
             <View style={{ flexDirection: 'row' }}>
             
             </View>
-            
+            {/* <TouchableOpacity
+              style={styles.priceLink}
+              onPress={() =>
+                isExtended ? setIsExtended(false) : setIsExtended(true)
+              }
+            >
+              <Text white size={14}>
+                {isExtended
+                  ? 'Multiple Applications License'
+                  : 'Single Application License'}
+              </Text>
+            </TouchableOpacity> */}
           </View>
         </View>
       </ImageBackground>
