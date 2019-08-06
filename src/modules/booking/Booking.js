@@ -139,7 +139,7 @@ export default class Booking extends Component {
               <View style={styles.popupContent}>
                 <ScrollView contentContainerStyle={styles.modalInfo}>
                     {/* <Image style={styles.image} source={{uri: this.state.userSelected.image}}/> */}
-                    <Text style={styles.name}>Submit Your Appointment</Text>
+                    <Text style={styles.name}>Resereve Your Time</Text>
                     {/* <Text style={styles.name}>{this.state.userSelected.vehicle_number}</Text>
                     <Text style={styles.position}>{this.state.userSelected.vehicle_brand}</Text>
                     <Text style={styles.about}>Vehicle Type : {this.state.userSelected.vehicle_type}</Text>

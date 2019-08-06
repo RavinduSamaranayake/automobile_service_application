@@ -16,7 +16,7 @@ import {
 import { AsyncStorage } from 'react-native';
 import axios from 'axios';
 
-export default class A extends Component {
+export default class Booking extends Component {
 
   constructor(props) {
     super(props);
@@ -29,7 +29,7 @@ export default class A extends Component {
 
   componentDidMount(){
     this.loadData();
-    console.log('..............user state id value is......',this.state.userid,'..................');
+     
 
     
   }
@@ -45,11 +45,11 @@ export default class A extends Component {
         this.setState({
           userdata: value,
        });
-      // console.log('..............user state value is......',this.state.userdata,'..................');
+      
        this.setState({
          userid: JSON.parse(this.state.userdata).id,
        });
-       console.log('..............user load state id value is......',this.state.userid,'..................');
+      
       
       
       
@@ -60,7 +60,7 @@ export default class A extends Component {
         vehicle_details:res.data,
         isLoading: false,
       })
-      console.log('..............read succcess......',this.state.vehicle_details,'..................');
+     
     })
     .catch((err)=>{
      // console.log(err);
@@ -85,7 +85,7 @@ export default class A extends Component {
   clickEventListener = (item) => {
     this.setState({userSelected: item}, () =>{
       this.setModalVisible(true);
-      console.log('..............vehicle number is......',this.state.userSelected.vehicle_number,'..................');
+     
     });
   }
 
@@ -120,7 +120,7 @@ export default class A extends Component {
               {/* <Image style={styles.image} source={{uri: item.image}}/> */}
               <View style={styles.cardContent}>
                 <Text style={styles.name}>{item.vehicle_number}</Text>
-                <Text style={styles.position}>{item.vehicle_brand}</Text>
+                <Text style={styles.position}>{item.vehicle_type}</Text>
                 <TouchableOpacity style={styles.followButton} onPress={()=> this.clickEventListener(item)}>
                   <Text style={styles.followButtonText}>Appointment</Text>  
                 </TouchableOpacity>
@@ -139,11 +139,11 @@ export default class A extends Component {
               <View style={styles.popupContent}>
                 <ScrollView contentContainerStyle={styles.modalInfo}>
                     {/* <Image style={styles.image} source={{uri: this.state.userSelected.image}}/> */}
-                    <Text style={styles.name}>Submit Your Appointment</Text>
-                    <Text style={styles.name}>{this.state.userSelected.vehicle_number}</Text>
+                    <Text style={styles.name}>Resereve </Text>
+                    {/* <Text style={styles.name}>{this.state.userSelected.vehicle_number}</Text>
                     <Text style={styles.position}>{this.state.userSelected.vehicle_brand}</Text>
                     <Text style={styles.about}>Vehicle Type : {this.state.userSelected.vehicle_type}</Text>
-                    <Text style={styles.about}>Meter Reading : {this.state.userSelected.meter_reading} km</Text>
+                    <Text style={styles.about}>Meter Reading : {this.state.userSelected.meter_reading} km</Text> */}
                 </ScrollView>
               </View>
               <View style={styles.popupButtons}>

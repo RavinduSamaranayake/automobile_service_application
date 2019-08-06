@@ -26,6 +26,7 @@
     "react-cross-form": "^1.2.12",
     "react-native": "0.58.5",
     "react-native-calendars": "^1.22.0",
+    "react-native-checkbox-form": "^1.1.5",
     "react-native-clean-form": "^0.5.0",
     "react-native-elements": "^1.1.0",
     "react-native-firebase": "^5.2.3",
