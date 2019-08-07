@@ -15,34 +15,20 @@ import {
 } from 'react-native';
 import { AsyncStorage } from 'react-native';
 import axios from 'axios';
-//import CheckboxFormX from 'react-native-checkbox-form';
-import PickerCheckBox from 'react-native-picker-checkbox';
-
-// set the labels and values for the check box
-
-const items = [
-  {
-    itemKey:1,
-    itemDescription:'Engine Repair'
+import CheckboxFormX from 'react-native-checkbox-form';
+const mockData = [
+    {
+        label: 'label1',
+        value: 'one'
     },
-  {
-    itemKey:2,
-    itemDescription:'Body Repair'
+    {
+        label: 'label2',
+        value: 'two'
     },
-  {
-    itemKey:3,
-    itemDescription:'Wheel Repair'
+    {
+        label: 'label3',
+        value: 'three'
     },
-
-  {
-    itemKey:4,
-    itemDescription:'Tank Repair'
-    },
-
-  {
-    itemKey:5,
-    itemDescription:'Tinkering'
-    }
 ];
 
 
@@ -57,14 +43,6 @@ export default class Booking extends Component {
     };
   }
 
-
- //for get the select values of check boxes
-
-  handleConfirm(pItems){
-    console.log('pItems =>', pItems);
-  }
- 
-  
   componentDidMount(){
     this.loadData();
      
@@ -72,8 +50,13 @@ export default class Booking extends Component {
     
   }
 
- 
-   
+  //for get the select values of check boxes
+
+  _onSelect = ( item ) => {
+    console.log(item , '..............' , item.value , '...is');
+  };
+
+
   
   //for get the current user id
   async loadData() {  
@@ -179,27 +162,21 @@ export default class Booking extends Component {
               <View style={styles.popupContent}>
                 <ScrollView contentContainerStyle={styles.modalInfo}>
                     {/* <Image style={styles.image} source={{uri: this.state.userSelected.image}}/> */}
-                    <Text style={styles.name}>Select your repair type</Text>
+                    <Text style={styles.name}>Resereve Your Time</Text>
                     {/* <Text style={styles.name}>{this.state.userSelected.vehicle_number}</Text>
                     <Text style={styles.position}>{this.state.userSelected.vehicle_brand}</Text>
                     <Text style={styles.about}>Vehicle Type : {this.state.userSelected.vehicle_type}</Text>
                     <Text style={styles.about}>Meter Reading : {this.state.userSelected.meter_reading} km</Text> */}
-                    
-
-                      <PickerCheckBox
-                            data={items}
-                            headerComponent={<Text style={{fontSize:25}} >Repairs</Text>}
-                            OnConfirm={(pItems) => this.handleConfirm(pItems)}
-                            ConfirmButtonTitle='OK'
-                            DescriptionField='itemDescription'
-                            KeyField='itemKey'
-                            placeholder='select some items'
-                            arrowColor='#FFD740'
-                            arrowSize={10}
-                            placeholderSelectedItems ='$count selected item(s)'
-                            />
-
-                       <Text style={styles.name}>Your repair date</Text>
+                    <CheckboxFormX
+                     style={{ width: 350 - 30 }}
+                     dataSource={mockData}
+                     itemShowKey="label"
+                     itemCheckedKey="RNchecked"
+                     iconSize={24}
+                     formHorizontal={false}
+                     labelHorizontal={true}
+                     onChecked={(item) => this._onSelect(item)}
+                     />
                 </ScrollView>
               </View>
               <View style={styles.popupButtons}>

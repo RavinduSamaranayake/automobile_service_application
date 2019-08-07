@@ -17,8 +17,29 @@ import { AsyncStorage } from 'react-native';
 import axios from 'axios';
 //import CheckboxFormX from 'react-native-checkbox-form';
 import PickerCheckBox from 'react-native-picker-checkbox';
-
 // set the labels and values for the check box
+// const mockData = [
+//     {
+//         label: 'Engine Repair',
+//         value: 'one'
+//     },
+//     {
+//         label: 'Body Repair',
+//         value: 'two'
+//     },
+//     {
+//         label: 'Wheel Repair',
+//         value: 'three'
+//     },
+//     {
+//       label: 'Tank Repair',
+//       value: 'four'
+//     },
+//     {
+//       label: 'Tinkering Repair',
+//       value: 'five'
+//    },
+// ];
 
 const items = [
   {
@@ -31,18 +52,14 @@ const items = [
     },
   {
     itemKey:3,
-    itemDescription:'Wheel Repair'
+    itemDescription:'Item 3'
     },
 
   {
-    itemKey:4,
-    itemDescription:'Tank Repair'
+    itemKey:2,
+    itemDescription:'Body Repair'
     },
-
-  {
-    itemKey:5,
-    itemDescription:'Tinkering'
-    }
+    
 ];
 
 
@@ -58,7 +75,6 @@ export default class Booking extends Component {
   }
 
 
- //for get the select values of check boxes
 
   handleConfirm(pItems){
     console.log('pItems =>', pItems);
@@ -72,8 +88,13 @@ export default class Booking extends Component {
     
   }
 
- 
-   
+  //for get the select values of check boxes
+
+  // _onSelect = ( item ) => {
+  //   console.log(item , '................is..');
+  // };
+
+
   
   //for get the current user id
   async loadData() {  
@@ -188,7 +209,7 @@ export default class Booking extends Component {
 
                       <PickerCheckBox
                             data={items}
-                            headerComponent={<Text style={{fontSize:25}} >Repairs</Text>}
+                            headerComponent={<Text style={{fontSize:25}} >items</Text>}
                             OnConfirm={(pItems) => this.handleConfirm(pItems)}
                             ConfirmButtonTitle='OK'
                             DescriptionField='itemDescription'
