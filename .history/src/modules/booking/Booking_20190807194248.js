@@ -163,7 +163,7 @@ export default class Booking extends Component {
                 <Text style={styles.name}>{item.vehicle_number}</Text>
                 <Text style={styles.position}>{item.vehicle_type}</Text>
                 <TouchableOpacity style={styles.followButton} onPress={()=> this.clickEventListener(item)}>
-                  <Text style={styles.followButtonText}>Repair</Text>  
+                  <Text style={styles.followButtonText}>Appointment</Text>  
                 </TouchableOpacity>
               </View>
             </TouchableOpacity>
@@ -331,13 +331,12 @@ const styles = StyleSheet.create({
 
   followButton: {
     marginTop:10,
-    marginBottom:5,
     height:35,
-    width:120,
+    width:100,
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    borderRadius: 5,
+    borderRadius:0,
     backgroundColor: "#00BFFF",
   },
   followButtonText:{
@@ -359,7 +358,6 @@ const styles = StyleSheet.create({
   popupContent: {
     //alignItems: 'center',
     margin: 10,
-    padding: 5,
     height:350,
   },
   popupHeader: {

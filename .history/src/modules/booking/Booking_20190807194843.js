@@ -331,7 +331,6 @@ const styles = StyleSheet.create({
 
   followButton: {
     marginTop:10,
-    marginBottom:5,
     height:35,
     width:120,
     flexDirection: 'row',

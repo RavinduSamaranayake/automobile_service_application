@@ -331,13 +331,12 @@ const styles = StyleSheet.create({
 
   followButton: {
     marginTop:10,
-    marginBottom:5,
     height:35,
-    width:120,
+    width:150,
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    borderRadius: 5,
+    borderRadius:10,
     backgroundColor: "#00BFFF",
   },
   followButtonText:{
@@ -359,7 +358,6 @@ const styles = StyleSheet.create({
   popupContent: {
     //alignItems: 'center',
     margin: 10,
-    padding: 5,
     height:350,
   },
   popupHeader: {
