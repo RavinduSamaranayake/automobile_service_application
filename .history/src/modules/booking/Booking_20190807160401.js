@@ -37,9 +37,13 @@ const items = [
 
   {
     itemKey:4,
-    itemDescription:'Suspension and Steering Repair'
+    itemDescription:'Suspension and S Repair'
     },
 
+  {
+    itemKey:5,
+    itemDescription:'Tinkering'
+    }
 ];
 
 
@@ -354,8 +358,8 @@ const styles = StyleSheet.create({
   },
   popupContent: {
     //alignItems: 'center',
-    margin: 10,
-    height:350,
+    margin: 5,
+    height:250,
   },
   popupHeader: {
     marginBottom: 45

@@ -47,6 +47,7 @@
     "react-native-paper": "^2.12.0",
     "react-native-picker-checkbox": "^2.0.1",
     "react-native-router-flux": "^4.0.6",
+    "react-native-textarea": "^1.0.3",
     "react-native-ui-lib": "^3.18.0",
     "react-native-vector-icons": "^6.3.0",
     "react-navigation": "^3.3.2",

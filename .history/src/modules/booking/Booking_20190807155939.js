@@ -28,18 +28,22 @@ const items = [
     },
   {
     itemKey:2,
-    itemDescription:'Break Systems Repair'
+    itemDescription:'Body Repair'
     },
   {
     itemKey:3,
-    itemDescription:'Transmission Repair'
+    itemDescription:'Wheel Repair'
     },
 
   {
     itemKey:4,
-    itemDescription:'Suspension and Steering Repair'
+    itemDescription:'Tank Repair'
     },
 
+  {
+    itemKey:5,
+    itemDescription:'Tinkering'
+    }
 ];
 
 
@@ -226,7 +230,7 @@ export default class Booking extends Component {
                               }}
                               onDateChange={(date) => {this.setState({date: date})}}
                             />
-                      <Text style={styles.name}>Additional note (if required)</Text>
+                      <Text style={styles.name}>Add</Text>
                       <Textarea
                           containerStyle={styles.textareaContainer}
                           style={styles.textarea}
@@ -354,8 +358,8 @@ const styles = StyleSheet.create({
   },
   popupContent: {
     //alignItems: 'center',
-    margin: 10,
-    height:350,
+    margin: 5,
+    height:250,
   },
   popupHeader: {
     marginBottom: 45

@@ -355,7 +355,7 @@ const styles = StyleSheet.create({
   popupContent: {
     //alignItems: 'center',
     margin: 10,
-    height:350,
+    height:0,
   },
   popupHeader: {
     marginBottom: 45

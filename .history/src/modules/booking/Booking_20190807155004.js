@@ -28,18 +28,22 @@ const items = [
     },
   {
     itemKey:2,
-    itemDescription:'Break Systems Repair'
+    itemDescription:'Body Repair'
     },
   {
     itemKey:3,
-    itemDescription:'Transmission Repair'
+    itemDescription:'Wheel Repair'
     },
 
   {
     itemKey:4,
-    itemDescription:'Suspension and Steering Repair'
+    itemDescription:'Tank Repair'
     },
 
+  {
+    itemKey:5,
+    itemDescription:'Tinkering'
+    }
 ];
 
 
@@ -226,14 +230,14 @@ export default class Booking extends Component {
                               }}
                               onDateChange={(date) => {this.setState({date: date})}}
                             />
-                      <Text style={styles.name}>Additional note (if required)</Text>
+
                       <Textarea
                           containerStyle={styles.textareaContainer}
                           style={styles.textarea}
                           onChangeText={this.onChange}
                           defaultValue={this.state.text}
                           maxLength={120}
-                          placeholder={'Enter additional note here...'}
+                          placeholder={'好玩有趣的，大家同乐，伤感忧闷的，大家同哭。。。'}
                           placeholderTextColor={'#c7c7c7'}
                           underlineColorAndroid={'transparent'}
                         />
@@ -354,8 +358,8 @@ const styles = StyleSheet.create({
   },
   popupContent: {
     //alignItems: 'center',
-    margin: 10,
-    height:350,
+    margin: 5,
+    height:250,
   },
   popupHeader: {
     marginBottom: 45
@@ -387,16 +391,5 @@ const styles = StyleSheet.create({
     paddingVertical: 50,
     justifyContent: 'space-around',
      
-  },
-  textareaContainer: {
-    height: 180,
-    padding: 5,
-    backgroundColor: '#F5FCFF',
-  },
-  textarea: {
-    textAlignVertical: 'top',  // hack android
-    height: 170,
-    fontSize: 14,
-    color: '#333',
   },
 }); 
