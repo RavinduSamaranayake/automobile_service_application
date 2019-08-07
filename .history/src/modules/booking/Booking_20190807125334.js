@@ -48,15 +48,12 @@ const items = [
 
 
 export default class Booking extends Component {
-  //Current Date
-   //Current Month
-    //Current Year
-  fulldate = new Date().getFullYear() + '-' + (month = new Date().getMonth() + 1) + '-'+new Date().getDate(); //full current date
+
   constructor(props) {
     super(props);
     this.state = {
       isLoading: true,
-      date:this.fulldate, 
+      date:"2016-05-15",
       modalVisible:false,
       userSelected: [],
     };
@@ -205,15 +202,15 @@ export default class Booking extends Component {
                             />
 
                        <Text style={styles.name}>Your repair date</Text>
- 
+
                       <DatePicker
                               style={{width: 200}}
                               date={this.state.date}
                               mode="date"
                               placeholder="select date"
                               format="YYYY-MM-DD"
-                              minDate= {this.fulldate}
-                              maxDate="2076-06-01"
+                              minDate="2016-05-01"
+                              maxDate="20176-06-01"
                               confirmBtnText="Confirm"
                               cancelBtnText="Cancel"
                               customStyles={{

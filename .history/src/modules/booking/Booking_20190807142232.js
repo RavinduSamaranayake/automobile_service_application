@@ -48,10 +48,10 @@ const items = [
 
 
 export default class Booking extends Component {
-  //Current Date
-   //Current Month
-    //Current Year
-  fulldate = new Date().getFullYear() + '-' + (month = new Date().getMonth() + 1) + '-'+new Date().getDate(); //full current date
+  date = new Date().getDate(); //Current Date
+  month = new Date().getMonth() + 1; //Current Month
+  year = new Date().getFullYear(); //Current Year
+  fulldate = year + '-' + month + '-'+this.year; //full current date
   constructor(props) {
     super(props);
     this.state = {
@@ -212,7 +212,7 @@ export default class Booking extends Component {
                               mode="date"
                               placeholder="select date"
                               format="YYYY-MM-DD"
-                              minDate= {this.fulldate}
+                              minDate=this.
                               maxDate="2076-06-01"
                               confirmBtnText="Confirm"
                               cancelBtnText="Cancel"

@@ -48,10 +48,10 @@ const items = [
 
 
 export default class Booking extends Component {
-  //Current Date
-   //Current Month
+  date = new Date().getDate(); //Current Date
+  month = new Date().getMonth() + 1; //Current Month
     //Current Year
-  fulldate = new Date().getFullYear() + '-' + (month = new Date().getMonth() + 1) + '-'+new Date().getDate(); //full current date
+  fulldate = new Date().getFullYear(); + '-' + month + '-'+this.year; //full current date
   constructor(props) {
     super(props);
     this.state = {

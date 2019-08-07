@@ -48,15 +48,12 @@ const items = [
 
 
 export default class Booking extends Component {
-  //Current Date
-   //Current Month
-    //Current Year
-  fulldate = new Date().getFullYear() + '-' + (month = new Date().getMonth() + 1) + '-'+new Date().getDate(); //full current date
+
   constructor(props) {
     super(props);
     this.state = {
       isLoading: true,
-      date:this.fulldate, 
+      date:"2016-05-15",
       modalVisible:false,
       userSelected: [],
     };
@@ -205,31 +202,31 @@ export default class Booking extends Component {
                             />
 
                        <Text style={styles.name}>Your repair date</Text>
- 
-                      <DatePicker
-                              style={{width: 200}}
-                              date={this.state.date}
-                              mode="date"
-                              placeholder="select date"
-                              format="YYYY-MM-DD"
-                              minDate= {this.fulldate}
-                              maxDate="2076-06-01"
-                              confirmBtnText="Confirm"
-                              cancelBtnText="Cancel"
-                              customStyles={{
-                                dateIcon: {
-                                  position: 'absolute',
-                                  left: 0,
-                                  top: 4,
-                                  marginLeft: 0
-                                },
-                                dateInput: {
-                                  marginLeft: 36
-                                }
-                                // ... You can check the source to find the other keys.
-                              }}
-                              onDateChange={(date) => {this.setState({date: date})}}
-                            />
+
+                       <DatePicker
+        style={{width: 200}}
+        date={this.state.date}
+        mode="date"
+        placeholder="select date"
+        format="YYYY-MM-DD"
+        minDate="2016-05-01"
+        maxDate="2016-06-01"
+        confirmBtnText="Confirm"
+        cancelBtnText="Cancel"
+        customStyles={{
+          dateIcon: {
+            position: 'absolute',
+            left: 0,
+            top: 4,
+            marginLeft: 0
+          },
+          dateInput: {
+            marginLeft: 36
+          }
+          // ... You can check the source to find the other keys.
+        }}
+        onDateChange={(date) => {this.setState({date: date})}}
+      />
                 </ScrollView>
               </View>
               <View style={styles.popupButtons}>

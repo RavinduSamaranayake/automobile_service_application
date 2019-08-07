@@ -17,7 +17,7 @@ import { AsyncStorage } from 'react-native';
 import axios from 'axios';
 //import CheckboxFormX from 'react-native-checkbox-form';
 import PickerCheckBox from 'react-native-picker-checkbox';
-import DatePicker from 'react-native-datepicker';
+import DatePicker from 'react-native-datepicker'
 
 // set the labels and values for the check box
 
@@ -48,15 +48,11 @@ const items = [
 
 
 export default class Booking extends Component {
-  //Current Date
-   //Current Month
-    //Current Year
-  fulldate = new Date().getFullYear() + '-' + (month = new Date().getMonth() + 1) + '-'+new Date().getDate(); //full current date
+
   constructor(props) {
     super(props);
     this.state = {
       isLoading: true,
-      date:this.fulldate, 
       modalVisible:false,
       userSelected: [],
     };
@@ -205,31 +201,6 @@ export default class Booking extends Component {
                             />
 
                        <Text style={styles.name}>Your repair date</Text>
- 
-                      <DatePicker
-                              style={{width: 200}}
-                              date={this.state.date}
-                              mode="date"
-                              placeholder="select date"
-                              format="YYYY-MM-DD"
-                              minDate= {this.fulldate}
-                              maxDate="2076-06-01"
-                              confirmBtnText="Confirm"
-                              cancelBtnText="Cancel"
-                              customStyles={{
-                                dateIcon: {
-                                  position: 'absolute',
-                                  left: 0,
-                                  top: 4,
-                                  marginLeft: 0
-                                },
-                                dateInput: {
-                                  marginLeft: 36
-                                }
-                                // ... You can check the source to find the other keys.
-                              }}
-                              onDateChange={(date) => {this.setState({date: date})}}
-                            />
                 </ScrollView>
               </View>
               <View style={styles.popupButtons}>
