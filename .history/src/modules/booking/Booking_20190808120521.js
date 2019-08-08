@@ -130,21 +130,21 @@ export default class Booking extends Component {
 
 
   
-  // when click the repair button visible the repair modal and get the vehicle id
+  // when click the repair button visible the repair modal
   setRepairModalVisible(item , visible) {
     this.setState({userSelected: item,
                    repairModalVisible: visible
                   });
   }
 
-   // when click the service button visible the repair modal and get the vehicle id
+   // when click the service button visible the repair modal
   setServiceModalVisible(item , visible) {
     this.setState({userSelected: item,
                    serviceModalVisible: visible
                   });
   } 
   
-   // handle the service modal visibility
+   // handle the repair modal visibility
    serviceModalVisible(visible) {
     this.setState({serviceModalVisible: visible
                   });
@@ -183,7 +183,7 @@ export default class Booking extends Component {
           }}
           renderItem={({item}) => {
           return (
-          <TouchableOpacity style={styles.card} onPress={() => {}}>
+          <TouchableOpacity style={styles.card} onPress={() => {this.clickEventListener(item)}}>
          {/* <Image style={styles.image} source={{uri: item.image}}/> */}
               <View style={styles.cardContent}>
                 <Text style={styles.name}>{item.vehicle_number}</Text>
@@ -191,7 +191,7 @@ export default class Booking extends Component {
                 <TouchableOpacity style={styles.followButton} onPress={()=> this.setRepairModalVisible(item,true)}>
                   <Text style={styles.followButtonText}>Repair</Text>  
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.followButton} onPress={()=> this.setServiceModalVisible(item,true)}>
+                <TouchableOpacity style={styles.followButton} onPress={()=> this.setServiceModalVisible(item,false)}>
                   <Text style={styles.followButtonText}>Service</Text>  
                 </TouchableOpacity>
               </View>
@@ -206,7 +206,7 @@ export default class Booking extends Component {
           animationType={'fade'}
           transparent={true}
           onRequestClose={() => this.repairModalVisible(false)}
-          visible={this.state.repairModalVisible}>
+          visible={this.state.modalVisible}>
 
           <View style={styles.popupOverlay}>
             <View style={styles.popup}>

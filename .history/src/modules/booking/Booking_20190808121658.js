@@ -206,7 +206,7 @@ export default class Booking extends Component {
           animationType={'fade'}
           transparent={true}
           onRequestClose={() => this.repairModalVisible(false)}
-          visible={this.state.repairModalVisible}>
+          visible={this.state.modalVisible}>
 
           <View style={styles.popupOverlay}>
             <View style={styles.popup}>

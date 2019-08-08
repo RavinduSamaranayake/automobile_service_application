@@ -191,7 +191,7 @@ export default class Booking extends Component {
                 <TouchableOpacity style={styles.followButton} onPress={()=> this.setRepairModalVisible(item,true)}>
                   <Text style={styles.followButtonText}>Repair</Text>  
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.followButton} onPress={()=> this.setServiceModalVisible(item,true)}>
+                <TouchableOpacity style={styles.followButton} onPress={()=> this.setServiceModalVisible(item,false)}>
                   <Text style={styles.followButtonText}>Service</Text>  
                 </TouchableOpacity>
               </View>
@@ -206,7 +206,7 @@ export default class Booking extends Component {
           animationType={'fade'}
           transparent={true}
           onRequestClose={() => this.repairModalVisible(false)}
-          visible={this.state.repairModalVisible}>
+          visible={this.state.modalVisible}>
 
           <View style={styles.popupOverlay}>
             <View style={styles.popup}>

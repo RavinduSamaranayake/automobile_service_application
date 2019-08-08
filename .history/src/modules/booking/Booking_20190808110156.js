@@ -123,42 +123,17 @@ export default class Booking extends Component {
   }  
 
 
- //click the list event and get the vehicle id
+ //click the list event
   clickEventListener = (item) => {
-    this.setState({userSelected: item});
+    this.setState({userSelected: item}, () =>{
+      this.setModalVisible(true);
+     
+    });
   }
 
-
-  
-  // when click the repair button visible the repair modal and get the vehicle id
-  setRepairModalVisible(item , visible) {
-    this.setState({userSelected: item,
-                   repairModalVisible: visible
-                  });
+  setModalVisible(visible) {
+    this.setState({remodalVisible: visible});
   }
-
-   // when click the service button visible the repair modal and get the vehicle id
-  setServiceModalVisible(item , visible) {
-    this.setState({userSelected: item,
-                   serviceModalVisible: visible
-                  });
-  } 
-  
-   // handle the service modal visibility
-   serviceModalVisible(visible) {
-    this.setState({serviceModalVisible: visible
-                  });
-  } 
-
-  // handle the repair modal visibility
-  repairModalVisible(visible) {
-    this.setState({repairModalVisible: visible
-                  });
-  } 
-
-
-
-
 
   render() {
 
@@ -183,16 +158,14 @@ export default class Booking extends Component {
           }}
           renderItem={({item}) => {
           return (
-          <TouchableOpacity style={styles.card} onPress={() => {}}>
-         {/* <Image style={styles.image} source={{uri: item.image}}/> */}
+            // <TouchableOpacity style={styles.card} onPress={() => {this.clickEventListener(item)}}>
+            <TouchableOpacity style={styles.card} onPress={() => {}}>
+              {/* <Image style={styles.image} source={{uri: item.image}}/> */}
               <View style={styles.cardContent}>
                 <Text style={styles.name}>{item.vehicle_number}</Text>
                 <Text style={styles.position}>{item.vehicle_type}</Text>
-                <TouchableOpacity style={styles.followButton} onPress={()=> this.setRepairModalVisible(item,true)}>
+                <TouchableOpacity style={styles.followButton} onPress={()=> this.clickEventListener(item)}>
                   <Text style={styles.followButtonText}>Repair</Text>  
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.followButton} onPress={()=> this.setServiceModalVisible(item,true)}>
-                  <Text style={styles.followButtonText}>Service</Text>  
                 </TouchableOpacity>
               </View>
             </TouchableOpacity>
@@ -205,8 +178,8 @@ export default class Booking extends Component {
         <Modal
           animationType={'fade'}
           transparent={true}
-          onRequestClose={() => this.repairModalVisible(false)}
-          visible={this.state.repairModalVisible}>
+          onRequestClose={() => this.setModalVisible(false)}
+          visible={this.state.modalVisible}>
 
           <View style={styles.popupOverlay}>
             <View style={styles.popup}>
@@ -276,7 +249,7 @@ export default class Booking extends Component {
                 {/* <TouchableOpacity onPress={() => {this.setModalVisible(false) }} style={styles.btnClose}>
                   <Text style={styles.txtClose}>Close</Text>
                 </TouchableOpacity> */}
-                <TouchableOpacity style={styles.followButton} onPress={()=> {this.repairModalVisible(false) }}>
+                <TouchableOpacity style={styles.followButton} onPress={()=> {this.setModalVisible(false) }}>
                   <Text style={styles.followButtonText}>Confirm</Text>  
                 </TouchableOpacity>
               </View>
@@ -289,15 +262,15 @@ export default class Booking extends Component {
         <Modal
           animationType={'fade'}
           transparent={true}
-          onRequestClose={() => this.serviceModalVisible(false)}
-          visible={this.state.serviceModalVisible}>
+          onRequestClose={() => this.setModalVisible(false)}
+          visible={this.state.modalVisible}>
 
           <View style={styles.popupOverlay}>
             <View style={styles.popup}>
               <View style={styles.popupContent}>
                 <ScrollView contentContainerStyle={styles.modalInfo}>
                     {/* <Image style={styles.image} source={{uri: this.state.userSelected.image}}/> */}
-                    <Text style={styles.name}>Select your service type</Text>
+                    <Text style={styles.name}>Select your repair type</Text>
                     {/* <Text style={styles.name}>{this.state.userSelected.vehicle_number}</Text>
                     <Text style={styles.position}>{this.state.userSelected.vehicle_brand}</Text>
                     <Text style={styles.about}>Vehicle Type : {this.state.userSelected.vehicle_type}</Text>
@@ -317,7 +290,7 @@ export default class Booking extends Component {
                             placeholderSelectedItems ='$count selected item(s)'
                             />
 
-                       <Text style={styles.name}>Your service date</Text>
+                       <Text style={styles.name}>Your repair date</Text>
  
                       <DatePicker
                               style={{width: 200}}
@@ -360,7 +333,7 @@ export default class Booking extends Component {
                 {/* <TouchableOpacity onPress={() => {this.setModalVisible(false) }} style={styles.btnClose}>
                   <Text style={styles.txtClose}>Close</Text>
                 </TouchableOpacity> */}
-                <TouchableOpacity style={styles.followButton} onPress={()=> {this.serviceModalVisible(false) }}>
+                <TouchableOpacity style={styles.followButton} onPress={()=> {this.setModalVisible(false) }}>
                   <Text style={styles.followButtonText}>Confirm</Text>  
                 </TouchableOpacity>
               </View>

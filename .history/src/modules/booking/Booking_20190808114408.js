@@ -130,33 +130,19 @@ export default class Booking extends Component {
 
 
   
-  // when click the repair button visible the repair modal and get the vehicle id
+  // when click the repair button visible the repair modal
   setRepairModalVisible(item , visible) {
     this.setState({userSelected: item,
                    repairModalVisible: visible
                   });
   }
 
-   // when click the service button visible the repair modal and get the vehicle id
+   // when click the service button visible the repair modal
   setServiceModalVisible(item , visible) {
     this.setState({userSelected: item,
-                   serviceModalVisible: visible
+                   serModalVisible: visible
                   });
   } 
-  
-   // handle the service modal visibility
-   serviceModalVisible(visible) {
-    this.setState({serviceModalVisible: visible
-                  });
-  } 
-
-  // handle the repair modal visibility
-  repairModalVisible(visible) {
-    this.setState({repairModalVisible: visible
-                  });
-  } 
-
-
 
 
 
@@ -183,15 +169,15 @@ export default class Booking extends Component {
           }}
           renderItem={({item}) => {
           return (
-          <TouchableOpacity style={styles.card} onPress={() => {}}>
+          <TouchableOpacity style={styles.card} onPress={() => {this.clickEventListener(item)}}>
          {/* <Image style={styles.image} source={{uri: item.image}}/> */}
               <View style={styles.cardContent}>
                 <Text style={styles.name}>{item.vehicle_number}</Text>
                 <Text style={styles.position}>{item.vehicle_type}</Text>
-                <TouchableOpacity style={styles.followButton} onPress={()=> this.setRepairModalVisible(item,true)}>
+                <TouchableOpacity style={styles.followButton} onPress={()=> this.clickEventListener(item)}>
                   <Text style={styles.followButtonText}>Repair</Text>  
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.followButton} onPress={()=> this.setServiceModalVisible(item,true)}>
+                <TouchableOpacity style={styles.followButton} onPress={()=> this.clickEventListener(item)}>
                   <Text style={styles.followButtonText}>Service</Text>  
                 </TouchableOpacity>
               </View>
@@ -205,7 +191,91 @@ export default class Booking extends Component {
         <Modal
           animationType={'fade'}
           transparent={true}
-          onRequestClose={() => this.repairModalVisible(false)}
+          onRequestClose={() => this.setModalVisible(false)}
+          visible={this.state.modalVisible}>
+
+          <View style={styles.popupOverlay}>
+            <View style={styles.popup}>
+              <View style={styles.popupContent}>
+                <ScrollView contentContainerStyle={styles.modalInfo}>
+                    {/* <Image style={styles.image} source={{uri: this.state.userSelected.image}}/> */}
+                    <Text style={styles.name}>Select your repair type</Text>
+                    {/* <Text style={styles.name}>{this.state.userSelected.vehicle_number}</Text>
+                    <Text style={styles.position}>{this.state.userSelected.vehicle_brand}</Text>
+                    <Text style={styles.about}>Vehicle Type : {this.state.userSelected.vehicle_type}</Text>
+                    <Text style={styles.about}>Meter Reading : {this.state.userSelected.meter_reading} km</Text> */}
+                    
+
+                      <PickerCheckBox
+                            data={items}
+                            headerComponent={<Text style={{fontSize:25}} >Repairs</Text>}
+                            OnConfirm={(pItems) => this.handleConfirm(pItems)}
+                            ConfirmButtonTitle='OK'
+                            DescriptionField='itemDescription'
+                            KeyField='itemKey'
+                            placeholder='select some items'
+                            arrowColor='#FFD740'
+                            arrowSize={10}
+                            placeholderSelectedItems ='$count selected item(s)'
+                            />
+
+                       <Text style={styles.name}>Your repair date</Text>
+ 
+                      <DatePicker
+                              style={{width: 200}}
+                              date={this.state.date}
+                              mode="date"
+                              placeholder="select date"
+                              format="YYYY-MM-DD"
+                              minDate= {this.fulldate}
+                              maxDate="2076-06-01"
+                              confirmBtnText="Confirm"
+                              cancelBtnText="Cancel"
+                              customStyles={{
+                                dateIcon: {
+                                  position: 'absolute',
+                                  left: 0,
+                                  top: 4,
+                                  marginLeft: 0
+                                },
+                                dateInput: {
+                                  marginLeft: 36
+                                }
+                                // ... You can check the source to find the other keys.
+                              }}
+                              onDateChange={(date) => {this.setState({date: date})}}
+                            />
+                      <Text style={styles.name}>Additional note (if required)</Text>
+                      <Textarea
+                          containerStyle={styles.textareaContainer}
+                          style={styles.textarea}
+                          onChangeText={this.onChange}
+                          defaultValue={this.state.text}
+                          maxLength={120}
+                          placeholder={'Enter additional note here...'}
+                          placeholderTextColor={'#c7c7c7'}
+                          underlineColorAndroid={'transparent'}
+                        />
+                </ScrollView>
+              </View>
+              <View style={styles.popupButtons}>
+                {/* <TouchableOpacity onPress={() => {this.setModalVisible(false) }} style={styles.btnClose}>
+                  <Text style={styles.txtClose}>Close</Text>
+                </TouchableOpacity> */}
+                <TouchableOpacity style={styles.followButton} onPress={()=> {this.setModalVisible(false) }}>
+                  <Text style={styles.followButtonText}>Confirm</Text>  
+                </TouchableOpacity>
+              </View>
+            </View>
+          </View>
+        </Modal>
+
+
+       {/* .............modal for services............ */}
+        <Modal
+          animationType={'fade'}
+          transparent={true}
+          onRequestClose={() => this.setModalVisible(false)}
           visible={this.state.repairModalVisible}>
 
           <View style={styles.popupOverlay}>
@@ -276,91 +346,7 @@ export default class Booking extends Component {
                 {/* <TouchableOpacity onPress={() => {this.setModalVisible(false) }} style={styles.btnClose}>
                   <Text style={styles.txtClose}>Close</Text>
                 </TouchableOpacity> */}
-                <TouchableOpacity style={styles.followButton} onPress={()=> {this.repairModalVisible(false) }}>
-                  <Text style={styles.followButtonText}>Confirm</Text>  
-                </TouchableOpacity>
-              </View>
-            </View>
-          </View>
-        </Modal>
-
-
-       {/* .............modal for services............ */}
-        <Modal
-          animationType={'fade'}
-          transparent={true}
-          onRequestClose={() => this.serviceModalVisible(false)}
-          visible={this.state.serviceModalVisible}>
-
-          <View style={styles.popupOverlay}>
-            <View style={styles.popup}>
-              <View style={styles.popupContent}>
-                <ScrollView contentContainerStyle={styles.modalInfo}>
-                    {/* <Image style={styles.image} source={{uri: this.state.userSelected.image}}/> */}
-                    <Text style={styles.name}>Select your service type</Text>
-                    {/* <Text style={styles.name}>{this.state.userSelected.vehicle_number}</Text>
-                    <Text style={styles.position}>{this.state.userSelected.vehicle_brand}</Text>
-                    <Text style={styles.about}>Vehicle Type : {this.state.userSelected.vehicle_type}</Text>
-                    <Text style={styles.about}>Meter Reading : {this.state.userSelected.meter_reading} km</Text> */}
-                    
-
-                      <PickerCheckBox
-                            data={items}
-                            headerComponent={<Text style={{fontSize:25}} >Repairs</Text>}
-                            OnConfirm={(pItems) => this.handleConfirm(pItems)}
-                            ConfirmButtonTitle='OK'
-                            DescriptionField='itemDescription'
-                            KeyField='itemKey'
-                            placeholder='select some items'
-                            arrowColor='#FFD740'
-                            arrowSize={10}
-                            placeholderSelectedItems ='$count selected item(s)'
-                            />
-
-                       <Text style={styles.name}>Your service date</Text>
- 
-                      <DatePicker
-                              style={{width: 200}}
-                              date={this.state.date}
-                              mode="date"
-                              placeholder="select date"
-                              format="YYYY-MM-DD"
-                              minDate= {this.fulldate}
-                              maxDate="2076-06-01"
-                              confirmBtnText="Confirm"
-                              cancelBtnText="Cancel"
-                              customStyles={{
-                                dateIcon: {
-                                  position: 'absolute',
-                                  left: 0,
-                                  top: 4,
-                                  marginLeft: 0
-                                },
-                                dateInput: {
-                                  marginLeft: 36
-                                }
-                                // ... You can check the source to find the other keys.
-                              }}
-                              onDateChange={(date) => {this.setState({date: date})}}
-                            />
-                      <Text style={styles.name}>Additional note (if required)</Text>
-                      <Textarea
-                          containerStyle={styles.textareaContainer}
-                          style={styles.textarea}
-                          onChangeText={this.onChange}
-                          defaultValue={this.state.text}
-                          maxLength={120}
-                          placeholder={'Enter additional note here...'}
-                          placeholderTextColor={'#c7c7c7'}
-                          underlineColorAndroid={'transparent'}
-                        />
-                </ScrollView>
-              </View>
-              <View style={styles.popupButtons}>
-                {/* <TouchableOpacity onPress={() => {this.setModalVisible(false) }} style={styles.btnClose}>
-                  <Text style={styles.txtClose}>Close</Text>
-                </TouchableOpacity> */}
-                <TouchableOpacity style={styles.followButton} onPress={()=> {this.serviceModalVisible(false) }}>
+                <TouchableOpacity style={styles.followButton} onPress={()=> {this.setModalVisible(false) }}>
                   <Text style={styles.followButtonText}>Confirm</Text>  
                 </TouchableOpacity>
               </View>
