@@ -62,10 +62,7 @@ const service_items = [
     itemDescription:'Suspension and Steering Service'
     },
 
-    {
-      itemKey:5,
-      itemDescription:'Full Service'
-      },
+    
 
 ];
 
@@ -259,7 +256,7 @@ export default class Booking extends Component {
                     
 
                       <PickerCheckBox
-                            data={repair_items}
+                            data={items}
                             headerComponent={<Text style={{fontSize:25}} >Repairs</Text>}
                             OnConfirm={(pItems) => this.handleConfirm(pItems)}
                             ConfirmButtonTitle='OK'
@@ -343,8 +340,8 @@ export default class Booking extends Component {
                     
 
                       <PickerCheckBox
-                            data={service_items}
-                            headerComponent={<Text style={{fontSize:25}} >Services</Text>}
+                            data={items}
+                            headerComponent={<Text style={{fontSize:25}} >Repairs</Text>}
                             OnConfirm={(pItems) => this.handleConfirm(pItems)}
                             ConfirmButtonTitle='OK'
                             DescriptionField='itemDescription'

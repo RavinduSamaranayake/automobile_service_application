@@ -22,7 +22,7 @@ import Textarea from 'react-native-textarea';
 import TimePicker from "react-native-24h-timepicker";
 // set the labels and values for the check box
 
-const repair_items = [
+const items = [
   {
     itemKey:1,
     itemDescription:'Engine Repair'
@@ -43,31 +43,6 @@ const repair_items = [
 
 ];
 
-const service_items = [
-  {
-    itemKey:1,
-    itemDescription:'Engine Service'
-    },
-  {
-    itemKey:2,
-    itemDescription:'Break Systems Service'
-    },
-  {
-    itemKey:3,
-    itemDescription:'Transmission Service'
-    },
-
-  {
-    itemKey:4,
-    itemDescription:'Suspension and Steering Service'
-    },
-
-    {
-      itemKey:5,
-      itemDescription:'Full Service'
-      },
-
-];
 
 export default class Booking extends Component {
   //Current Date
@@ -183,12 +158,11 @@ export default class Booking extends Component {
                   });
   } 
 
-  //close time picker
+  //
   onCancel() {
     this.TimePicker.close();
   }
  
-  //set the time
   onConfirm(hour, minute) {
     this.setState({ time: `${hour}:${minute}` });
     this.TimePicker.close();
@@ -259,7 +233,7 @@ export default class Booking extends Component {
                     
 
                       <PickerCheckBox
-                            data={repair_items}
+                            data={items}
                             headerComponent={<Text style={{fontSize:25}} >Repairs</Text>}
                             OnConfirm={(pItems) => this.handleConfirm(pItems)}
                             ConfirmButtonTitle='OK'
@@ -343,8 +317,8 @@ export default class Booking extends Component {
                     
 
                       <PickerCheckBox
-                            data={service_items}
-                            headerComponent={<Text style={{fontSize:25}} >Services</Text>}
+                            data={items}
+                            headerComponent={<Text style={{fontSize:25}} >Repairs</Text>}
                             OnConfirm={(pItems) => this.handleConfirm(pItems)}
                             ConfirmButtonTitle='OK'
                             DescriptionField='itemDescription'
@@ -381,22 +355,6 @@ export default class Booking extends Component {
                               }}
                               onDateChange={(date) => {this.setState({date: date})}}
                             />
-
-
-
-                      
-                      <Text style={styles.name} onPress={() => this.TimePicker.open()}>Set the time(Click here)</Text>
-                      
-                          <Text style={styles.text}>{this.state.time}</Text>
-                          <TimePicker
-                            ref={ref => {
-                              this.TimePicker = ref;
-                            }}
-                            onCancel={() => this.onCancel()}
-                            onConfirm={(hour, minute) => this.onConfirm(hour, minute)}
-                          />
-
-
                       <Text style={styles.name}>Additional note (if required)</Text>
                       <Textarea
                           containerStyle={styles.textareaContainer}
@@ -575,13 +533,4 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: '#333',
   },
-  text: {
-    fontSize: 20,
-    marginTop: 10
-  },
-  buttonText: {
-    color: "#FFFFFF",
-    fontSize: 16,
-    fontWeight: "600"
-  }
 }); 

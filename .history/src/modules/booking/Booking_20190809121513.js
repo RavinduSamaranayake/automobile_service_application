@@ -46,26 +46,21 @@ const repair_items = [
 const service_items = [
   {
     itemKey:1,
-    itemDescription:'Engine Service'
+    itemDescription:'Engine Se'
     },
   {
     itemKey:2,
-    itemDescription:'Break Systems Service'
+    itemDescription:'Break Systems Repair'
     },
   {
     itemKey:3,
-    itemDescription:'Transmission Service'
+    itemDescription:'Transmission Repair'
     },
 
   {
     itemKey:4,
-    itemDescription:'Suspension and Steering Service'
+    itemDescription:'Suspension and Steering Repair'
     },
-
-    {
-      itemKey:5,
-      itemDescription:'Full Service'
-      },
 
 ];
 
@@ -259,7 +254,7 @@ export default class Booking extends Component {
                     
 
                       <PickerCheckBox
-                            data={repair_items}
+                            data={items}
                             headerComponent={<Text style={{fontSize:25}} >Repairs</Text>}
                             OnConfirm={(pItems) => this.handleConfirm(pItems)}
                             ConfirmButtonTitle='OK'
@@ -343,8 +338,8 @@ export default class Booking extends Component {
                     
 
                       <PickerCheckBox
-                            data={service_items}
-                            headerComponent={<Text style={{fontSize:25}} >Services</Text>}
+                            data={items}
+                            headerComponent={<Text style={{fontSize:25}} >Repairs</Text>}
                             OnConfirm={(pItems) => this.handleConfirm(pItems)}
                             ConfirmButtonTitle='OK'
                             DescriptionField='itemDescription'

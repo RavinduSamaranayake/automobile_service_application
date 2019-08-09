@@ -22,7 +22,7 @@ import Textarea from 'react-native-textarea';
 import TimePicker from "react-native-24h-timepicker";
 // set the labels and values for the check box
 
-const repair_items = [
+const items = [
   {
     itemKey:1,
     itemDescription:'Engine Repair'
@@ -43,31 +43,6 @@ const repair_items = [
 
 ];
 
-const service_items = [
-  {
-    itemKey:1,
-    itemDescription:'Engine Service'
-    },
-  {
-    itemKey:2,
-    itemDescription:'Break Systems Service'
-    },
-  {
-    itemKey:3,
-    itemDescription:'Transmission Service'
-    },
-
-  {
-    itemKey:4,
-    itemDescription:'Suspension and Steering Service'
-    },
-
-    {
-      itemKey:5,
-      itemDescription:'Full Service'
-      },
-
-];
 
 export default class Booking extends Component {
   //Current Date
@@ -259,7 +234,7 @@ export default class Booking extends Component {
                     
 
                       <PickerCheckBox
-                            data={repair_items}
+                            data={items}
                             headerComponent={<Text style={{fontSize:25}} >Repairs</Text>}
                             OnConfirm={(pItems) => this.handleConfirm(pItems)}
                             ConfirmButtonTitle='OK'
@@ -343,8 +318,8 @@ export default class Booking extends Component {
                     
 
                       <PickerCheckBox
-                            data={service_items}
-                            headerComponent={<Text style={{fontSize:25}} >Services</Text>}
+                            data={items}
+                            headerComponent={<Text style={{fontSize:25}} >Repairs</Text>}
                             OnConfirm={(pItems) => this.handleConfirm(pItems)}
                             ConfirmButtonTitle='OK'
                             DescriptionField='itemDescription'
@@ -385,7 +360,7 @@ export default class Booking extends Component {
 
 
                       
-                      <Text style={styles.name} onPress={() => this.TimePicker.open()}>Set the time(Click here)</Text>
+                      <Text style={styles.name} onPress={() => this.TimePicker.open()}>Set the service time</Text>
                       
                           <Text style={styles.text}>{this.state.time}</Text>
                           <TimePicker
