@@ -222,7 +222,7 @@ export default class Booking extends Component {
           renderItem={({item}) => {
           return (
           <TouchableOpacity style={styles.card} onPress={() => {}}>
-             <Image style={styles.image} source={require('./mylogo.png')}/>
+            
          {/* <Image style={styles.image} source={{uri: item.image}}/> */}
               <View style={styles.cardContent}>
                 <Text style={styles.name}>{item.vehicle_number}</Text>
@@ -459,10 +459,8 @@ const styles = StyleSheet.create({
     marginTop:10
   },
   image:{
-    width:130,
-    height:130,
-    marginTop:20,
-    marginBottom:20,
+    width:90,
+    height:90,
     borderRadius:45,
   },
 

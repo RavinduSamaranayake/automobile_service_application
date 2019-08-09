@@ -460,7 +460,7 @@ const styles = StyleSheet.create({
   },
   image:{
     width:130,
-    height:130,
+    height:140,
     marginTop:20,
     marginBottom:20,
     borderRadius:45,

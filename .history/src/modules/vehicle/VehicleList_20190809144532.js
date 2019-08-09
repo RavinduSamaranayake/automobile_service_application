@@ -149,9 +149,9 @@ export default class VehicleList extends Component {
                 </ScrollView>
               </View>
               <View style={styles.popupButtons}>
-                {/* <TouchableOpacity onPress={() => {this.setModalVisible(false) }} style={styles.btnClose}>
+                <TouchableOpacity onPress={() => {this.setModalVisible(false) }} style={styles.btnClose}>
                   <Text style={styles.txtClose}>Close</Text>
-                </TouchableOpacity> */}
+                </TouchableOpacity>
               </View>
             </View>
           </View>

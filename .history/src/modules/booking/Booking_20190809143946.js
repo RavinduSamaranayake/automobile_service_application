@@ -462,7 +462,7 @@ const styles = StyleSheet.create({
     width:130,
     height:130,
     marginTop:20,
-    marginBottom:20,
+    marginBottom:0,
     borderRadius:45,
   },
 
