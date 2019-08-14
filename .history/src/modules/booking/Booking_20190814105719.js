@@ -59,11 +59,9 @@ export default class Booking extends Component {
       vehicle_number: '',
       repair_type:[],
       service_type:[],
-      repair_date:this.fulldate, 
-      service_date:this.fulldate, 
+      repdate:this.fulldate, 
       arrival_time:'',
-      repair_additional_notes:'',
-      service_additional_notes:'',
+      additional_notes:'',
     };
   }
 
@@ -273,7 +271,7 @@ export default class Booking extends Component {
  
                       <DatePicker
                               style={{width: 200}}
-                              date={this.state.repair_date}
+                              date={this.state.date}
                               mode="date"
                               placeholder="select date"
                               format="YYYY-MM-DD"
@@ -293,16 +291,14 @@ export default class Booking extends Component {
                                 }
                                 // ... You can check the source to find the other keys.
                               }}
-                              onDateChange={(date) => {this.setState({repair_date: date})}}
+                              onDateChange={(date) => {this.setState({date: date})}}
                             />
                       <Text style={styles.name}>Additional note (if required)</Text>
                       <Textarea
                           containerStyle={styles.textareaContainer}
                           style={styles.textarea}
-                          onChangeText={(text) => {
-                            this.setState({ repair_additional_notes: text });
-                          }}
-                          defaultValue={this.state.repair_additional_notes}
+                          onChangeText={this.onChange}
+                          defaultValue={this.state.text}
                           maxLength={120}
                           placeholder={'Enter additional note here...'}
                           placeholderTextColor={'#c7c7c7'}
@@ -359,7 +355,7 @@ export default class Booking extends Component {
  
                       <DatePicker
                               style={{width: 200}}
-                              date={this.state.service_date}
+                              date={this.state.date}
                               mode="date"
                               placeholder="select date"
                               format="YYYY-MM-DD"
@@ -379,7 +375,7 @@ export default class Booking extends Component {
                                 }
                                 // ... You can check the source to find the other keys.
                               }}
-                              onDateChange={(date) => {this.setState({service_date: date})}}
+                              onDateChange={(date) => {this.setState({date: date})}}
                             />
 
 
@@ -401,10 +397,8 @@ export default class Booking extends Component {
                       <Textarea
                           containerStyle={styles.textareaContainer}
                           style={styles.textarea}
-                          onChangeText={(text) => {
-                            this.setState({ service_additional_notes: text });
-                          }}
-                          defaultValue={this.state.service_additional_notes}
+                          onChangeText={this.onChange}
+                          defaultValue={this.state.text}
                           maxLength={120}
                           placeholder={'Enter additional note here...'}
                           placeholderTextColor={'#c7c7c7'}

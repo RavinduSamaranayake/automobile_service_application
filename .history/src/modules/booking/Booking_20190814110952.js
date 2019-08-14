@@ -299,10 +299,8 @@ export default class Booking extends Component {
                       <Textarea
                           containerStyle={styles.textareaContainer}
                           style={styles.textarea}
-                          onChangeText={(text) => {
-                            this.setState({ repair_additional_notes: text });
-                          }}
-                          defaultValue={this.state.repair_additional_notes}
+                          onChangeText={this.onChange}
+                          defaultValue={this.state.text}
                           maxLength={120}
                           placeholder={'Enter additional note here...'}
                           placeholderTextColor={'#c7c7c7'}
@@ -401,10 +399,8 @@ export default class Booking extends Component {
                       <Textarea
                           containerStyle={styles.textareaContainer}
                           style={styles.textarea}
-                          onChangeText={(text) => {
-                            this.setState({ service_additional_notes: text });
-                          }}
-                          defaultValue={this.state.service_additional_notes}
+                          onChangeText={this.onChange}
+                          defaultValue={this.state.text}
                           maxLength={120}
                           placeholder={'Enter additional note here...'}
                           placeholderTextColor={'#c7c7c7'}

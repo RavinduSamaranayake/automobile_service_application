@@ -302,7 +302,7 @@ export default class Booking extends Component {
                           onChangeText={(text) => {
                             this.setState({ repair_additional_notes: text });
                           }}
-                          defaultValue={this.state.repair_additional_notes}
+                          defaultValue={this.state.}
                           maxLength={120}
                           placeholder={'Enter additional note here...'}
                           placeholderTextColor={'#c7c7c7'}
