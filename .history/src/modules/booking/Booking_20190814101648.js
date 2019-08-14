@@ -259,7 +259,7 @@ export default class Booking extends Component {
                       <PickerCheckBox
                             data={repair_items}
                             headerComponent={<Text style={{fontSize:25}} >Repairs</Text>}
-                            OnConfirm={(pItems) => this.handleRepairConfirm(pItems)}
+                            OnConfirm={(pItems) => this.handleRConfirm(pItems)}
                             ConfirmButtonTitle='OK'
                             DescriptionField='label'
                             KeyField='value'
@@ -343,7 +343,7 @@ export default class Booking extends Component {
                       <PickerCheckBox
                             data={service_items}
                             headerComponent={<Text style={{fontSize:25}} >Services</Text>}
-                            OnConfirm={(pItems) => this.handleServiceConfirm(pItems)}
+                            OnConfirm={(pItems) => this.handleConfirm(pItems)}
                             ConfirmButtonTitle='OK'
                             DescriptionField='label'
                             KeyField='value'

@@ -9,6 +9,12 @@ import {
 } from 'react-native';
 import { AsyncStorage } from 'react-native';
 
+
+const menu = useRef();
+
+  const hideMenu = () => menu.current.hide();
+
+  const showMenu = () => menu.current.show();
 export default class ViewProfile extends Component {
 
     state = {

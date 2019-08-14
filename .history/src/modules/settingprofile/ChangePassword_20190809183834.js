@@ -7,7 +7,7 @@ import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view
 import ValidationComponent from 'react-native-form-validator';
 import { Button } from '../../components';
 import axios from 'axios';
-import Menu, { MenuItem, MenuDivider } from 'react-native-material-menu';
+
 export default class ChangePassword extends ValidationComponent {
 
   constructor(props) {

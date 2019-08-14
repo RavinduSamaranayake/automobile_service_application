@@ -74,7 +74,7 @@ export default class ViewProfile extends Component {
               <Text style={styles.info}> {this.state.email}</Text>
               <Text style={styles.info}> {this.state.address}</Text>
               <Text style={styles.info}> {this.state.contact}</Text>
-              <Text style={styles.info}> {this.state.nic}</Text>
+              <Text style={styles.info}>{this.state.nic}</Text>
  
               <TouchableOpacity onPress={this.changeProfile} style={styles.buttonContainer}>
               <Text style={{color: 'white',fontWeight: 'bold'}}>Change Profile</Text>
@@ -140,7 +140,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    marginBottom:10,
+    marginBottom:20,
     width:250,
     borderRadius:30,
     backgroundColor: "#00BFFF",

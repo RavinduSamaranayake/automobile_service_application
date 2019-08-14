@@ -343,7 +343,7 @@ export default class Booking extends Component {
                       <PickerCheckBox
                             data={service_items}
                             headerComponent={<Text style={{fontSize:25}} >Services</Text>}
-                            OnConfirm={(pItems) => this.handleServiceConfirm(pItems)}
+                            OnConfirm={(pItems) => this.handleConfirm(pItems)}
                             ConfirmButtonTitle='OK'
                             DescriptionField='label'
                             KeyField='value'

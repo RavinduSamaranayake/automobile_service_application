@@ -23,24 +23,19 @@ import TimePicker from "react-native-24h-timepicker";
 // set the labels and values for the check box
 
 const repair_items = [
-  { value: 'Engine Repair', label: 'Engine Repair' },
-  { value: 'Brake Systems Repair', label: 'Brake Systems Repair' },
-  { value: 'Transmission Repair', label: 'Transmission Repair' },
-  { value: 'Suspension and Steering Repair', label: 'Suspension and Steering Repair' },
-  { value: 'Accident Repair', label: 'Accident Repair'},
-  { value: 'Vehicle Tinkering', label: 'Vehicle Tinkering'},
-  { value: 'Body Painting', label: 'Body Painting'}
+  
+  {
+    itemKey:7,
+    itemDescription:'Body Painting'
+    },
+  
 
 ];
 
 const service_items = [  
-  { value: 'Full Vehicle Service', label: 'Full Vehicle Service' },
-  { value: 'Oil Change', label: 'Oil Change' },
-  { value: 'Engine Checkup', label: 'Engine Checkup' },
-  { value: 'System Scanning', label: 'System Scanning' },
-  { value: 'Quick Body Wash', label: 'Quick Body Wash'},
-  { value: 'Body Wax', label: 'Interior Cleanup'},
-  { value: 'Interior Cleanup', label: 'Interior Cleanup'} 
+  
+
+   
 ];
 
 export default class Booking extends Component {
@@ -70,20 +65,8 @@ export default class Booking extends Component {
 
  //for get the select values of check boxes
 
-  handleRepairConfirm(pItems){
+  handleConfirm(pItems){
     console.log('pItems =>', pItems);
-    this.setState({
-      repair_type: pItems
-    })
-
-  }
- 
-  handleServiceConfirm(pItems){
-    console.log('pItems =>', pItems);
-    this.setState({
-      service_type: pItems
-    })
-
   }
  
   
@@ -259,10 +242,10 @@ export default class Booking extends Component {
                       <PickerCheckBox
                             data={repair_items}
                             headerComponent={<Text style={{fontSize:25}} >Repairs</Text>}
-                            OnConfirm={(pItems) => this.handleRepairConfirm(pItems)}
+                            OnConfirm={(pItems) => this.handleConfirm(pItems)}
                             ConfirmButtonTitle='OK'
-                            DescriptionField='label'
-                            KeyField='value'
+                            DescriptionField='itemDescription'
+                            KeyField='itemKey'
                             placeholder='select some items'
                             arrowColor='#FFD740'
                             arrowSize={10}
@@ -343,10 +326,10 @@ export default class Booking extends Component {
                       <PickerCheckBox
                             data={service_items}
                             headerComponent={<Text style={{fontSize:25}} >Services</Text>}
-                            OnConfirm={(pItems) => this.handleServiceConfirm(pItems)}
+                            OnConfirm={(pItems) => this.handleConfirm(pItems)}
                             ConfirmButtonTitle='OK'
-                            DescriptionField='label'
-                            KeyField='value'
+                            DescriptionField='itemDescription'
+                            KeyField='itemKey'
                             placeholder='select some items'
                             arrowColor='#FFD740'
                             arrowSize={10}
