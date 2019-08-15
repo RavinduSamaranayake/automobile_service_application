@@ -61,17 +61,17 @@ export default function PagesScreen(props) {
           />
           <Text style={styles.itemText}>Vehicles</Text>
         </TouchableOpacity>
-        {/* <TouchableOpacity
-          onPress={() => props.navigation.navigate({ routeName: 'ServiceHistory' })}
-          style={styles.item}
-        >
-          <Image
-            resizeMode="contain"
-            source={historyIcon}
-            style={styles.itemImage}
-          />
-          <Text style={styles.itemText}>History</Text>
-        </TouchableOpacity> */}
+        <TouchableOpacity
+        //   onPress={() => props.navigation.navigate({ routeName: 'ServiceHistory' })}
+        //   style={styles.item}
+        // >
+        //   <Image
+        //     resizeMode="contain"
+        //     source={historyIcon}
+        //     style={styles.itemImage}
+        //   />
+        //   <Text style={styles.itemText}>History</Text>
+        </TouchableOpacity>
         {/* <TouchableOpacity 
 
         onPress={ () => {

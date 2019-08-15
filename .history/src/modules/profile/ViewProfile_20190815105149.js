@@ -85,11 +85,12 @@ export default class ViewProfile extends Component {
               </TouchableOpacity> */}
             
                <Text style={{color: 'red',  fontSize:17} } onPress={() => {
-                //log out from user
-                 deviceStorage.deleteJWT();
-                 this.props.navigation.navigate({ routeName: 'Splash' });
-                 }}
-               >Sign Out</Text>
+
+//log out from user
+     deviceStorage.deleteJWT();
+     props.navigation.navigate({ routeName: 'Splash' });
+      
+}}>Sign Out</Text>
             </View>
         </View>
       </View>

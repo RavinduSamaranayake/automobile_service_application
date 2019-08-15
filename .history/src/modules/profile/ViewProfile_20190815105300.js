@@ -87,8 +87,8 @@ export default class ViewProfile extends Component {
                <Text style={{color: 'red',  fontSize:17} } onPress={() => {
                 //log out from user
                  deviceStorage.deleteJWT();
-                 this.props.navigation.navigate({ routeName: 'Splash' });
-                 }}
+                 props.navigation.navigate({ routeName: 'Splash' });
+               }}
                >Sign Out</Text>
             </View>
         </View>

@@ -12,7 +12,8 @@ import AppView from './src/modules/AppView';
 export default function App() {
 
   return (
-        <AppView />
+    
+    <AppView />
   );
 }
 

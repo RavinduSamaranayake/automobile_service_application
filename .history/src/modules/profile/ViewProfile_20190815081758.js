@@ -7,7 +7,6 @@ import {
   Image,
   TouchableOpacity
 } from 'react-native';
-import deviceStorage from '../../services/deviceStorage';
 import { AsyncStorage } from 'react-native';
 
 export default class ViewProfile extends Component {
@@ -84,12 +83,7 @@ export default class ViewProfile extends Component {
               <Text style={{color: 'brown',fontWeight: 'bold'}}>Sign Out</Text>
               </TouchableOpacity> */}
             
-               <Text style={{color: 'red',  fontSize:17} } onPress={() => {
-                //log out from user
-                 deviceStorage.deleteJWT();
-                 this.props.navigation.navigate({ routeName: 'Splash' });
-                 }}
-               >Sign Out</Text>
+               <Text style={{color: 'brown',fontWeight: 'bold', fontSize:17} } onPress={this.settingAccount}>Sign Out</Text>
             </View>
         </View>
       </View>

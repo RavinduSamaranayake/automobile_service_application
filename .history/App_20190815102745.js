@@ -11,8 +11,11 @@ import AppView from './src/modules/AppView';
 
 export default function App() {
 
+  //RNLocalNotifications.createNotification(id, text, datetime, sound[, hiddendata]);
+  RNLocalNotifications.createNotification(1, 'Some text', '2019-05-22 23:23', 'default');
   return (
-        <AppView />
+    
+    <AppView />
   );
 }
 

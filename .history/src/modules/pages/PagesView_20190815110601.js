@@ -61,7 +61,7 @@ export default function PagesScreen(props) {
           />
           <Text style={styles.itemText}>Vehicles</Text>
         </TouchableOpacity>
-        {/* <TouchableOpacity
+        <TouchableOpacity
           onPress={() => props.navigation.navigate({ routeName: 'ServiceHistory' })}
           style={styles.item}
         >
@@ -71,7 +71,7 @@ export default function PagesScreen(props) {
             style={styles.itemImage}
           />
           <Text style={styles.itemText}>History</Text>
-        </TouchableOpacity> */}
+        </TouchableOpacity>
         {/* <TouchableOpacity 
 
         onPress={ () => {
