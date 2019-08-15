@@ -11,7 +11,7 @@ import PagesScreen from '../pages/PagesViewContainer';
 import ComponentsScreen from '../components/ComponentsViewContainer';
 import Notifications from '../notifications/Notifications';
 import AvailableService from '../availableservices/AvailableService';
-import VehicleList from '../vehicle/VehicleList';
+import from '../availableservices/AvailableService';
 
 const iconHome = require('../../../assets/images/tabbar/home.png');
 const iconCalendar = require('../../../assets/images/tabbar/calendar.png');
@@ -105,12 +105,12 @@ export default createBottomTabNavigator(
     },
     
     Others: {
-      screen: VehicleList,
+      screen: ComponentsScreen,
       navigationOptions: {
         header: (
           <View style={styles.headerContainer}>
             <Image style={styles.headerImage} source={hederBackground} />
-            <Text style={styles.headerCaption}>Vehicles</Text>
+            <Text style={styles.headerCaption}>Others</Text>
           </View>
         ),
       },
@@ -135,7 +135,7 @@ export default createBottomTabNavigator(
           case 'Pages':
             iconSource = iconPages;
             break;
-          case 'Vehicles':
+          case 'Others':
             iconSource = iconComponents;
             break;
           default:

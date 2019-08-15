@@ -135,7 +135,7 @@ export default createBottomTabNavigator(
           case 'Pages':
             iconSource = iconPages;
             break;
-          case 'Vehicles':
+          case '':
             iconSource = iconComponents;
             break;
           default:

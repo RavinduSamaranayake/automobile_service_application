@@ -105,12 +105,12 @@ export default createBottomTabNavigator(
     },
     
     Others: {
-      screen: VehicleList,
+      screen: ComponentsScreen,
       navigationOptions: {
         header: (
           <View style={styles.headerContainer}>
             <Image style={styles.headerImage} source={hederBackground} />
-            <Text style={styles.headerCaption}>Vehicles</Text>
+            <Text style={styles.headerCaption}>V</Text>
           </View>
         ),
       },
@@ -135,7 +135,7 @@ export default createBottomTabNavigator(
           case 'Pages':
             iconSource = iconPages;
             break;
-          case 'Vehicles':
+          case 'Others':
             iconSource = iconComponents;
             break;
           default:

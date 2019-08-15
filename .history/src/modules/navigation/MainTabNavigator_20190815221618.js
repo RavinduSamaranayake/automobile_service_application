@@ -105,7 +105,7 @@ export default createBottomTabNavigator(
     },
     
     Others: {
-      screen: VehicleList,
+      screen: ComponentsScreen,
       navigationOptions: {
         header: (
           <View style={styles.headerContainer}>
@@ -135,7 +135,7 @@ export default createBottomTabNavigator(
           case 'Pages':
             iconSource = iconPages;
             break;
-          case 'Vehicles':
+          case 'Others':
             iconSource = iconComponents;
             break;
           default:
