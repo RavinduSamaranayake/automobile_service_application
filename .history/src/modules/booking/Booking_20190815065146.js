@@ -222,7 +222,6 @@ export default class Booking extends Component {
           vehicle_number:'',
           service_type:[],
           service_date:'',
-          arrival_time:'',
           service_additional_notes:'',
           serve_msg:res.data.msg,
           description:'You have been recieve a new service request '
@@ -274,78 +273,7 @@ export default class Booking extends Component {
 
  }
 
- // confirm the repairBooking
-
- confirmRepair(){
-  this.setState({ isLoading : true})
-  this.repairModalVisible(false)
-  const Repair = {
-    vehicle:this.state.vehicle,
-    vehicle_number:this.state.vehicle_number,
-    repair_type:this.state.repair_type,
-    date:this.state.repair_date,
-    additional_notes:this.state.repair_additional_notes
-  }
-
-  axios.post('http://shan-motors.herokuapp.com/api/appointments/book-repair',Repair)
-      .then(res=>{
-        Alert.alert('Sucess','Your vehicle '+this.state.vehicle_number+` Repair Booking Sucessfully on ` + this.state.repair_date ,[{text:'ok'}]);
-        this.setState({
-          vehicle:'',
-          vehicle_number:'',
-          repair_type:[],
-          repair_date:'',
-          repair_additional_notes:'',
-          message:res.data.msg,
-          description:'You have been recieve a new repair request'
-        })
-        
-        console.log('....................no problem with api call.........................');
-
-
-        // const RequestNotification = {
-        //   description:this.state.description,
-        //   date_time:this.state.repair_date 
-        // }
-        // axios.post('http://shan-motors.herokuapp.com/api/appointments/send-request-notifications',RequestNotification)
-        //     .then(res=>{
-        //       console.log('....................sucess it call.........................');
-        //       this.setState({
-        //         description:'',
-        //         date_time:'',
-        //         isLoading: false
-        //       })
-        //       Alert.alert('Sucess',`Service Booking Sucessfully`,[{text:'ok'}]);
-             
-        //     })
-        //     .catch(err=>{
-        //       console.log('....................give the error ' + err+ ' .........................');
-        //       console.log(err);
-        //       this.setState({ isLoading : false})
-        //       Alert.alert('Error',err,[{text:'ok'}]);
-             
-        //     })
-      })
-     
-      .catch(res=>{
-        Alert.alert('Error',`Repair Booking Fail..`,[{text:'ok'}]);
-        console.log('....................give the error fail .........................');
-        this.setState({
-          serve_err:res.response.data.err,
-          isLoading: false
-        })
-       
-      })
-      
-      this.setState({    
-        serve_msg:'',
-        serve_err:'',
-        isLoading: false
-    });
-
-
- }
-
+ 
 
 
   render() {
@@ -467,7 +395,7 @@ export default class Booking extends Component {
                 {/* <TouchableOpacity onPress={() => {this.setModalVisible(false) }} style={styles.btnClose}>
                   <Text style={styles.txtClose}>Close</Text>
                 </TouchableOpacity> */}
-                <TouchableOpacity style={styles.followButton} onPress={()=> this.confirmRepair()}>
+                <TouchableOpacity style={styles.followButton} onPress={()=> {this.repairModalVisible(false) }}>
                   <Text style={styles.followButtonText}>Confirm</Text>  
                 </TouchableOpacity>
               </View>

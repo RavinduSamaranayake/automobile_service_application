@@ -278,7 +278,7 @@ export default class Booking extends Component {
 
  confirmRepair(){
   this.setState({ isLoading : true})
-  this.repairModalVisible(false)
+  this.serviceModalVisible(false)
   const Repair = {
     vehicle:this.state.vehicle,
     vehicle_number:this.state.vehicle_number,

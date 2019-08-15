@@ -222,7 +222,6 @@ export default class Booking extends Component {
           vehicle_number:'',
           service_type:[],
           service_date:'',
-          arrival_time:'',
           service_additional_notes:'',
           serve_msg:res.data.msg,
           description:'You have been recieve a new service request '
@@ -276,28 +275,29 @@ export default class Booking extends Component {
 
  // confirm the repairBooking
 
- confirmRepair(){
+ confirmService(){
   this.setState({ isLoading : true})
-  this.repairModalVisible(false)
-  const Repair = {
+  this.serviceModalVisible(false)
+  const Service = {
     vehicle:this.state.vehicle,
     vehicle_number:this.state.vehicle_number,
-    repair_type:this.state.repair_type,
-    date:this.state.repair_date,
-    additional_notes:this.state.repair_additional_notes
+    service_type:this.state.service_type,
+    date:this.state.service_date,
+    arrival_time:this.state.arrival_time,
+    additional_notes:this.state.service_additional_notes
   }
 
-  axios.post('http://shan-motors.herokuapp.com/api/appointments/book-repair',Repair)
+  axios.post('http://shan-motors.herokuapp.com/api/appointments/book-service',Service)
       .then(res=>{
-        Alert.alert('Sucess','Your vehicle '+this.state.vehicle_number+` Repair Booking Sucessfully on ` + this.state.repair_date ,[{text:'ok'}]);
+        Alert.alert('Sucess','Your vehicle '+this.state.vehicle_number+` Service Booking Sucessfully on ` + this.state.service_date +' at '+ this.state.arrival_time ,[{text:'ok'}]);
         this.setState({
           vehicle:'',
           vehicle_number:'',
-          repair_type:[],
-          repair_date:'',
-          repair_additional_notes:'',
-          message:res.data.msg,
-          description:'You have been recieve a new repair request'
+          service_type:[],
+          service_date:'',
+          service_additional_notes:'',
+          serve_msg:res.data.msg,
+          description:'You have been recieve a new service request '
         })
         
         console.log('....................no problem with api call.........................');
@@ -305,7 +305,7 @@ export default class Booking extends Component {
 
         // const RequestNotification = {
         //   description:this.state.description,
-        //   date_time:this.state.repair_date 
+        //   date_time:this.state.service_date + ' ' + this.state.arrival_time
         // }
         // axios.post('http://shan-motors.herokuapp.com/api/appointments/send-request-notifications',RequestNotification)
         //     .then(res=>{
@@ -328,7 +328,7 @@ export default class Booking extends Component {
       })
      
       .catch(res=>{
-        Alert.alert('Error',`Repair Booking Fail..`,[{text:'ok'}]);
+        Alert.alert('Error',`Service Booking Fail..`,[{text:'ok'}]);
         console.log('....................give the error fail .........................');
         this.setState({
           serve_err:res.response.data.err,
@@ -467,7 +467,7 @@ export default class Booking extends Component {
                 {/* <TouchableOpacity onPress={() => {this.setModalVisible(false) }} style={styles.btnClose}>
                   <Text style={styles.txtClose}>Close</Text>
                 </TouchableOpacity> */}
-                <TouchableOpacity style={styles.followButton} onPress={()=> this.confirmRepair()}>
+                <TouchableOpacity style={styles.followButton} onPress={()=> {this.repairModalVisible(false) }}>
                   <Text style={styles.followButtonText}>Confirm</Text>  
                 </TouchableOpacity>
               </View>

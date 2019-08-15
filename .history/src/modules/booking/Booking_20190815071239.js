@@ -278,7 +278,7 @@ export default class Booking extends Component {
 
  confirmRepair(){
   this.setState({ isLoading : true})
-  this.repairModalVisible(false)
+  this.serviceModalVisible(false)
   const Repair = {
     vehicle:this.state.vehicle,
     vehicle_number:this.state.vehicle_number,
@@ -328,7 +328,7 @@ export default class Booking extends Component {
       })
      
       .catch(res=>{
-        Alert.alert('Error',`Repair Booking Fail..`,[{text:'ok'}]);
+        Alert.alert('Error',`R Booking Fail..`,[{text:'ok'}]);
         console.log('....................give the error fail .........................');
         this.setState({
           serve_err:res.response.data.err,
@@ -467,7 +467,7 @@ export default class Booking extends Component {
                 {/* <TouchableOpacity onPress={() => {this.setModalVisible(false) }} style={styles.btnClose}>
                   <Text style={styles.txtClose}>Close</Text>
                 </TouchableOpacity> */}
-                <TouchableOpacity style={styles.followButton} onPress={()=> this.confirmRepair()}>
+                <TouchableOpacity style={styles.followButton} onPress={()=> {this.repairModalVisible(false) }}>
                   <Text style={styles.followButtonText}>Confirm</Text>  
                 </TouchableOpacity>
               </View>
