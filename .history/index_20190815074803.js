@@ -6,9 +6,7 @@
 import {AppRegistry} from 'react-native';
 import App from './App';
 import {name as appName} from './app.json';
-//import console = require('console');
-
-
-console.disableYellowBox = true;
+import console = require('console');
+console.dis
 
 AppRegistry.registerComponent(appName, () => App);
