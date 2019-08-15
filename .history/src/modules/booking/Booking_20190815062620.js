@@ -8,7 +8,6 @@ import {
   Image,
   TouchableOpacity,
   FlatList,
-  Alert,
   Dimensions,
   Modal,
   ScrollView,
@@ -216,7 +215,6 @@ export default class Booking extends Component {
 
   axios.post('http://shan-motors.herokuapp.com/api/appointments/book-service',Service)
       .then(res=>{
-        Alert.alert('Sucess','Your vehicle '+this.state.vehicle_number+` Service Booking Sucessfully on ` + this.state.service_date +' at '+ this.state.arrival_time ,[{text:'ok'}]);
         this.setState({
           vehicle:'',
           vehicle_number:'',
@@ -226,7 +224,7 @@ export default class Booking extends Component {
           serve_msg:res.data.msg,
           description:'You have been recieve a new service request '
         })
-        
+        Alert.alert('Sucess',`Service Booking Sucessfully`,[{text:'ok'}]);
         console.log('....................no problem with api call.........................');
 
 
@@ -234,28 +232,28 @@ export default class Booking extends Component {
         //   description:this.state.description,
         //   date_time:this.state.service_date + ' ' + this.state.arrival_time
         // }
-        // axios.post('http://shan-motors.herokuapp.com/api/appointments/send-request-notifications',RequestNotification)
-        //     .then(res=>{
-        //       console.log('....................sucess it call.........................');
-        //       this.setState({
-        //         description:'',
-        //         date_time:'',
-        //         isLoading: false
-        //       })
-        //       Alert.alert('Sucess',`Service Booking Sucessfully`,[{text:'ok'}]);
+      //   axios.post('http://shan-motors.herokuapp.com/api/appointments/send-request-notifications',RequestNotification)
+      //       .then(res=>{
+      //         console.log('....................sucess it call.........................');
+      //         this.setState({
+      //           description:'',
+      //           date_time:'',
+      //           isLoading: false
+      //         })
+      //         Alert.alert('Sucess',`Service Booking Sucessfully`,[{text:'ok'}]);
              
-        //     })
-        //     .catch(err=>{
-        //       console.log('....................give the error ' + err+ ' .........................');
-        //       console.log(err);
-        //       this.setState({ isLoading : false})
-        //       Alert.alert('Error',err,[{text:'ok'}]);
+      //       })
+      //       .catch(err=>{
+      //         console.log('....................give the error ' + err+ ' .........................');
+      //         console.log(err);
+      //         this.setState({ isLoading : false})
+      //         Alert.alert('Error',err,[{text:'ok'}]);
              
-        //     })
+      //       })
       })
      
       .catch(res=>{
-        Alert.alert('Error',`Service Booking Fail..`,[{text:'ok'}]);
+        Alert.alert('Sucess',`Service Booking Sucessfully`,[{text:'ok'}]);
         console.log('....................give the error fail .........................');
         this.setState({
           serve_err:res.response.data.err,

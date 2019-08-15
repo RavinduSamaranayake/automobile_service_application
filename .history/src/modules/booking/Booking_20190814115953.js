@@ -8,7 +8,6 @@ import {
   Image,
   TouchableOpacity,
   FlatList,
-  Alert,
   Dimensions,
   Modal,
   ScrollView,
@@ -66,8 +65,7 @@ export default class Booking extends Component {
       repair_additional_notes:'',
       service_additional_notes:'',
       serve_msg: '',
-      description: '',
-      serve_err:'',
+      description: ''
     };
   }
 
@@ -203,8 +201,7 @@ export default class Booking extends Component {
  // confirm the serviceBooking
 
  confirmService(){
-  this.setState({ isLoading : true})
-  this.serviceModalVisible(false)
+
   const Service = {
     vehicle:this.state.vehicle,
     vehicle_number:this.state.vehicle_number,
@@ -214,9 +211,8 @@ export default class Booking extends Component {
     additional_notes:this.state.service_additional_notes
   }
 
-  axios.post('http://shan-motors.herokuapp.com/api/appointments/book-service',Service)
+  axios.post('api/appointments/book-service',Service)
       .then(res=>{
-        Alert.alert('Sucess','Your vehicle '+this.state.vehicle_number+` Service Booking Sucessfully on ` + this.state.service_date +' at '+ this.state.arrival_time ,[{text:'ok'}]);
         this.setState({
           vehicle:'',
           vehicle_number:'',
@@ -226,48 +222,31 @@ export default class Booking extends Component {
           serve_msg:res.data.msg,
           description:'You have been recieve a new service request '
         })
-        
-        console.log('....................no problem with api call.........................');
-
-
-        // const RequestNotification = {
-        //   description:this.state.description,
-        //   date_time:this.state.service_date + ' ' + this.state.arrival_time
-        // }
-        // axios.post('http://shan-motors.herokuapp.com/api/appointments/send-request-notifications',RequestNotification)
-        //     .then(res=>{
-        //       console.log('....................sucess it call.........................');
-        //       this.setState({
-        //         description:'',
-        //         date_time:'',
-        //         isLoading: false
-        //       })
-        //       Alert.alert('Sucess',`Service Booking Sucessfully`,[{text:'ok'}]);
-             
-        //     })
-        //     .catch(err=>{
-        //       console.log('....................give the error ' + err+ ' .........................');
-        //       console.log(err);
-        //       this.setState({ isLoading : false})
-        //       Alert.alert('Error',err,[{text:'ok'}]);
-             
-        //     })
       })
-     
+      const RequestNotification = {
+        description:this.state.description,
+        date_time:this.state.service_date 
+      }
+      axios.post('api/appointments/send-request-notifications',RequestNotification)
+          .then(res=>{
+            this.setState({
+              description:'',
+              date_time:''
+            })
+          })
+          .catch(err=>{
+            console.log(err);
+          })
       .catch(res=>{
-        Alert.alert('Error',`Service Booking Fail..`,[{text:'ok'}]);
-        console.log('....................give the error fail .........................');
         this.setState({
-          serve_err:res.response.data.err,
-          isLoading: false
+          visible:true,
+          serve_err:res.response.data.err
         })
-       
       })
-      
+
       this.setState({    
         serve_msg:'',
-        serve_err:'',
-        isLoading: false
+        serve_err:''
     });
 
 
@@ -496,7 +475,7 @@ export default class Booking extends Component {
                 {/* <TouchableOpacity onPress={() => {this.setModalVisible(false) }} style={styles.btnClose}>
                   <Text style={styles.txtClose}>Close</Text>
                 </TouchableOpacity> */}
-                <TouchableOpacity style={styles.followButton} onPress={()=> this.confirmService() }>
+                <TouchableOpacity style={styles.followButton} onPress={()=> {this.serviceModalVisible(false) }}>
                   <Text style={styles.followButtonText}>Confirm</Text>  
                 </TouchableOpacity>
               </View>
