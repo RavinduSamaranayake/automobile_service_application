@@ -24,7 +24,7 @@
     "react": "16.6.3",
     "react-addons-update": "^15.6.2",
     "react-cross-form": "^1.2.12",
-    "react-native": "0.58.5",
+    "react-native": "0.70.2",
     "react-native-24h-timepicker": "^1.0.0",
     "react-native-calendars": "^1.22.0",
     "react-native-checkbox-form": "^1.1.5",
