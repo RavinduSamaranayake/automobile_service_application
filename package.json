@@ -68,7 +68,7 @@
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
     "babel-jest": "24.1.0",
-    "danger": "^7.0.2",
+    "danger": "^11.2.0",
     "detox": "^9.1.2",
     "enzyme": "^3.7.0",
     "enzyme-adapter-react-16": "^1.7.0",
